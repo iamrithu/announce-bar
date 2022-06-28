@@ -76,10 +76,10 @@ export async function createServer(
   });
 
   app.get("/demo", async (req, res) => {
-    const test_session = await Shopify.Utils.loadCurrentSession(req, res);
+    const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
     const allUsers = await prisma.shops.findMany();
-    res.json(test_session);
-    console.log("test_session");
+    console.log(test_session);
+    res.json(allUsers);
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
