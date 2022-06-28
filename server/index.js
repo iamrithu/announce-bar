@@ -72,7 +72,7 @@ export async function createServer(
     const result = await prisma.shops.create({
       data: req.body,
     });
-    res.json(result);
+    res.send(result);
   });
 
   app.get("/demo", async (req, res) => {
