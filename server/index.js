@@ -93,20 +93,20 @@ export async function createServer(
         isActive: "false",
       },
     });
-    // var template = {
-    //   uuid: uuid(),
-    //   name: req.body.name,
-    //   content: req.body.shipBar,
-    //   background: req.body.background,
-    //   position: req.body.position,
-    //   fontColor: req.body.fontColor,
-    //   fontFamily: req.body.fontFamily,
-    //   fontSize: req.body.fontSize,
-    //   shopDetails: test_session.shop,
-    //   isActive: true,
-    // };
+    var template = {
+      uuid: uuid(),
+      name: req.body.name,
+      content: req.body.shipBar,
+      background: req.body.background,
+      position: req.body.position,
+      fontColor: req.body.fontColor,
+      fontFamily: req.body.fontFamily,
+      fontSize: req.body.fontSize,
+      shopDetails: test_session.shop,
+      isActive: "true",
+    };
 
-    // await prisma.shipbars.create({ data: template });
+    await prisma.shipbars.create({ data: template });
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
