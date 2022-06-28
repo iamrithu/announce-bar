@@ -8,6 +8,9 @@ import "dotenv/config";
 import applyAuthMiddleware from "./middleware/auth.js";
 import verifyRequest from "./middleware/verify-request.js";
 
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
+
 const USE_ONLINE_TOKENS = true;
 const TOP_LEVEL_OAUTH_COOKIE = "shopify_top_level_oauth";
 
@@ -59,6 +62,11 @@ export async function createServer(
         res.status(500).send(error.message);
       }
     }
+  });
+
+  app.get("/demo", async (req, res) => {
+    const allUsers = await prisma.shops.findMany();
+    res.send(allUsers);
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
