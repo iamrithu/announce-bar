@@ -70,15 +70,43 @@ export async function createServer(
   });
 
   app.get("/announcementBar", async (req, res) => {
-    const session = await Shopify.Utils.loadCurrentSession(req, res, true);
-    const data = await prisma.shops.findUnique({
-      where: {
-        name: session.shop,
+    try {
+      const session = await Shopify.Utils.loadCurrentSession(req, res, true);
+      const data = await prisma.shops.findUnique({
+        where: {
+          name: session.shop,
+        },
+        include: { product: true },
+      });
+      console.log(data);
+      res.status(200).send(data);
+    } catch (error) {
+      res.status(404).send(error.message);
+    }
+  });
+  app.post("/announcementBar", async (req, res) => {
+    const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
+
+    await prisma.shipbars.update({
+      where: { isActive: true },
+      data: {
+        isActive: false,
       },
-      include: { product: true },
     });
-    console.log(data);
-    res.status(200).send(data);
+    var template = {
+      uuid: uuid(),
+      name: req.body.name,
+      content: req.body.shipBar,
+      background: req.body.background,
+      position: req.body.position,
+      fontColor: req.body.fontColor,
+      fontFamily: req.body.fontFamily,
+      fontSize: req.body.fontSize,
+      shopDetails: test_session.shop,
+      isActive: true,
+    };
+
+    await prisma.shipbars.create({ data: template });
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {

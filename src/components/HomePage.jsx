@@ -8,7 +8,17 @@ export const HomePage = () => {
 
   const click = async () => {
     await fetch("/announcementBar", {
-      method: "GET",
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: "demo",
+        content: "demo",
+        background: "red",
+        position: "fixed",
+        fontColor: "white",
+        fontFamily: "monstres",
+        fontSize: "14px",
+      }),
     });
   };
   return (
