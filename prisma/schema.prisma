@@ -20,7 +20,7 @@ model shipbars {
   fontColor   String
   fontFamily  String
   fontSize    String
-  isActive    Boolean  @default(false)
+  isActive    String   @default("false")
   createdAt   DateTime @default(now())
   shopDetails shops    @relation(fields: [shop], references: [name])
   shop        String
