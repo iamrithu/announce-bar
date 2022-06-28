@@ -7,10 +7,8 @@ export const HomePage = () => {
   const fetch = userLoggedInFetch(app);
 
   const click = async () => {
-    await fetch("/demo", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({}),
+    await fetch("/announcementBar", {
+      method: "GET",
     });
   };
   return (
