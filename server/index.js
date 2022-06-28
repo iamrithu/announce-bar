@@ -71,15 +71,15 @@ export async function createServer(
 
   app.post("/demo", async (req, res) => {
     const session = await Shopify.Utils.loadCurrentSession(req, res, true);
-
-    // const result = await prisma.shops.create({
-    //   data: {
-    //     uuid: uuid(),
-    //     shopId: session.id,
-    //     name: session.shop,
-    //   },
-    // });
-    res.send(session);
+    const result = await prisma.shops.create({
+      data: {
+        uuid: uuid(),
+        shopId: session.id,
+        name: session.shop,
+      },
+    });
+    console.log(session);
+    res.send(result);
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
