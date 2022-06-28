@@ -1,6 +1,7 @@
 import { Shopify } from "@shopify/shopify-api";
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
+import { uuid } from "uuidv4";
 
 import topLevelAuthRedirect from "../helpers/top-level-auth-redirect.js";
 
@@ -49,6 +50,7 @@ export default function applyAuthMiddleware(app) {
         res,
         req.query
       );
+      console.log("hello");
 
       const host = req.query.host;
       app.set(

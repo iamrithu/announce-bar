@@ -76,7 +76,7 @@ export async function createServer(
       where: { shopId: session.id },
     });
     console.log(data.length);
-    if (data.length > 0) {
+    if (data.length === 0) {
       console.log("already exist");
     } else {
       const result = await prisma.shops.create({
