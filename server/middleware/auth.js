@@ -57,7 +57,13 @@ export default function applyAuthMiddleware(app) {
       if (data) {
         console.log("exit");
       } else {
-        console.log("not");
+        await prisma.shops.create({
+          data: {
+            uuid: uuid(),
+            shopId: session.id,
+            name: session.shop,
+          },
+        });
       }
       // if (data) {
 
