@@ -15,7 +15,7 @@ export const HomePage = () => {
   };
   return (
     <div>
-      <button></button>
+      <button onClick={click}>demo</button>
     </div>
   );
 };
