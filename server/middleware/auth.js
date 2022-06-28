@@ -50,23 +50,28 @@ export default function applyAuthMiddleware(app) {
         res,
         req.query
       );
-      var data = await prisma.shops.findUnique({
+      const data = await prisma.shops.findUnique({
         where: { name: session.shop },
       });
-      console.log(data.length);
+      console.log(data);
       if (data) {
-        console.log("already exist");
+        console.log("exit");
       } else {
-        const result = await prisma.shops.create({
-          data: {
-            uuid: uuid(),
-            shopId: session.id,
-            name: session.shop,
-          },
-        });
-
-        res.send(result);
+        console.log("not");
       }
+      // if (data) {
+
+      // } else {
+      //   await prisma.shops.create({
+      //     data: {
+      //       uuid: uuid(),
+      //       shopId: session.id,
+      //       name: session.shop,
+      //     },
+      //   });
+
+      //   res.send(result);
+      // }
 
       const host = req.query.host;
       app.set(
