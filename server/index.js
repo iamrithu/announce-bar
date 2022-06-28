@@ -69,9 +69,16 @@ export async function createServer(
     }
   });
 
-  app.post("/demo", async (req, res) => {
+  app.get("/announcementBar", async (req, res) => {
     const session = await Shopify.Utils.loadCurrentSession(req, res, true);
-    console.log(session);
+    const data = await prisma.shops.findUnique({
+      where: {
+        name: session.shop,
+      },
+      include: { product: true },
+    });
+    console.log(data);
+    res.status(200).send(data);
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
