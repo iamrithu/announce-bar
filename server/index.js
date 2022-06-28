@@ -8,20 +8,21 @@ import "dotenv/config";
 import applyAuthMiddleware from "./middleware/auth.js";
 import verifyRequest from "./middleware/verify-request.js";
 
-const { PrismaClient } = require("@prisma/client");
+import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const USE_ONLINE_TOKENS = true;
 const TOP_LEVEL_OAUTH_COOKIE = "shopify_top_level_oauth";
-
-const PORT = parseInt(process.env.PORT || "8081", 10);
+const { PORT, API_KEY, API_SECRET_KEY, SCOPES, HOST } = process.env;
+if (!PORT || !API_KEY || !API_SECRET_KEY || !SCOPES || !HOST) {
+  throw new Error();
+}
 const isTest = process.env.NODE_ENV === "test" || !!process.env.VITE_TEST_BUILD;
-
 Shopify.Context.initialize({
-  API_KEY: process.env.SHOPIFY_API_KEY,
-  API_SECRET_KEY: process.env.SHOPIFY_API_SECRET,
-  SCOPES: process.env.SCOPES.split(","),
-  HOST_NAME: process.env.HOST.replace(/https:\/\//, ""),
+  API_KEY: API_KEY,
+  API_SECRET_KEY: API_SECRET_KEY,
+  SCOPES: SCOPES.split(","),
+  HOST_NAME: HOST.replace(/https:\/\//, ""),
   API_VERSION: ApiVersion.April22,
   IS_EMBEDDED_APP: true,
   // This should be replaced with your preferred storage strategy
@@ -115,9 +116,6 @@ export async function createServer(
     }
   });
 
-  /**
-   * @type {import('vite').ViteDevServer}
-   */
   let vite;
   if (!isProd) {
     vite = await import("vite").then(({ createServer }) =>
@@ -125,7 +123,7 @@ export async function createServer(
         root,
         logLevel: isTest ? "error" : "info",
         server: {
-          port: PORT,
+          port: Number(PORT),
           hmr: {
             protocol: "ws",
             host: "localhost",
