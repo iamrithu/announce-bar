@@ -22,7 +22,7 @@ model shipbars {
   fontSize    String
   isActive    String   @default("false")
   createdAt   DateTime @default(now())
-  shopDetails shops    @relation(fields: [shop], references: [name])
+  shopDetails shops    @relation(fields: [shop], references: [uuid])
   shop        String
 }
 

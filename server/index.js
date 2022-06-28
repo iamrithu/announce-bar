@@ -103,7 +103,7 @@ export async function createServer(
       fontColor: req.body.fontColor,
       fontFamily: req.body.fontFamily,
       fontSize: req.body.fontSize,
-      shop: test_session.shop,
+      shop: "web-app-store1.myshopify.com",
       isActive: "true",
     };
 
