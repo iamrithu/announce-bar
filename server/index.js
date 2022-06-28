@@ -109,11 +109,7 @@ export async function createServer(
         fontFamily: req.body.fontFamily,
         fontSize: req.body.fontSize,
         isActive: "true",
-        shops: {
-          connect: {
-            name: test_session.shop,
-          },
-        },
+        shops: test_session.shop,
       };
 
       await prisma.shipbars.create({ data: template });

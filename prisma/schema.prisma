@@ -11,25 +11,25 @@ datasource db {
 }
 
 model shipbars {
-  id         Int      @id @default(autoincrement())
-  uuid       String   @unique @db.VarChar(255)
-  name       String
-  content    String
-  background String
-  position   String
-  fontColor  String
-  fontFamily String
-  fontSize   String
-  isActive   String   @default("false")
-  createdAt  DateTime @default(now())
-  shops      shops    @relation(fields: [shop], references: [name])
-  shop       String
+  id          Int      @id @default(autoincrement())
+  uuid        String   @unique @db.VarChar(255)
+  name        String
+  content     String
+  background  String
+  position    String
+  fontColor   String
+  fontFamily  String
+  fontSize    String
+  isActive    String   @default("false")
+  createdAt   DateTime @default(now())
+  shopDetails shops    @relation(fields: [shop], references: [name])
+  shop        String
 }
 
 model shops {
-  id       Int        @id @default(autoincrement())
-  uuid     String     @unique @db.VarChar(255)
-  shopId   String
-  name     String     @unique
-  shipbars shipbars[]
+  id      Int        @id @default(autoincrement())
+  uuid    String     @unique @db.VarChar(255)
+  shopId  String
+  name    String     @unique
+  product shipbars[]
 }
