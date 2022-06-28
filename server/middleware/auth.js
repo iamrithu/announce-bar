@@ -1,4 +1,7 @@
 import { Shopify } from "@shopify/shopify-api";
+import { PrismaClient } from "@prisma/client";
+import { uuid } from "uuid";
+const prisma = new PrismaClient();
 
 import topLevelAuthRedirect from "../helpers/top-level-auth-redirect.js";
 
@@ -47,6 +50,19 @@ export default function applyAuthMiddleware(app) {
         res,
         req.query
       );
+      const data = await prisma.shops.findMany({
+        where: { shopId: session.id },
+      });
+
+      if (data) {
+        return;
+      } else {
+        await prisma.shops.create({
+          uuid: uuid.v4(),
+          shopId: session.id,
+          name: session.shop,
+        });
+      }
 
       const host = req.query.host;
       app.set(
