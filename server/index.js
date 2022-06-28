@@ -8,6 +8,8 @@ import "dotenv/config";
 import applyAuthMiddleware from "./middleware/auth.js";
 import verifyRequest from "./middleware/verify-request.js";
 
+import body from "body-parser";
+
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
@@ -52,6 +54,8 @@ export async function createServer(
 
   applyAuthMiddleware(app);
 
+  app.use(body.json());
+
   app.post("/webhooks", async (req, res) => {
     try {
       await Shopify.Webhooks.Registry.process(req, res);
@@ -62,6 +66,13 @@ export async function createServer(
         res.status(500).send(error.message);
       }
     }
+  });
+
+  app.post("/demo", async (req, res) => {
+    const result = await prisma.shops.create({
+      data: req.body,
+    });
+    res.json(result);
   });
 
   app.get("/demo", async (req, res) => {
