@@ -103,7 +103,7 @@ export async function createServer(
       fontColor: req.body.fontColor,
       fontFamily: req.body.fontFamily,
       fontSize: req.body.fontSize,
-      shopDetails: { name: test_session.shop },
+      shop: test_session.shop,
       isActive: "true",
     };
 
