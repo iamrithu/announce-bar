@@ -30,8 +30,8 @@ export function ProductsCard() {
   const app = useAppBridge();
   const fetch = userLoggedInFetch(app);
   const updateProductCount = useCallback(async () => {
-    const { count } = await fetch("/products-count").then((res) => res.json());
-    setProductCount(count);
+    const { count } = await fetch("/demo").then((res) => res.json());
+    console.log(count);
   }, []);
 
   useEffect(() => {
