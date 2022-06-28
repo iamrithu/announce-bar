@@ -7,6 +7,7 @@ import "dotenv/config";
 
 import applyAuthMiddleware from "./middleware/auth.js";
 import verifyRequest from "./middleware/verify-request.js";
+import { uuid } from "uuidv4";
 
 import body from "body-parser";
 
@@ -69,17 +70,16 @@ export async function createServer(
   });
 
   app.post("/demo", async (req, res) => {
-    const result = await prisma.shops.create({
-      data: req.body,
-    });
-    res.send(result);
-  });
+    const session = await Shopify.Utils.loadCurrentSession(req, res, true);
 
-  app.get("/demo", async (req, res) => {
-    const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
-    const allUsers = await prisma.shops.findMany();
-    console.log(test_session);
-    res.json(allUsers);
+    // const result = await prisma.shops.create({
+    //   data: {
+    //     uuid: uuid(),
+    //     shopId: session.id,
+    //     name: session.shop,
+    //   },
+    // });
+    res.send(session);
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
