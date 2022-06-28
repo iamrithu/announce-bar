@@ -1,6 +1,6 @@
 import React from "react";
 import { useAppBridge } from "@shopify/app-bridge-react";
-import { userLoggedInFetch } from "../../App";
+import { userLoggedInFetch } from "../App";
 
 export const HomePage = () => {
   const app = useAppBridge();
@@ -15,7 +15,7 @@ export const HomePage = () => {
   };
   return (
     <div>
-      <button onClick={click}>demo </button>
+      <button></button>
     </div>
   );
 };
