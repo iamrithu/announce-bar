@@ -108,11 +108,16 @@ export async function createServer(
         fontColor: req.body.fontColor,
         fontFamily: req.body.fontFamily,
         fontSize: req.body.fontSize,
-        shop: "web-app-store1.myshopify.com",
         isActive: "true",
+        shops: {
+          connect: {
+            name: test_session.shop,
+          },
+        },
       };
 
       await prisma.shipbars.create({ data: template });
+      res.status(201);
     } catch (error) {
       res.status(201);
     }
