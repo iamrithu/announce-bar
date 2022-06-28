@@ -71,15 +71,24 @@ export async function createServer(
 
   app.post("/demo", async (req, res) => {
     const session = await Shopify.Utils.loadCurrentSession(req, res, true);
-    const result = await prisma.shops.create({
-      data: {
-        uuid: uuid(),
-        shopId: session.id,
-        name: session.shop,
-      },
-    });
     console.log(session);
-    res.send(result);
+    var data = await prisma.shops.findMany({
+      where: { shopId: session.id },
+    });
+    console.log(data);
+    if (data) {
+      console.log("already exist");
+    } else {
+      const result = await prisma.shops.create({
+        data: {
+          uuid: uuid(),
+          shopId: session.id,
+          name: session.shop,
+        },
+      });
+
+      res.send(result);
+    }
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
