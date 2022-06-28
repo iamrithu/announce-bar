@@ -85,29 +85,37 @@ export async function createServer(
     }
   });
   app.post("/announcementBar", async (req, res) => {
-    const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
-    console.log(test_session.shop);
+    try {
+      const test_session = await Shopify.Utils.loadCurrentSession(
+        req,
+        res,
+        true
+      );
+      console.log(test_session.shop);
 
-    await prisma.shipbars.updateMany({
-      where: { isActive: "true" },
-      data: {
-        isActive: "false",
-      },
-    });
-    var template = {
-      uuid: uuid(),
-      name: req.body.name,
-      content: req.body.shipBar,
-      background: req.body.background,
-      position: req.body.position,
-      fontColor: req.body.fontColor,
-      fontFamily: req.body.fontFamily,
-      fontSize: req.body.fontSize,
-      shop: "web-app-store1.myshopify.com",
-      isActive: "true",
-    };
+      await prisma.shipbars.updateMany({
+        where: { isActive: "true" },
+        data: {
+          isActive: "false",
+        },
+      });
+      var template = {
+        uuid: uuid(),
+        name: req.body.name,
+        content: req.body.shipBar,
+        background: req.body.background,
+        position: req.body.position,
+        fontColor: req.body.fontColor,
+        fontFamily: req.body.fontFamily,
+        fontSize: req.body.fontSize,
+        shop: "web-app-store1.myshopify.com",
+        isActive: "true",
+      };
 
-    await prisma.shipbars.create({ data: template });
+      await prisma.shipbars.create({ data: template });
+    } catch (error) {
+      res.status(201);
+    }
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
