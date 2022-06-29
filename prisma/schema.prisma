@@ -22,7 +22,6 @@ model shipbars {
   fontSize    String
   isActive    String   @default("false")
   createdAt   DateTime @default(now())
-  shopDetails shops    @relation(fields: [shop], references: [name])
   shop        String
 }
 
@@ -31,5 +30,4 @@ model shops {
   uuid    String     @unique @db.VarChar(255)
   shopId  String
   name    String     @unique
-  product shipbars[]
 }

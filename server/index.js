@@ -86,16 +86,7 @@ export async function createServer(
   });
   app.post("/announcementBar", async (req, res) => {
     const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
-    console.log(test_session);
-
-    await prisma.shipbars.updateMany({
-      where: { isActive: "true" },
-      data: {
-        isActive: "false",
-      },
-    });
-    var template = {
-      uuid: uuid(),
+    var data = {
       name: req.body.name,
       content: req.body.shipBar,
       background: req.body.background,
@@ -106,8 +97,9 @@ export async function createServer(
       shop: test_session.shop,
       isActive: "true",
     };
-
-    await prisma.shipbars.create({ data: template });
+    await prisma.shipbars.create({
+      data: data,
+    });
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
