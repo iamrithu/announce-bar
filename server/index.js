@@ -89,7 +89,7 @@ export async function createServer(
     var data = {
       uuid: uuid(),
       name: req.body.name,
-      content: req.body.shipBar,
+      content: req.body.content,
       background: req.body.background,
       position: req.body.position,
       fontColor: req.body.fontColor,
