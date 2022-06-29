@@ -71,13 +71,7 @@ export async function createServer(
 
   app.get("/announcementBar", async (req, res) => {
     try {
-      const session = await Shopify.Utils.loadCurrentSession(req, res, true);
-      const data = await prisma.shops.findUnique({
-        where: {
-          name: session.shop,
-        },
-        include: { product: true },
-      });
+      const data = await prisma.shipbars.findMany({});
       console.log(data);
       res.status(200).send(data);
     } catch (error) {
