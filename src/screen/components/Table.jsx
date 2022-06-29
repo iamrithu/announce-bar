@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useAppBridge } from "@shopify/app-bridge-react";
 import { userLoggedInFetch } from "../../App";
 
-// import Templates from "./Templates";
+import Templates from "./Templates";
 
 import styled from "styled-components";
 
@@ -50,13 +50,13 @@ export const Table = () => {
   //   });
   // }
 
-  // const add = () => {
-  //   if (openState === false) {
-  //     setOpenState(true);
-  //   } else {
-  //     setOpenState(false);
-  //   }
-  // };
+  const add = () => {
+    if (openState === false) {
+      setOpenState(true);
+    } else {
+      setOpenState(false);
+    }
+  };
 
   useEffect(() => {
     getTemplate();
@@ -69,7 +69,7 @@ export const Table = () => {
         <Layout.Section>
           <Stack distribution="trailing">
             {" "}
-            <Button>Add</Button>{" "}
+            <Button onClick={add}>Add</Button>{" "}
           </Stack>
         </Layout.Section>
         <Layout.Section>
