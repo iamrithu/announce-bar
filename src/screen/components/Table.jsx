@@ -35,7 +35,8 @@ export const Table = () => {
   // }
 
   async function deleted(e) {
-    await fetch(`/delete/${e.uuid}`, {
+    console.log(e.uuid);
+    await fetch(`/delete/3-9r4230r9fwefh94r3984rf9`, {
       method: "Delete",
     });
     getTemplate();
