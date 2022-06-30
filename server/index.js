@@ -84,6 +84,12 @@ export async function createServer(
   });
   app.post("/announcementBar", async (req, res) => {
     const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
+
+    const selectData = await prisma.shipbars.update({
+      where: { shop: test_session.shop, isActive: "true" },
+      data: { isActive: "false" },
+    });
+
     var data = {
       uuid: uuid(),
       name: req.body.name,
