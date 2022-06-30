@@ -120,12 +120,6 @@ export async function createServer(
     });
   });
 
-  const deleteUser = await prisma.user.delete({
-    where: {
-      email: "bert@prisma.io",
-    },
-  });
-
   app.get("/products-count", verifyRequest(app), async (req, res) => {
     const session = await Shopify.Utils.loadCurrentSession(req, res, true);
     const { Product } = await import(
