@@ -117,7 +117,7 @@ export async function createServer(
 
   app.delete("/delete/:id", async (req, res) => {
     console.log(req.params.id);
-    const deleteUser = await prisma.shipbars.deleteMany({
+    const deleteUser = await prisma.shipbars.delete({
       where: {
         uuid: req.params.id,
       },
