@@ -22,6 +22,7 @@ export const Table = () => {
   const fetch = userLoggedInFetch(app);
 
   const [actived, setActive] = useState();
+  const [del, setDelete] = useState();
 
   const [templates, set_templates] = useState([]);
   const [openState, setOpenState] = useState(false);
@@ -35,10 +36,10 @@ export const Table = () => {
   // }
 
   async function deleted(e) {
-    await fetch(`/delete/${e}`, {
+    var data = await fetch(`/delete/${e}`, {
       method: "Delete",
     });
-    getTemplate();
+    setDelete(data);
   }
 
   async function activate(e, index) {
@@ -61,7 +62,7 @@ export const Table = () => {
   useEffect(() => {
     getTemplate();
     // scriptRun();
-  }, []);
+  }, [del]);
 
   return (
     <Page fullWidth>
