@@ -111,7 +111,7 @@ export const Table = () => {
                       {index === actived ? "Actived " : "Paused"}
                     </ActiveButton>
                     <Button>Edit</Button>
-                    <Button>Delete</Button>
+                    <Button onClick={deleted(info.uuid)}>Delete</Button>
                   </Stack>,
                 ];
               })}
