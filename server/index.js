@@ -85,10 +85,10 @@ export async function createServer(
   app.post("/announcementBar", async (req, res) => {
     const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
 
-    const selectData = await prisma.shipbars.findUnique({
-      where: { shop: test_session.shop, isActive: "true" },
-    });
-    console.log(selectData);
+    // const selectData = await prisma.shipbars.findUnique({
+    //   where: { shop: test_session.shop, isActive: "true" },
+    // });
+    // console.log(selectData);
 
     var data = {
       uuid: uuid(),
