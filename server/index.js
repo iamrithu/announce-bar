@@ -90,23 +90,26 @@ export async function createServer(
         isActive: "true",
       },
     });
-    console.log(data);
 
-    // var data = {
-    //   uuid: uuid(),
-    //   name: req.body.name,
-    //   content: req.body.shipBar,
-    //   background: req.body.background,
-    //   position: req.body.position,
-    //   fontColor: req.body.fontColor,
-    //   fontFamily: req.body.fontFamily,
-    //   fontSize: req.body.fontSize,
-    //   shop: test_session.shop,
-    //   isActive: "true",
-    // };
-    // await prisma.shipbars.create({
-    //   data: data,
-    // });
+    await prisma.shipbars.update({
+      where: { uuid: data[0].uuid },
+      data: { isActive: "false" },
+    });
+    var data = {
+      uuid: uuid(),
+      name: req.body.name,
+      content: req.body.shipBar,
+      background: req.body.background,
+      position: req.body.position,
+      fontColor: req.body.fontColor,
+      fontFamily: req.body.fontFamily,
+      fontSize: req.body.fontSize,
+      shop: test_session.shop,
+      isActive: "true",
+    };
+    await prisma.shipbars.create({
+      data: data,
+    });
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
