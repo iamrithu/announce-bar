@@ -85,7 +85,9 @@ export async function createServer(
     const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
 
     const data = await prisma.shipbars.update({
-      where: { shop: test_session.shop, isActive: "true" },
+      where: {
+        AND: [{ shop: test_session.shop },{ isActive: "true" }],
+      },
     });
     console.log(data);
 
