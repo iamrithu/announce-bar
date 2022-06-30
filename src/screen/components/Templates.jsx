@@ -187,7 +187,7 @@ const Templates = ({ getTemplate }) => {
                 autoComplete="off"
               />
 
-              <Stack alignment="center" distribution="equalSpacing">
+              {/* <Stack alignment="center" distribution="equalSpacing">
                 <TextField
                   label="Initial Message:"
                   value="Free shipping for orders over "
@@ -200,7 +200,7 @@ const Templates = ({ getTemplate }) => {
                   onChange={set_content}
                   autoComplete="off"
                 />
-              </Stack>
+              </Stack> */}
 
               <TextField
                 label="Content"
