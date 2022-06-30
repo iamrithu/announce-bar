@@ -166,30 +166,30 @@ export async function createServer(
   });
 
   app.get("/get-script", async (req, res) => {
-    const test_session = await Shopify.Utils.loadCurrentSession(req, res);
-    console.log(test_session);
-    const data = await prisma.shipbars.findMany({
-      where: {
-        shop: test_session.shop,
-        isActive: "true",
-      },
-    });
-    console.log(data);
+    console.log(req.query.shop);
 
-    if (data.length > 0) {
-      const fileString = fs.readFileSync(`./public/script.js`, "utf-8");
-      const tpl = await engine.parseAndRender(fileString, {
-        background: `${data[0].background}`,
-        position: `${data[0].position}`,
-        color: `${data[0].fontColor}`,
-        "font-size": `${data[0].fontSize}`,
-        "font-family": `${data[0].fontFamily}`,
-        content: `${data[0].content}`,
-      });
-      res.type("application/javascript");
+    // const data = await prisma.shipbars.findMany({
+    //   where: {
+    //     shop: ,
+    //     isActive: "true",
+    //   },
+    // });
+    // console.log(data);
 
-      res.send(tpl);
-    }
+    // if (data.length > 0) {
+    //   const fileString = fs.readFileSync(`./public/script.js`, "utf-8");
+    //   const tpl = await engine.parseAndRender(fileString, {
+    //     background: `${data[0].background}`,
+    //     position: `${data[0].position}`,
+    //     color: `${data[0].fontColor}`,
+    //     "font-size": `${data[0].fontSize}`,
+    //     "font-family": `${data[0].fontFamily}`,
+    //     content: `${data[0].content}`,
+    //   });
+    //   res.type("application/javascript");
+
+    //   res.send(tpl);
+    // }
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
