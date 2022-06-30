@@ -112,6 +112,20 @@ export async function createServer(
     });
   });
 
+  app.delete("/delete/:id", async (req, res) => {
+    const deleteUser = await prisma.shipbars.delete({
+      where: {
+        uuid: req.params.id,
+      },
+    });
+  });
+
+  const deleteUser = await prisma.user.delete({
+    where: {
+      email: "bert@prisma.io",
+    },
+  });
+
   app.get("/products-count", verifyRequest(app), async (req, res) => {
     const session = await Shopify.Utils.loadCurrentSession(req, res, true);
     const { Product } = await import(

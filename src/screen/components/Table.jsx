@@ -34,12 +34,12 @@ export const Table = () => {
   //   await fetch("/script_tag").then((res) => res.status);
   // }
 
-  // async function deleted(e) {
-  //   await fetch(`/delete/${e._id}`, {
-  //     method: "Delete",
-  //   });
-  //   getTemplate();
-  // }
+  async function deleted(e) {
+    await fetch(`/delete/${e.uuid}`, {
+      method: "Delete",
+    });
+    getTemplate();
+  }
 
   // async function activate(e, index) {
   //   setActive(index);
