@@ -23,6 +23,8 @@ const TOP_LEVEL_OAUTH_COOKIE = "shopify_top_level_oauth";
 const PORT = parseInt(process.env.PORT || "8081", 10);
 const isTest = process.env.NODE_ENV === "test" || !!process.env.VITE_TEST_BUILD;
 
+const engine = new Liquid();
+
 Shopify.Context.initialize({
   API_KEY: process.env.SHOPIFY_API_KEY,
   API_SECRET_KEY: process.env.SHOPIFY_API_SECRET,
@@ -117,12 +119,74 @@ export async function createServer(
     });
   });
 
+  app.put("/update/:id", async (req, res) => {
+    const test_session = await Shopify.Utils.loadCurrentSession(req, res);
+    const data = await prisma.shipbars.findMany({
+      where: {
+        shop: test_session.shop,
+        isActive: "true",
+      },
+    });
+    if (data.length != 0) {
+      await prisma.shipbars.update({
+        where: { uuid: data[0].uuid },
+        data: { isActive: "false" },
+      });
+    }
+
+    await prisma.shipbars.update({
+      where: { uuid: req.params.id },
+      data: {
+        isActive: "true",
+      },
+    });
+  });
+
   app.delete("/delete/:id", async (req, res) => {
     const deleteUser = await prisma.shipbars.delete({
       where: {
         uuid: req.params.id,
       },
     });
+  });
+  app.get("/script_tag", verifyRequest(app), async (req, res) => {
+    const test_session = await Shopify.Utils.loadCurrentSession(req, res);
+
+    const { ScriptTag } = await import(
+      `@shopify/shopify-api/dist/rest-resources/${Shopify.Context.API_VERSION}/index.js`
+    );
+
+    const script_tag = new ScriptTag({ session: test_session });
+    script_tag.event = "onload";
+    script_tag.src = `${process.env.HOST}/get-script`;
+    await script_tag.save({});
+    res.status(200);
+
+    console.log("pingged");
+  });
+
+  app.get("/get-script", async (req, res) => {
+    const data = await prisma.shipbars.findMany({
+      where: {
+        shop: test_session.shop,
+        isActive: "true",
+      },
+    });
+
+    if (data.length > 0) {
+      const fileString = fs.readFileSync(`./public/script.js`, "utf-8");
+      const tpl = await engine.parseAndRender(fileString, {
+        background: `${data[0].background}`,
+        position: `${data[0].position}`,
+        color: `${data[0].fontColor}`,
+        "font-size": `${data[0].fontSize}`,
+        "font-family": `${data[0].fontFamily}`,
+        content: `${data[0].content}`,
+      });
+      res.type("application/javascript");
+
+      res.send(tpl);
+    }
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
