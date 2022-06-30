@@ -113,11 +113,12 @@ export async function createServer(
   });
 
   app.delete("/delete/:id", async (req, res) => {
-    const deleteUser = await prisma.shipbars.delete({
-      where: {
-        uuid: req.params.id,
-      },
-    });
+    console.log(req.params.id);
+    // const deleteUser = await prisma.shipbars.deleteMany({
+    //   where: {
+    //     uuid: req.params.id,
+    //   },
+    // });
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
