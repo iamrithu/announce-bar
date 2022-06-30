@@ -85,26 +85,26 @@ export async function createServer(
   app.post("/announcementBar", async (req, res) => {
     const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
 
-    // const selectData = await prisma.shipbars.findUnique({
-    //   where: { shop: test_session.shop, isActive: "true" },
-    // });
-    // console.log(selectData);
-
-    var data = {
-      uuid: uuid(),
-      name: req.body.name,
-      content: req.body.shipBar,
-      background: req.body.background,
-      position: req.body.position,
-      fontColor: req.body.fontColor,
-      fontFamily: req.body.fontFamily,
-      fontSize: req.body.fontSize,
-      shop: test_session.shop,
-      isActive: "true",
-    };
-    await prisma.shipbars.create({
-      data: data,
+    const selectData = await prisma.shipbars.findUnique({
+      where: { shop: test_session.shop, isActive: "true" },
     });
+    console.log(selectData);
+
+    // var data = {
+    //   uuid: uuid(),
+    //   name: req.body.name,
+    //   content: req.body.shipBar,
+    //   background: req.body.background,
+    //   position: req.body.position,
+    //   fontColor: req.body.fontColor,
+    //   fontFamily: req.body.fontFamily,
+    //   fontSize: req.body.fontSize,
+    //   shop: test_session.shop,
+    //   isActive: "true",
+    // };
+    // await prisma.shipbars.create({
+    //   data: data,
+    // });
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
