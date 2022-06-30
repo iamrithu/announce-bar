@@ -35,21 +35,20 @@ export const Table = () => {
   // }
 
   async function deleted(e) {
-    console.log(e.uuid);
-    await fetch(`/delete/3-9r4230r9fwefh94r3984rf9`, {
+    await fetch(`/delete/${e}`, {
       method: "Delete",
     });
     getTemplate();
   }
 
-  // async function activate(e, index) {
-  //   setActive(index);
-  //   await fetch(`/update/${e._id}`, {
-  //     method: "PUT",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify({ isActive: true }),
-  //   });
-  // }
+  async function activate(e, index) {
+    setActive(index);
+    await fetch(`/update/${e._id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ isActive: true }),
+    });
+  }
 
   const add = () => {
     if (openState === false) {
