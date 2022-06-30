@@ -168,13 +168,13 @@ export async function createServer(
   app.get("/get-script", async (req, res) => {
     console.log(req.query.shop);
 
-    // const data = await prisma.shipbars.findMany({
-    //   where: {
-    //     shop: ,
-    //     isActive: "true",
-    //   },
-    // });
-    // console.log(data);
+    const data = await prisma.shipbars.findMany({
+      where: {
+        shop: req.query.shop,
+        isActive: "true",
+      },
+    });
+    console.log(data);
 
     // if (data.length > 0) {
     //   const fileString = fs.readFileSync(`./public/script.js`, "utf-8");
