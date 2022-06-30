@@ -70,8 +70,12 @@ export async function createServer(
   });
 
   app.get("/announcementBar", async (req, res) => {
+    const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
+
     try {
-      const data = await prisma.shipbars.findMany({});
+      const data = await prisma.shipbars.findMany({
+        where: { shop: test_session.shop },
+      });
       console.log(data);
       res.status(200).send(data);
     } catch (error) {
