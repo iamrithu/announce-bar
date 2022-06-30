@@ -76,7 +76,6 @@ export async function createServer(
       const data = await prisma.shipbars.findMany({
         where: { shop: test_session.shop },
       });
-      console.log(data);
       res.status(200).send(data);
     } catch (error) {
       res.status(404).send(error.message);
@@ -85,10 +84,10 @@ export async function createServer(
   app.post("/announcementBar", async (req, res) => {
     const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
 
-    const selectData = await prisma.shipbars.findUnique({
+    const data = await prisma.shipbars.findMany({
       where: { shop: test_session.shop, isActive: "true" },
     });
-    console.log(selectData);
+    console.log(data);
 
     // var data = {
     //   uuid: uuid(),
