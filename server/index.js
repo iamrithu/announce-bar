@@ -95,7 +95,7 @@ export async function createServer(
       where: { uuid: data[0].uuid },
       data: { isActive: "false" },
     });
-    var data = {
+    var details = {
       uuid: uuid(),
       name: req.body.name,
       content: req.body.shipBar,
@@ -108,7 +108,7 @@ export async function createServer(
       isActive: "true",
     };
     await prisma.shipbars.create({
-      data: data,
+      data: details,
     });
   });
 
