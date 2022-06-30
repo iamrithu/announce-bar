@@ -120,6 +120,7 @@ export async function createServer(
   });
 
   app.put("/update/:id", async (req, res) => {
+    console.log(req.params.id);
     const test_session = await Shopify.Utils.loadCurrentSession(req, res);
     const data = await prisma.shipbars.findMany({
       where: {
@@ -127,19 +128,20 @@ export async function createServer(
         isActive: "true",
       },
     });
-    if (data.length != 0) {
-      await prisma.shipbars.update({
-        where: { uuid: data[0].uuid },
-        data: { isActive: "false" },
-      });
-    }
+    console.log(data);
+    // if (data.length != 0) {
+    //   await prisma.shipbars.update({
+    //     where: { uuid: data[0].uuid },
+    //     data: { isActive: "false" },
+    //   });
+    // }
 
-    await prisma.shipbars.update({
-      where: { uuid: req.params.id },
-      data: {
-        isActive: "true",
-      },
-    });
+    // await prisma.shipbars.update({
+    //   where: { uuid: req.params.id },
+    //   data: {
+    //     isActive: "true",
+    //   },
+    // });
   });
 
   app.delete("/delete/:id", async (req, res) => {
