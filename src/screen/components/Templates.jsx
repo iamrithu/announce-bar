@@ -16,8 +16,6 @@ const Templates = ({ getTemplate }) => {
   const app = useAppBridge();
   const fetch = userLoggedInFetch(app);
 
-  const handleSelectChange = useCallback((value) => setSelected(value), []);
-
   const options = [
     { label: "Fixed", value: "fixed" },
     { label: "Scrollable ", value: "relative" },
@@ -32,6 +30,8 @@ const Templates = ({ getTemplate }) => {
   const [font_family, set_font_family] = useState("");
   const [font_size, set_font_size] = useState("");
   const [selected, setSelected] = useState("");
+
+  const handleSelectChange = useCallback((value) => setSelected(value), []);
 
   var templates = [
     {
@@ -107,6 +107,7 @@ const Templates = ({ getTemplate }) => {
     setOpenTextField(true);
   };
   async function create() {
+    console.log(selected);
     var template = {
       name: name,
       shipBar: content,

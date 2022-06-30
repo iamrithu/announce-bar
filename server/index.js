@@ -183,7 +183,6 @@ export async function createServer(
         content: `${data[0].content}`,
       });
       res.type("application/javascript");
-
       res.send(tpl);
     } else {
       return;
