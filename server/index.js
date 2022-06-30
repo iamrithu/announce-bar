@@ -1,6 +1,8 @@
 // @ts-check
 import { resolve } from "path";
 import express from "express";
+import { Liquid } from "liquidjs";
+
 import cookieParser from "cookie-parser";
 import { Shopify, ApiVersion } from "@shopify/shopify-api";
 import "dotenv/config";
@@ -10,6 +12,7 @@ import verifyRequest from "./middleware/verify-request.js";
 import { uuid } from "uuidv4";
 
 import body from "body-parser";
+import fs from "fs";
 
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
@@ -114,11 +117,11 @@ export async function createServer(
 
   app.delete("/delete/:id", async (req, res) => {
     console.log(req.params.id);
-    // const deleteUser = await prisma.shipbars.deleteMany({
-    //   where: {
-    //     uuid: req.params.id,
-    //   },
-    // });
+    const deleteUser = await prisma.shipbars.deleteMany({
+      where: {
+        uuid: req.params.id,
+      },
+    });
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
