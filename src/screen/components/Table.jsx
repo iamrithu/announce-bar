@@ -39,6 +39,7 @@ export const Table = () => {
     var data = await fetch(`/delete/${e}`, {
       method: "Delete",
     });
+    getTemplate();
     setDelete(data);
   }
 

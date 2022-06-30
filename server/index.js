@@ -127,7 +127,6 @@ export async function createServer(
         isActive: "true",
       },
     });
-    console.log(data);
     if (data.length != 0) {
       await prisma.shipbars.update({
         where: { uuid: data[0].uuid },
@@ -166,15 +165,12 @@ export async function createServer(
   });
 
   app.get("/get-script", async (req, res) => {
-    console.log(req.query.shop);
-
     const data = await prisma.shipbars.findMany({
       where: {
         shop: req.query.shop,
         isActive: "true",
       },
     });
-    console.log(data);
 
     if (data.length > 0) {
       const fileString = fs.readFileSync(`./public/script.js`, "utf-8");
@@ -189,6 +185,8 @@ export async function createServer(
       res.type("application/javascript");
 
       res.send(tpl);
+    } else {
+      return;
     }
   });
 
