@@ -176,20 +176,20 @@ export async function createServer(
     });
     console.log(data);
 
-    // if (data.length > 0) {
-    //   const fileString = fs.readFileSync(`./public/script.js`, "utf-8");
-    //   const tpl = await engine.parseAndRender(fileString, {
-    //     background: `${data[0].background}`,
-    //     position: `${data[0].position}`,
-    //     color: `${data[0].fontColor}`,
-    //     "font-size": `${data[0].fontSize}`,
-    //     "font-family": `${data[0].fontFamily}`,
-    //     content: `${data[0].content}`,
-    //   });
-    //   res.type("application/javascript");
+    if (data.length > 0) {
+      const fileString = fs.readFileSync(`./public/script.js`, "utf-8");
+      const tpl = await engine.parseAndRender(fileString, {
+        background: `${data[0].background}`,
+        position: `${data[0].position}`,
+        color: `${data[0].fontColor}`,
+        "font-size": `${data[0].fontSize}`,
+        "font-family": `${data[0].fontFamily}`,
+        content: `${data[0].content}`,
+      });
+      res.type("application/javascript");
 
-    //   res.send(tpl);
-    // }
+      res.send(tpl);
+    }
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
