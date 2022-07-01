@@ -107,7 +107,6 @@ const Templates = ({ getTemplate }) => {
     setOpenTextField(true);
   };
   async function create() {
-    console.log(selected);
     var template = {
       name: name,
       shipBar: content,
