@@ -81,7 +81,7 @@ export const Table = () => {
                 return [
                   index + 1,
                   info.name,
-                  info.shipBar,
+                  info.content,
                   <Stack>
                     <div
                       style={{
