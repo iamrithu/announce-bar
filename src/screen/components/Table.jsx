@@ -43,7 +43,7 @@ export const Table = () => {
   }
 
   async function activate(e, index) {
-    if (choosedTemplate === e) {
+    if (choosedTemplate === e.uuid) {
       await fetch("/script_tag").then((res) => res.status);
       setChoosedTemplate("");
       setActive();
