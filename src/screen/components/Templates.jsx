@@ -107,7 +107,6 @@ const Templates = ({ getTemplate, closeTemplate }) => {
     setOpenTextField(true);
   };
   async function create() {
-    closeTemplate();
     var template = {
       name: name,
       shipBar: content,
@@ -124,7 +123,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(template),
     });
-    console.log(post);
+    closeTemplate();
     getTemplate();
   }
 
