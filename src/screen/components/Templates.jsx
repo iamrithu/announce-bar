@@ -12,7 +12,7 @@ import { userLoggedInFetch } from "../../App";
 
 import { useState, useCallback } from "react";
 
-const Templates = ({ getTemplate }) => {
+const Templates = ({ getTemplate, closeTemplate }) => {
   const app = useAppBridge();
   const fetch = userLoggedInFetch(app);
 
@@ -286,6 +286,7 @@ const Templates = ({ getTemplate }) => {
           </Layout.Section>
           <Layout.Section fullWidth>
             <Stack distribution="trailing">
+              <Button onClick={closeTemplate}>Cancel</Button>
               <Button primary onClick={create}>
                 Create Template
               </Button>

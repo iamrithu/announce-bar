@@ -68,6 +68,10 @@ export const Table = () => {
     }
   };
 
+  const close = () => {
+    setOpenState(false);
+  };
+
   useEffect(() => {
     getTemplate();
     scriptRun();
@@ -131,7 +135,9 @@ export const Table = () => {
           </Card>
         </Layout.Section>
         <Layout.Section>
-          {openState ? <Templates getTemplate={getTemplate()} /> : null}
+          {openState ? (
+            <Templates getTemplate={getTemplate()} closeTemplate={close()} />
+          ) : null}
         </Layout.Section>
       </Layout>
     </Page>
