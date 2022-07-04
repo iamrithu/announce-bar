@@ -39,8 +39,7 @@ export const Table = () => {
     var data = await fetch(`/delete/${e}`, {
       method: "Delete",
     });
-    const count = await fetch(`/announcementBar`).then((res) => res.json());
-    set_templates(count);
+    getTemplate;
   }
 
   async function activate(e) {
@@ -65,6 +64,9 @@ export const Table = () => {
     } else {
       setOpenState(false);
     }
+  };
+  const close = () => {
+    setOpenState(false);
   };
 
   useEffect(() => {
@@ -130,7 +132,9 @@ export const Table = () => {
           </Card>
         </Layout.Section>
         <Layout.Section>
-          {openState ? <Templates getTemplate={getTemplate()} /> : null}
+          {openState ? (
+            <Templates getTemplate={getTemplate()} closeTemplate={close} />
+          ) : null}
         </Layout.Section>
       </Layout>
     </Page>

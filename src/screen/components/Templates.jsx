@@ -287,7 +287,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
           </Layout.Section>
           <Layout.Section fullWidth>
             <Stack distribution="trailing">
-              <Button onClick={closeTemplate}>Cancel</Button>
+              <Button onClick={() => closeTemplate()}>Cancel</Button>
               <Button primary onClick={create}>
                 Create Template
               </Button>
