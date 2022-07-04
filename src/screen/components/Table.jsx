@@ -43,14 +43,14 @@ export const Table = () => {
     set_templates(count);
   }
 
-  async function activate(e, index) {
+  async function activate(e) {
     if (choosedTemplate === e.uuid) {
       setChoosedTemplate("");
       setActive();
       await fetch("/updateAll").then((res) => res.status);
     } else {
       setChoosedTemplate(e.uuid);
-      setActive(index);
+      setActive(e.uuid);
       await fetch(`/update/${e.uuid}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -116,8 +116,8 @@ export const Table = () => {
                   </Stack>,
                   <Stack>
                     <ActiveButton
-                      active={index === actived}
-                      onClick={() => activate(info, index)}
+                      active={info.uuid === actived}
+                      onClick={() => activate(info)}
                     >
                       {index === actived ? "Actived " : "Paused"}
                     </ActiveButton>
