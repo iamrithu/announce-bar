@@ -164,7 +164,7 @@ export async function createServer(
       },
     });
   });
-  app.get("/script_tag/:id", verifyRequest(app), async (req, res) => {
+  app.get("/script_tag", verifyRequest(app), async (req, res) => {
     const test_session = await Shopify.Utils.loadCurrentSession(req, res);
     const { ScriptTag } = await import(
       `@shopify/shopify-api/dist/rest-resources/${Shopify.Context.API_VERSION}/index.js`
@@ -172,42 +172,41 @@ export async function createServer(
 
     const script_tag = new ScriptTag({ session: test_session });
     script_tag.event = "onload";
-    script_tag.src = `${process.env.HOST}/get-script/${req.params.id}`;
+    script_tag.src = `${process.env.HOST}/get-script`;
     await script_tag.save({});
     res.status(200);
 
     console.log("pingged");
   });
 
-  app.get("/get-script/:id", async (req, res) => {
-    // const data = await prisma.shipbars.findMany({
-    //   where: {
-    //     shop: req.query.shop,
-    //     isActive: "true",
-    //   },
-    // });
+  app.get("/get-script", async (req, res) => {
     const data = await prisma.shipbars.findMany({
       where: {
-        uuid: req.params.id,
+        shop: req.query.shop,
+        isActive: "true",
       },
     });
-    console.log(data);
+    //   where: {
+    //     uuid: req.params.id,
+    //   },
+    // });
+    // console.log(data);
 
-    // if (data.length > 0) {
-    //   const fileString = fs.readFileSync(`./public/script.js`, "utf-8");
-    //   const tpl = await engine.parseAndRender(fileString, {
-    //     background: `${data[0].background}`,
-    //     position: `${data[0].position}`,
-    //     color: `${data[0].fontColor}`,
-    //     "font-size": `${data[0].fontSize}`,
-    //     "font-family": `${data[0].fontFamily}`,
-    //     content: `${data[0].content}`,
-    //   });
-    //   res.type("application/javascript");
-    //   res.send(tpl);
-    // } else {
-    //   return;
-    // }
+    if (data.length > 0) {
+      const fileString = fs.readFileSync(`./public/script.js`, "utf-8");
+      const tpl = await engine.parseAndRender(fileString, {
+        background: `${data[0].background}`,
+        position: `${data[0].position}`,
+        color: `${data[0].fontColor}`,
+        "font-size": `${data[0].fontSize}`,
+        "font-family": `${data[0].fontFamily}`,
+        content: `${data[0].content}`,
+      });
+      res.type("application/javascript");
+      res.send(tpl);
+    } else {
+      return;
+    }
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
