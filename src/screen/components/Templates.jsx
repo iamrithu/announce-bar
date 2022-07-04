@@ -124,9 +124,8 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       body: JSON.stringify(template),
     }).then((res) => res.json);
 
-    console.log(post);
     getTemplate();
-    closeTemplate;
+    closeTemplate();
   }
 
   return (
