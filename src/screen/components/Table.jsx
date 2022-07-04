@@ -25,6 +25,7 @@ export const Table = () => {
 
   const [templates, set_templates] = useState([]);
   const [openState, setOpenState] = useState(false);
+  const [choosedTemplate, setChoosedTemplate] = useState("");
 
   async function getTemplate() {
     const count = await fetch(`/announcementBar`).then((res) => res.json());
@@ -42,12 +43,19 @@ export const Table = () => {
   }
 
   async function activate(e, index) {
-    setActive(index);
-    await fetch(`/update/${e.uuid}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ isActive: true }),
-    });
+    if (choosedTemplate === e) {
+      await fetch("/script_tag").then((res) => res.status);
+      setChoosedTemplate("");
+      setActive();
+    } else {
+      setChoosedTemplate(e.uuid);
+      setActive(index);
+      await fetch(`/update/${e.uuid}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ isActive: true }),
+      });
+    }
   }
 
   const add = () => {
