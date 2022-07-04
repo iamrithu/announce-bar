@@ -107,6 +107,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
     setOpenTextField(true);
   };
   async function create() {
+    closeTemplate();
     var template = {
       name: name,
       shipBar: content,
