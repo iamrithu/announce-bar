@@ -118,11 +118,12 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       isActive: true,
     };
 
-    await fetch("/announcementBar", {
+    var post = await fetch("/announcementBar", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(template),
     });
+    console.log(post);
     getTemplate();
   }
 

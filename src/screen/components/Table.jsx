@@ -119,7 +119,7 @@ export const Table = () => {
                       active={info.uuid === actived}
                       onClick={() => activate(info)}
                     >
-                      {index === actived ? "Actived " : "Paused"}
+                      {info.uuid === actived ? "Actived " : "Paused"}
                     </ActiveButton>
                     {/* <Button>Edit</Button> */}
                     <Button onClick={() => deleted(info.uuid)}>Delete</Button>
