@@ -38,8 +38,7 @@ export const Table = () => {
   async function deleted(e) {
     var data = await fetch(`/delete/${e}`, {
       method: "Delete",
-    });
-    getTemplate;
+    }).then((res) => getTemplate());
   }
 
   async function activate(e) {
@@ -133,7 +132,7 @@ export const Table = () => {
         </Layout.Section>
         <Layout.Section>
           {openState ? (
-            <Templates getTemplate={getTemplate()} closeTemplate={close} />
+            <Templates getTemplate={getTemplate} closeTemplate={close} />
           ) : null}
         </Layout.Section>
       </Layout>
