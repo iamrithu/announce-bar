@@ -141,7 +141,7 @@ export async function createServer(
       },
     });
   });
-  app.get("/updateAll", async (req, res) => {
+  app.get("/updateAll/:id", async (req, res) => {
     const test_session = await Shopify.Utils.loadCurrentSession(req, res);
     const data = await prisma.shipbars.findMany({
       where: {

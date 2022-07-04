@@ -123,7 +123,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(template),
     });
-    getTemplate;
+    getTemplate();
   }
 
   return (
