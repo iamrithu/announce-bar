@@ -30,6 +30,7 @@ export const Table = () => {
   async function getTemplate() {
     const count = await fetch(`/announcementBar`).then((res) => res.json());
     set_templates(count);
+    getTemplate();
   }
   async function scriptRun() {
     await fetch("/script_tag").then((res) => res.status);
@@ -65,10 +66,6 @@ export const Table = () => {
     } else {
       setOpenState(false);
     }
-  };
-
-  const close = () => {
-    setOpenState(false);
   };
 
   useEffect(() => {
@@ -134,9 +131,7 @@ export const Table = () => {
           </Card>
         </Layout.Section>
         <Layout.Section>
-          {openState ? (
-            <Templates getTemplate={getTemplate} closeTemplate={close} />
-          ) : null}
+          {openState ? <Templates getTemplate={getTemplate()} /> : null}
         </Layout.Section>
       </Layout>
     </Page>
