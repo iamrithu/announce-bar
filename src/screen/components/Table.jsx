@@ -39,14 +39,15 @@ export const Table = () => {
     var data = await fetch(`/delete/${e}`, {
       method: "Delete",
     });
-    set_templates(data);
+    getTemplate();
   }
 
   async function activate(e) {
     if (choosedTemplate === e.uuid) {
       setChoosedTemplate("");
       setActive();
-      await fetch("/updateAll").then((res) => res.status);
+      // await fetch("/updateAll").then((res) => res.status);
+      await fetch(`/script_tag/${""}`).then((res) => res.status);
     } else {
       setChoosedTemplate(e.uuid);
       setActive(e.uuid);
@@ -74,7 +75,7 @@ export const Table = () => {
   useEffect(() => {
     getTemplate();
     scriptRun();
-  }, [templates]);
+  }, []);
 
   return (
     <Page fullWidth>
