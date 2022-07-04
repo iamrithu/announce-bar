@@ -30,7 +30,6 @@ export const Table = () => {
   async function getTemplate() {
     const count = await fetch(`/announcementBar`).then((res) => res.json());
     set_templates(count);
-    getTemplate();
   }
   async function scriptRun() {
     await fetch("/script_tag").then((res) => res.status);
