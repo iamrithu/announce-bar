@@ -125,7 +125,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
     });
     console.log(post);
     getTemplate();
-    closeTemplate();
+    closeTemplate;
   }
 
   return (
