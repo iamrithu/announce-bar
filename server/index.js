@@ -191,6 +191,7 @@ export async function createServer(
         uuid: req.params.id,
       },
     });
+    console.log(data);
 
     // if (data.length > 0) {
     //   const fileString = fs.readFileSync(`./public/script.js`, "utf-8");
