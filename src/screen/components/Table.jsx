@@ -49,6 +49,7 @@ export const Table = () => {
       setChoosedTemplate("");
       setActive();
       await fetch("/updateAll").then((res) => res.status);
+      scriptRun();
     } else {
       setChoosedTemplate(e.uuid);
       setActive(index);
@@ -74,7 +75,6 @@ export const Table = () => {
 
   useEffect(() => {
     getTemplate();
-    scriptRun();
   }, []);
 
   return (
