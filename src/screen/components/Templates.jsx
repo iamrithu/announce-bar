@@ -122,10 +122,9 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(template),
-    }).then((res) => res.json);
-
+    });
+    console.log(post);
     getTemplate();
-    closeTemplate();
   }
 
   return (
