@@ -39,6 +39,8 @@ export const Table = () => {
     var data = await fetch(`/delete/${e}`, {
       method: "Delete",
     });
+    const count = await fetch(`/announcementBar`).then((res) => res.json());
+    set_templates(count);
     getTemplate();
   }
 
