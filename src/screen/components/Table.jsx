@@ -136,7 +136,7 @@ export const Table = () => {
         </Layout.Section>
         <Layout.Section>
           {openState ? (
-            <Templates getTemplate={getTemplate()} closeTemplate={close()} />
+            <Templates getTemplate={getTemplate()} closeTemplate={close} />
           ) : null}
         </Layout.Section>
       </Layout>
