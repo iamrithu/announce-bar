@@ -44,17 +44,17 @@ export const Table = () => {
 
   async function activate(e, index) {
     if (choosedTemplate === e.uuid) {
-      await fetch("/updateAll").then((res) => res.status);
       setChoosedTemplate("");
       setActive();
+      // await fetch("/updateAll").then((res) => res.status);
     } else {
       setChoosedTemplate(e.uuid);
       setActive(index);
-      await fetch(`/update/${e.uuid}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ isActive: true }),
-      });
+      // await fetch(`/update/${e.uuid}`, {
+      //   method: "PUT",
+      //   headers: { "Content-Type": "application/json" },
+      //   body: JSON.stringify({ isActive: true }),
+      // });
     }
   }
 
