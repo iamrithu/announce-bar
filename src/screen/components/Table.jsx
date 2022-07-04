@@ -41,7 +41,6 @@ export const Table = () => {
     });
     const count = await fetch(`/announcementBar`).then((res) => res.json());
     set_templates(count);
-    getTemplate();
   }
 
   async function activate(e) {
@@ -75,7 +74,7 @@ export const Table = () => {
   useEffect(() => {
     getTemplate();
     scriptRun();
-  }, []);
+  }, [templates]);
 
   return (
     <Page fullWidth>
