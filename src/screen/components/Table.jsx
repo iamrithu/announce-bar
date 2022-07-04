@@ -39,8 +39,7 @@ export const Table = () => {
     var data = await fetch(`/delete/${e}`, {
       method: "Delete",
     });
-    const count = await fetch(`/announcementBar`).then((res) => res.json());
-    set_templates(count);
+    getTemplate;
   }
 
   async function activate(e) {
@@ -51,7 +50,6 @@ export const Table = () => {
     } else {
       setChoosedTemplate(e.uuid);
       setActive(e.uuid);
-
       await fetch(`/update/${e.uuid}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -74,7 +72,7 @@ export const Table = () => {
   useEffect(() => {
     getTemplate();
     scriptRun();
-  }, [templates]);
+  }, []);
 
   return (
     <Page fullWidth>
