@@ -17,6 +17,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   const fetch = userLoggedInFetch(app);
 
   const options = [
+    { label: "Choose", value: "" },
     { label: "Fixed", value: "fixed" },
     { label: "Scrollable ", value: "relative" },
   ];
