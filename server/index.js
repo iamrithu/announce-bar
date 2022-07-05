@@ -140,6 +140,30 @@ export async function createServer(
         isActive: "true",
       },
     });
+    const data2 = await prisma.shipbars.findMany({
+      where: {
+        uuid: req.params.id,
+      },
+    });
+
+    if (data2.length > 0) {
+      const fileString = fs.readFileSync(
+        `./theme-app-extension/blocks/app-block.liquid`,
+        "utf-8"
+      );
+      const tpl = await engine.parseAndRender(fileString, {
+        background: `${data2[0].background}`,
+        position: `${data2[0].position}`,
+        color: `${data2[0].fontColor}`,
+        "font-size": `${data[0].fontSize}`,
+        "font-family": `${data2[0].fontFamily}`,
+        content: `${data2[0].content}`,
+      });
+      res.type("application/javascript");
+      res.send(tpl);
+    } else {
+      return;
+    }
   });
   app.get("/updateAll", async (req, res) => {
     const test_session = await Shopify.Utils.loadCurrentSession(req, res);
@@ -164,45 +188,22 @@ export async function createServer(
       },
     });
   });
-  app.get("/script_tag", verifyRequest(app), async (req, res) => {
-    const test_session = await Shopify.Utils.loadCurrentSession(req, res);
-    const { ScriptTag } = await import(
-      `@shopify/shopify-api/dist/rest-resources/${Shopify.Context.API_VERSION}/index.js`
-    );
+  // app.get("/script_tag", verifyRequest(app), async (req, res) => {
+  //   const test_session = await Shopify.Utils.loadCurrentSession(req, res);
+  //   const { ScriptTag } = await import(
+  //     `@shopify/shopify-api/dist/rest-resources/${Shopify.Context.API_VERSION}/index.js`
+  //   );
 
-    const script_tag = new ScriptTag({ session: test_session });
-    script_tag.event = "onload";
-    script_tag.src = `${process.env.HOST}/get-script`;
-    await script_tag.save({});
-    res.status(200);
+  //   const script_tag = new ScriptTag({ session: test_session });
+  //   script_tag.event = "onload";
+  //   script_tag.src = `${process.env.HOST}/get-script`;
+  //   await script_tag.save({});
+  //   res.status(200);
 
-    console.log("pingged");
-  });
+  //   console.log("pingged");
+  // });
 
-  app.get("/get-script", async (req, res) => {
-    const data = await prisma.shipbars.findMany({
-      where: {
-        shop: req.query.shop,
-        isActive: "true",
-      },
-    });
-
-    if (data.length > 0) {
-      const fileString = fs.readFileSync(`./public/script.js`, "utf-8");
-      const tpl = await engine.parseAndRender(fileString, {
-        background: `${data[0].background}`,
-        position: `${data[0].position}`,
-        color: `${data[0].fontColor}`,
-        "font-size": `${data[0].fontSize}`,
-        "font-family": `${data[0].fontFamily}`,
-        content: `${data[0].content}`,
-      });
-      res.type("application/javascript");
-      res.send(tpl);
-    } else {
-      return;
-    }
-  });
+  app.get("/get-script", async (req, res) => {});
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
     const session = await Shopify.Utils.loadCurrentSession(req, res, true);

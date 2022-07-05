@@ -36,9 +36,9 @@ export const Table = () => {
     });
     set_templates(count);
   }
-  async function scriptRun() {
-    await fetch("/script_tag").then((res) => res.status);
-  }
+  // async function scriptRun() {
+  //   await fetch("/script_tag").then((res) => res.status);
+  // }
 
   async function deleted(e) {
     var data = await fetch(`/delete/${e}`, {
@@ -75,7 +75,7 @@ export const Table = () => {
 
   useEffect(() => {
     getTemplate();
-    scriptRun();
+    // scriptRun();
   }, []);
 
   return (

@@ -22,5 +22,3 @@ announcementBar.innerHTML = `<div
     >
       {{content}}
     </div>`;
-
-//DB=mongodb+srv://shopify:shopify@cluster0.gdtlt.mongodb.net/Shopify?retryWrites=true&w=majority
