@@ -4,7 +4,7 @@ const announcementBar = document.getElementById(
 announcementBar.style.marginBottom = "10px";
 announcementBar.innerHTML = `<div
       style="
-        height: 35px;
+        height:40px;
         width: 100%;
         background: url();
         background: {{background}};
