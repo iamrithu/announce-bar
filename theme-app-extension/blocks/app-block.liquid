@@ -2,13 +2,13 @@
  fetch(`https://announce-bar-bcnd.herokuapp.com/get-script/?shop=${window.location.hostname}`).then((res)=>res.json().then(console.log))
   
 console.log("test-2")
-console.log(data)
+
 </script>
-{% schema%}
+{% schema %}
 {
     "name": "announce-bar",
     "target":"head",
     "templates":["index"],
     "settings":[]
 }
-{%endschema%}
+{% endschema %}

@@ -13,6 +13,7 @@ import { uuid } from "uuidv4";
 
 import body from "body-parser";
 import fs from "fs";
+import cors from "cors";
 
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
@@ -61,6 +62,7 @@ export async function createServer(
   applyAuthMiddleware(app);
 
   app.use(body.json());
+  app.use(cors());
 
   app.post("/webhooks", async (req, res) => {
     try {
