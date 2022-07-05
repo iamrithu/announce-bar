@@ -180,33 +180,33 @@ export async function createServer(
   // });
 
   app.get("/get-script", async (req, res) => {
-    const test_session = await Shopify.Utils.loadCurrentSession(req, res);
+    // const test_session = await Shopify.Utils.loadCurrentSession(req, res);
+console.log(req.query,req.params)
+    // const data = await prisma.shipbars.findMany({
+    //   where: {
+    //     shop: String(test_session.shop),
+    //     isActive: "true",
+    //   },
+    // });
 
-    const data = await prisma.shipbars.findMany({
-      where: {
-        shop: String(test_session.shop),
-        isActive: "true",
-      },
-    });
+    res.json({s:"aksjbkajdb"});
 
-    res.json(data);
-
-    // if (data.length > 0) {
-    //   const fileString = fs.readFileSync(`./public/script.js`, "utf-8");
-    //   const tpl = await engine.parseAndRender(fileString, {
-    //     background: `${data[0].background}`,
-    //     position: `${data[0].position}`,
-    //     color: `${data[0].fontColor}`,
-    //     "font-size": `${data[0].fontSize}`,
-    //     "font-family": `${data[0].fontFamily}`,
-    //     content: `${data[0].content}`,
-    //   });
-    //   res.type("application/javascript");
-    //   res.send(tpl);
-    // } else {
-    //   return;
-    // }
-  });
+  //   // if (data.length > 0) {
+  //   //   const fileString = fs.readFileSync(`./public/script.js`, "utf-8");
+  //   //   const tpl = await engine.parseAndRender(fileString, {
+  //   //     background: `${data[0].background}`,
+  //   //     position: `${data[0].position}`,
+  //   //     color: `${data[0].fontColor}`,
+  //   //     "font-size": `${data[0].fontSize}`,
+  //   //     "font-family": `${data[0].fontFamily}`,
+  //   //     content: `${data[0].content}`,
+  //   //   });
+  //   //   res.type("application/javascript");
+  //   //   res.send(tpl);
+  //   // } else {
+  //   //   return;
+  //   // }
+  // });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
     const session = await Shopify.Utils.loadCurrentSession(req, res, true);

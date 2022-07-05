@@ -1,7 +1,7 @@
 <script>
-var data = fetch('https://announce-bar-bcnd.herokuapp.com')
+ fetch(`https://announce-bar-bcnd.herokuapp.com/get-script/?shop=${window.location.hostname}`).then((res)=>res.json().then(console.log))
   
-console.log("test")
+console.log("test-2")
 console.log(data)
 </script>
 {% schema%}
