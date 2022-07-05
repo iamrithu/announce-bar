@@ -184,14 +184,14 @@ export async function createServer(
   app.get("/get-script", async (req, res) => {
     // const test_session = await Shopify.Utils.loadCurrentSession(req, res);
     console.log(req.query, req.params);
-    // const data = await prisma.shipbars.findMany({
-    //   where: {
-    //     shop: String(test_session.shop),
-    //     isActive: "true",
-    //   },
-    // });
+    const data = await prisma.shipbars.findMany({
+      where: {
+        shop: String(req.query.shop),
+        isActive: "true",
+      },
+    });
 
-    res.json({ s: "aksjbkajdb" });
+    res.json(data);
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
