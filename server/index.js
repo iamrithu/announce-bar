@@ -192,6 +192,7 @@ export async function createServer(
     });
 
     res.json(data);
+    console.log(data);
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {

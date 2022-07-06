@@ -1,14 +1,15 @@
+<div  id="demo"style="position:fixed; top: 0; left: 0 ; margin-bottom:10px; height:40px;width:100%;background:pink;color:white;z-index:100; display:flex;align-items:center;justify-content:center">
+  demo-project
+</div>
 <script>
- fetch(`https://announce-bar-bcnd.herokuapp.com/get-script/?shop=${window.location.hostname}`).then((res)=>res.json().then(console.log))
-  
-console.log("test-2")
-
+const url = `https://announce-bar-bcnd.herokuapp.com/get-script?shop=${window.location.hostname}`
+fetch(url).then(data => console.log(data));
 </script>
+
 {% schema %}
-{
-    "name": "announce-bar",
-    "target":"head",
-    "templates":["index"],
-    "settings":[]
-}
+  {
+    "name": "App Embed",
+    "target": "head",
+    "settings": []
+  }
 {% endschema %}
