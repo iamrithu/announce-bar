@@ -4,9 +4,7 @@ import { useState, useEffect } from "react";
 import { useAppBridge } from "@shopify/app-bridge-react";
 import { userLoggedInFetch } from "../../App";
 
-// import Templates from "./Templates";
-
-const Templates = React.lazy(() => import("./Templates"));
+import Templates from "./Templates";
 
 import styled from "styled-components";
 

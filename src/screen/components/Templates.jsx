@@ -180,28 +180,6 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                 onChange={set_name}
                 autoComplete="off"
               />
-              {/* <TextField
-                label="Free Shipping Goal:"
-                type="number"
-                value={goal}
-                onChange={set_goal}
-                autoComplete="off"
-              /> */}
-
-              {/* <Stack alignment="center" distribution="equalSpacing">
-                <TextField
-                  label="Initial Message:"
-                  value="Free shipping for orders over "
-                  onChange={set_content}
-                  autoComplete="off"
-                />{" "}
-                <h2>INR{goal}</h2>
-                <TextField
-                  value="away from free shipping"
-                  onChange={set_content}
-                  autoComplete="off"
-                />
-              </Stack> */}
 
               <TextField
                 label="Content"
