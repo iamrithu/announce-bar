@@ -191,7 +191,7 @@ export async function createServer(
       },
     });
 
-    res.json(data);
+    res.send(data);
     console.log(data);
   });
 
