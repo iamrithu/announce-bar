@@ -53,7 +53,6 @@ export default function applyAuthMiddleware(app) {
       const data = await prisma.shops.findUnique({
         where: { name: session.shop },
       });
-      console.log(data);
       if (data) {
         console.log("exit");
       } else {
