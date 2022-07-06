@@ -169,7 +169,6 @@ export async function createServer(
 
   app.get("/get-script", async (req, res) => {
     // const test_session = await Shopify.Utils.loadCurrentSession(req, res);
-    console.log(req.query, req.params);
     const data = await prisma.shipbars.findMany({
       where: {
         shop: String(req.query.shop),
@@ -178,7 +177,6 @@ export async function createServer(
     });
 
     res.send(data);
-    console.log(data);
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
