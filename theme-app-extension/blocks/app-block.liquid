@@ -1,9 +1,28 @@
-<div  id="demo"style="position:fixed; top: 0; left: 0 ; margin-bottom:10px; height:40px;width:100%;background:pink;color:white;z-index:100; display:flex;align-items:center;justify-content:center">
-  demo-project
+<div  id="demo">
+
 </div>
 <script>
+let announceBar = document.getElementById("demo");
 const url = `https://announce-bar-bcnd.herokuapp.com/get-script?shop=${window.location.hostname}`
-fetch(url).then(data => console.log(data));
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+       announceBar.innerHTML = data[0].content;
+       announceBar.style.cssText=`
+        position:${data[0].position}; 
+        top: 0; 
+        left: 0 ; 
+        margin-bottom:10px;
+        height:40px;
+        width:100%;
+        background:${data[0].background};
+        color:${data[0].fontColor};
+        z-index:100;
+        font-size:${data[0].fontSize};
+        display:flex;
+        align-items:center;
+        justify-content:center`
+  });
 </script>
 
 {% schema %}
