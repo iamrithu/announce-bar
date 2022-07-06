@@ -1,11 +1,8 @@
 import { Card, DataTable, Page, Button, Stack, Layout } from "@shopify/polaris";
 import { useState, useEffect } from "react";
-
 import { useAppBridge } from "@shopify/app-bridge-react";
 import { userLoggedInFetch } from "../../App";
-
 import Templates from "./Templates";
-
 import styled from "styled-components";
 
 const ActiveButton = styled.button`
@@ -72,7 +69,6 @@ export const Table = () => {
 
   useEffect(() => {
     getTemplate();
-    // scriptRun();
   }, []);
 
   return (
