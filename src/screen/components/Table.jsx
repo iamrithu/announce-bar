@@ -4,7 +4,9 @@ import { useState, useEffect } from "react";
 import { useAppBridge } from "@shopify/app-bridge-react";
 import { userLoggedInFetch } from "../../App";
 
-import Templates from "./Templates";
+// import Templates from "./Templates";
+
+const Templates = React.lazy(() => import("./Templates"));
 
 import styled from "styled-components";
 
@@ -36,9 +38,6 @@ export const Table = () => {
     });
     set_templates(count);
   }
-  // async function scriptRun() {
-  //   await fetch("/script_tag").then((res) => res.status);
-  // }
 
   async function deleted(e) {
     var data = await fetch(`/delete/${e}`, {
