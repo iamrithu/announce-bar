@@ -50,9 +50,7 @@ export const Table = () => {
     if (choosedTemplate === e.uuid) {
       setChoosedTemplate("");
       setActive();
-      await fetch(`/updateAll?shop=${window.location.hostname}`).then(
-        (res) => res.status
-      );
+      await fetch(`/updateAll`).then((res) => res.status);
     } else {
       setChoosedTemplate(e.uuid);
       setActive(e.uuid);
