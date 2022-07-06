@@ -166,20 +166,6 @@ export async function createServer(
       },
     });
   });
-  // app.get("/script_tag", verifyRequest(app), async (req, res) => {
-  //   const test_session = await Shopify.Utils.loadCurrentSession(req, res);
-  //   const { ScriptTag } = await import(
-  //     `@shopify/shopify-api/dist/rest-resources/${Shopify.Context.API_VERSION}/index.js`
-  //   );
-
-  //   const script_tag = new ScriptTag({ session: test_session });
-  //   script_tag.event = "onload";
-  //   script_tag.src = `${process.env.HOST}/get-script`;
-  //   await script_tag.save({});
-  //   res.status(200);
-
-  //   console.log("pingged");
-  // });
 
   app.get("/get-script", async (req, res) => {
     // const test_session = await Shopify.Utils.loadCurrentSession(req, res);
