@@ -231,7 +231,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                 autoComplete="off"
               />
               <Select
-                label="Date range"
+                label="Position"
                 options={options}
                 onChange={handleSelectChange}
                 value={selected}
