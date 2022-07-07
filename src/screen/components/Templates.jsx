@@ -275,18 +275,28 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                   width: "95%",
                 }}
               >
-                <Select
-                  label="Date range"
-                  options={fontOPT}
-                  onChange={fontSelectChange}
-                  value={font_family}
+                <lable
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: "200",
+                    marginRight: "6.8%",
+                  }}
+                >
+                  Font-Color :
+                </lable>
+                <input
+                  value={font_color}
+                  type="color"
+                  onChange={(e) => set_font_color(e.target.value)}
+                  autoComplete="off"
+                  style={{ width: "200px", height: "40px" }}
                 />
               </div>
-              <TextField
+              <Select
                 label="Font-Family"
+                options={fontOPT}
+                onChange={fontSelectChange}
                 value={font_family}
-                onChange={set_font_family}
-                autoComplete="off"
               />
 
               <TextField
