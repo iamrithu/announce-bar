@@ -23,43 +23,43 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   ];
   const fontOPT = [
     {
-      lable: "Assistant",
+      label: "Assistant",
       value: "Assistant",
     },
     {
-      lable: "Avenir Next",
+      label: "Avenir Next",
       value: "Avenir Next",
     },
     {
-      lable: "Oswald",
+      label: "Oswald",
       value: "Oswald",
     },
     {
-      lable: "Anonymous Pro",
+      label: "Anonymous Pro",
       value: "Anonymous Pro",
     },
     {
-      lable: "Archivo",
+      label: "Archivo",
       value: "Archivo",
     },
     {
-      lable: "Questrial",
+      label: "Questrial",
       value: "Questrial",
     },
     {
-      lable: "Americana",
+      label: "Americana",
       value: "Americana",
     },
     {
-      lable: "Quattrocento Sans",
+      label: "Quattrocento Sans",
       value: "Quattrocento Sans",
     },
     {
-      lable: "Futura",
+      label: "Futura",
       value: "Futura",
     },
     {
-      lable: "Electra",
+      label: "Electra",
       value: "Electra",
     },
   ];
