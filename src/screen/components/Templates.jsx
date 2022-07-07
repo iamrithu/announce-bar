@@ -21,6 +21,48 @@ const Templates = ({ getTemplate, closeTemplate }) => {
     { label: "Fixed", value: "fixed" },
     { label: "Scrollable ", value: "relative" },
   ];
+  const fontOPT = [
+    {
+      lable: "Assistant",
+      value: "Assistant",
+    },
+    {
+      lable: "Avenir Next",
+      value: "Avenir Next",
+    },
+    {
+      lable: "Oswald",
+      value: "Oswald",
+    },
+    {
+      lable: "Anonymous Pro",
+      value: "Anonymous Pro",
+    },
+    {
+      lable: "Archivo",
+      value: "Archivo",
+    },
+    {
+      lable: "Questrial",
+      value: "Questrial",
+    },
+    {
+      lable: "Americana",
+      value: "Americana",
+    },
+    {
+      lable: "Quattrocento Sans",
+      value: "Quattrocento Sans",
+    },
+    {
+      lable: "Futura",
+      value: "Futura",
+    },
+    {
+      lable: "Electra",
+      value: "Electra",
+    },
+  ];
 
   const [openTextField, setOpenTextField] = useState(false);
   const [name, set_name] = useState("My First Free Shipping Bar");
@@ -33,6 +75,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   const [selected, setSelected] = useState("");
 
   const handleSelectChange = useCallback((value) => setSelected(value), []);
+  const fontSelectChange = useCallback((value) => set_font_family(value), []);
 
   var templates = [
     {
@@ -232,21 +275,11 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                   width: "95%",
                 }}
               >
-                <lable
-                  style={{
-                    fontSize: "15px",
-                    fontWeight: "200",
-                    marginRight: "6.8%",
-                  }}
-                >
-                  Font-Color :
-                </lable>
-                <input
-                  value={font_color}
-                  type="color"
-                  onChange={(e) => set_font_color(e.target.value)}
-                  autoComplete="off"
-                  style={{ width: "200px", height: "40px" }}
+                <Select
+                  label="Date range"
+                  options={fontOPT}
+                  onChange={fontSelectChange}
+                  value={font_family}
                 />
               </div>
               <TextField
