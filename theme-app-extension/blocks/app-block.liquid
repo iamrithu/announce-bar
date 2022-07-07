@@ -1,6 +1,8 @@
 <div  id="demo">
 </div>
 <script>
+let a = document.getElementById("shopify-section-announcement-bar");
+
 let announceBar = document.getElementById("demo");
 const url = `https://announce-bar-bcnd.herokuapp.com/get-script?shop=${window.location.hostname}`
 fetch(url)
@@ -14,12 +16,11 @@ fetch(url)
         position:${data[0].position}; 
         top: 0; 
         left: 0 ; 
-        margin-bottom:10px;
         height:40px;
         width:100%;
         background:${data[0].background};
         color:${data[0].fontColor};
-        z-index:100;
+        z-index:1000;
         font-size:${data[0].fontSize};
         display:flex;
         align-items:center;
