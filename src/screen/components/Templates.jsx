@@ -23,6 +23,10 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   ];
   const fontOPT = [
     {
+      label: "Helvetica",
+      value: "Helvetica",
+    },
+    {
       label: "Assistant",
       value: "Assistant",
     },
