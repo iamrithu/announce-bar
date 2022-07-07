@@ -23,45 +23,45 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   ];
   const fontOPT = [
     {
-      label: "Assistant",
+      lable: "Assistant",
       value: "Assistant",
     },
-    {
-      label: "Avenir Next",
-      value: "Avenir Next",
-    },
-    {
-      label: "Oswald",
-      value: "Oswald",
-    },
-    {
-      label: "Anonymous Pro",
-      value: "Anonymous Pro",
-    },
-    {
-      label: "Archivo",
-      value: "Archivo",
-    },
-    {
-      label: "Questrial",
-      value: "Questrial",
-    },
-    {
-      label: "Americana",
-      value: "Americana",
-    },
-    {
-      label: "Quattrocento Sans",
-      value: "Quattrocento Sans",
-    },
-    {
-      label: "Futura",
-      value: "Futura",
-    },
-    {
-      label: "Electra",
-      value: "Electra",
-    },
+    // {
+    //   lable: "Avenir Next",
+    //   value: "Avenir Next",
+    // },
+    // {
+    //   lable: "Oswald",
+    //   value: "Oswald",
+    // },
+    // {
+    //   lable: "Anonymous Pro",
+    //   value: "Anonymous Pro",
+    // },
+    // {
+    //   lable: "Archivo",
+    //   value: "Archivo",
+    // },
+    // {
+    //   lable: "Questrial",
+    //   value: "Questrial",
+    // },
+    // {
+    //   lable: "Americana",
+    //   value: "Americana",
+    // },
+    // {
+    //   lable: "Quattrocento Sans",
+    //   value: "Quattrocento Sans",
+    // },
+    // {
+    //   lable: "Futura",
+    //   value: "Futura",
+    // },
+    // {
+    //   lable: "Electra",
+    //   value: "Electra",
+    // },
   ];
 
   const [openTextField, setOpenTextField] = useState(false);
