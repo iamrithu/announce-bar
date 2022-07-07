@@ -23,7 +23,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   ];
   const fontOPT = [
     {
-      lable: "Assistant",
+      label: "Assistant",
       value: "Assistant",
     },
     // {
