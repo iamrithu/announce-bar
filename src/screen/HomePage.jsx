@@ -13,7 +13,8 @@ export function HomePage() {
           position: "absolute",
           width: "100%",
           height: "200px",
-          background: "blue",
+          background: "grey",
+          zIndex: "100",
         }}
       >
         hello
