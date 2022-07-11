@@ -4,7 +4,7 @@ const router = express.Router();
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
-router.get("/announcementBar", (req, res) => {
+router.get("/announcementBar", async(req, res) => {
   const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
 
     try {
