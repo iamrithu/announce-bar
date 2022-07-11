@@ -4,8 +4,6 @@ import { useState } from "react";
 
 import styled from "styled-components";
 
-const [showInstruction, setInstruction] = useState(false);
-
 const Container = styled.div`
   width: 90%;
   height: 400px;
@@ -17,15 +15,16 @@ const Container = styled.div`
   left: 5%;
 `;
 
-const open = () => {
-  if (showInstruction === false) {
-    return setInstruction(true);
-  }
-
-  setInstruction(false);
-};
-
 export function HomePage() {
+  const [showInstruction, setInstruction] = useState(false);
+
+  const open = () => {
+    if (showInstruction === false) {
+      return setInstruction(true);
+    }
+
+    setInstruction(false);
+  };
   return (
     <Page fullWidth>
       <div style={{ display: "flex" }}>
