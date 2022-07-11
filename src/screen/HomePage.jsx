@@ -33,7 +33,7 @@ export function HomePage() {
         >
           Announcement Bar
         </h2>
-        <Icon source={InfoMinor} color="base" onClick={open} />
+        {/* <Icon source={InfoMinor} color="base" onClick={open} /> */}
         <button onClick={open}>click</button>
       </div>
 
