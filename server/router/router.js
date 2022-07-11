@@ -46,9 +46,10 @@ router.post("/announcementBar", async (req, res) => {
     shop: test_session.shop,
     isActive: "true",
   };
-  await prisma.shipbars.create({
+  let newData = await prisma.shipbars.create({
     data: details,
   });
+  res.status(200).send(newData);
 });
 
 router.put("/update/:id", async (req, res) => {
@@ -66,12 +67,13 @@ router.put("/update/:id", async (req, res) => {
     });
   }
 
-  await prisma.shipbars.update({
+  let newData = await prisma.shipbars.update({
     where: { uuid: req.params.id },
     data: {
       isActive: "true",
     },
   });
+  res.status(200).send(newData);
 });
 router.get("/updateAll", async (req, res) => {
   const test_session = await Shopify.Utils.loadCurrentSession(req, res);
@@ -84,10 +86,11 @@ router.get("/updateAll", async (req, res) => {
       },
     });
     if (data.length != 0) {
-      await prisma.shipbars.update({
+      let datas = await prisma.shipbars.update({
         where: { uuid: data[0].uuid },
         data: { isActive: "false" },
       });
+      res.status(200).send(datas);
     }
   } catch (error) {
     res.status(404).send(error.message);
@@ -101,6 +104,7 @@ router.delete("/delete/:id", async (req, res) => {
         uuid: req.params.id,
       },
     });
+    res.status(200).send(deleteUser);
   } catch (error) {
     res.status(404).send(error.message);
   }
@@ -117,6 +121,7 @@ router.get("/get-script", async (req, res) => {
     });
 
     res.send(data);
+    res.status(200).send(data);
   } catch (error) {
     res.status(404).send(error.message);
   }
