@@ -35,7 +35,7 @@ export function HomePage() {
         >
           Announcement Bar
         </h2>
-        <div onClick={open}>
+        <div onClick={open} style={{ cursor: "pointer" }}>
           <Icon source={InfoMinor} color="base" />
         </div>
       </div>
