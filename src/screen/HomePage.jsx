@@ -35,25 +35,7 @@ export function HomePage() {
         >
           Announcement Bar
         </h2>
-        <div
-          style={{
-            height: "10px",
-            width: "10px",
-            padding: "10px",
-            borderRadius: "50%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            background: "black",
-            color: "white",
-            fontWeight: "bold",
-            cursor: "pointer",
-          }}
-          onClick={open}
-        >
-          i
-        </div>
-        <Icon source={InfoMinor} color="base" />
+        <Icon source={InfoMinor} color="base" onClick={open} />
       </div>
 
       {showInstruction ? (
