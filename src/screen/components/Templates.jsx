@@ -145,6 +145,13 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       fontColor: "#FFFFFF",
       fontFamily: "Helvetica",
     },
+    {
+      name: "New stuff",
+      background: "#00A0AC",
+      fontSize: "14",
+      fontColor: "#FFFFFF",
+      fontFamily: "Helvetica",
+    },
   ];
 
   const choose_template = (info) => {
