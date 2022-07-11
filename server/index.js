@@ -78,18 +78,18 @@ export async function createServer(
 
   app.use("/", router);
 
-  app.get("/announcementBar", async (req, res) => {
-    const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
+  // app.get("/announcementBar", async (req, res) => {
+  //   const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
 
-    try {
-      const data = await prisma.shipbars.findMany({
-        where: { shop: test_session.shop },
-      });
-      res.status(200).send(data);
-    } catch (error) {
-      res.status(404).send(error.message);
-    }
-  });
+  //   try {
+  //     const data = await prisma.shipbars.findMany({
+  //       where: { shop: test_session.shop },
+  //     });
+  //     res.status(200).send(data);
+  //   } catch (error) {
+  //     res.status(404).send(error.message);
+  //   }
+  // });
   app.post("/announcementBar", async (req, res) => {
     const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
 
