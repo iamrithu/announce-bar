@@ -99,8 +99,8 @@ export const Table = () => {
                   <Stack>
                     <div
                       style={{
-                        height: "30px",
-                        width: "100%",
+                        height: "40px",
+                        width: "200px",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
