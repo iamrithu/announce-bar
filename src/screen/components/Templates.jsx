@@ -163,7 +163,6 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       fontColor: font_color,
       fontFamily: font_family,
       fontSize: font_size,
-      isActive: true,
     };
 
     var post = await fetch("/announcementBar", {
