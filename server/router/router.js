@@ -2,6 +2,8 @@ import { Shopify, ApiVersion } from "@shopify/shopify-api";
 import express from "express";
 const router = express.Router();
 import { PrismaClient } from "@prisma/client";
+import { uuid } from "uuidv4";
+
 const prisma = new PrismaClient();
 
 router.get("/announcementBar", async (req, res) => {

@@ -1,6 +1,5 @@
 import { resolve } from "path";
 import express from "express";
-import { Liquid } from "liquidjs";
 
 import cookieParser from "cookie-parser";
 import { Shopify, ApiVersion } from "@shopify/shopify-api";
@@ -8,23 +7,16 @@ import "dotenv/config";
 
 import applyAuthMiddleware from "./middleware/auth.js";
 import verifyRequest from "./middleware/verify-request.js";
-import { uuid } from "uuidv4";
 
 import body from "body-parser";
-import fs from "fs";
 import cors from "cors";
 import router from "./router/router.js";
-
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
 
 const USE_ONLINE_TOKENS = true;
 const TOP_LEVEL_OAUTH_COOKIE = "shopify_top_level_oauth";
 
 const PORT = parseInt(process.env.PORT || "8081", 10);
 const isTest = process.env.NODE_ENV === "test" || !!process.env.VITE_TEST_BUILD;
-
-const engine = new Liquid();
 
 Shopify.Context.initialize({
   API_KEY: process.env.SHOPIFY_API_KEY,
@@ -77,122 +69,6 @@ export async function createServer(
   });
 
   app.use("/", router);
-
-  // app.get("/announcementBar", async (req, res) => {
-  //   const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
-
-  //   try {
-  //     const data = await prisma.shipbars.findMany({
-  //       where: { shop: test_session.shop },
-  //     });
-  //     res.status(200).send(data);
-  //   } catch (error) {
-  //     res.status(404).send(error.message);
-  //   }
-  // });
-  // app.post("/announcementBar", async (req, res) => {
-  //   const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
-
-  //   const data = await prisma.shipbars.findMany({
-  //     where: {
-  //       shop: test_session.shop,
-  //       isActive: "true",
-  //     },
-  //   });
-  //   if (data.length != 0) {
-  //     await prisma.shipbars.update({
-  //       where: { uuid: data[0].uuid },
-  //       data: { isActive: "false" },
-  //     });
-  //   }
-
-  //   var details = {
-  //     uuid: uuid(),
-  //     name: req.body.name,
-  //     content: req.body.shipBar,
-  //     background: req.body.background,
-  //     position: req.body.position,
-  //     fontColor: req.body.fontColor,
-  //     fontFamily: req.body.fontFamily,
-  //     fontSize: req.body.fontSize,
-  //     shop: test_session.shop,
-  //     isActive: "true",
-  //   };
-  //   await prisma.shipbars.create({
-  //     data: details,
-  //   });
-  // });
-
-  // app.put("/update/:id", async (req, res) => {
-  //   const test_session = await Shopify.Utils.loadCurrentSession(req, res);
-  //   const data = await prisma.shipbars.findMany({
-  //     where: {
-  //       shop: test_session.shop,
-  //       isActive: "true",
-  //     },
-  //   });
-  //   if (data.length != 0) {
-  //     await prisma.shipbars.update({
-  //       where: { uuid: data[0].uuid },
-  //       data: { isActive: "false" },
-  //     });
-  //   }
-
-  //   await prisma.shipbars.update({
-  //     where: { uuid: req.params.id },
-  //     data: {
-  //       isActive: "true",
-  //     },
-  //   });
-  // });
-  // app.get("/updateAll", async (req, res) => {
-  //   const test_session = await Shopify.Utils.loadCurrentSession(req, res);
-
-  //   try {
-  //     const data = await prisma.shipbars.findMany({
-  //       where: {
-  //         shop: test_session.shop,
-  //         isActive: "true",
-  //       },
-  //     });
-  //     if (data.length != 0) {
-  //       await prisma.shipbars.update({
-  //         where: { uuid: data[0].uuid },
-  //         data: { isActive: "false" },
-  //       });
-  //     }
-  //   } catch (error) {
-  //     res.status(404).send(error.message);
-  //   }
-  // });
-
-  // app.delete("/delete/:id", async (req, res) => {
-  //   try {
-  //     const deleteUser = await prisma.shipbars.delete({
-  //       where: {
-  //         uuid: req.params.id,
-  //       },
-  //     });
-  //   } catch (error) {
-  //     res.status(404).send(error.message);
-  //   }
-  // });
-
-  // app.get("/get-script", async (req, res) => {
-  //   // const test_session = await Shopify.Utils.loadCurrentSession(req, res);
-  //   try {
-  //     const data = await prisma.shipbars.findMany({
-  //       where: {
-  //         shop: String(req.query.shop),
-  //         isActive: "true",
-  //       },
-  //     });
-
-  //     res.send(data);
-  //   } catch (error) {
-  //     res.status(404).send(error.message);
-  //   }
-  // });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
     const session = await Shopify.Utils.loadCurrentSession(req, res, true);
