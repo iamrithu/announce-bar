@@ -13,7 +13,7 @@ import { uuid } from "uuidv4";
 import body from "body-parser";
 import fs from "fs";
 import cors from "cors";
-import router from "./router/router";
+import router from "./router/router.js";
 
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
