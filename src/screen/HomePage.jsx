@@ -3,6 +3,9 @@ import { Table } from "./components/Table.jsx";
 import { useState } from "react";
 
 import styled from "styled-components";
+import { Icon } from "@shopify/polaris";
+
+import { InfoMinor } from "@shopify/polaris-icons";
 
 const Container = styled.div`
   width: 90%;
@@ -50,6 +53,7 @@ export function HomePage() {
         >
           i
         </div>
+        <Icon source={InfoMinor} color="base" />
       </div>
 
       {showInstruction ? (
