@@ -71,7 +71,7 @@ export const Table = () => {
 
   useEffect(() => {
     getTemplate();
-  }, []);
+  }, [templates]);
 
   return (
     <Page fullWidth>
