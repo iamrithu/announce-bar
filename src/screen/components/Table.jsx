@@ -78,7 +78,7 @@ export const Table = () => {
           <Stack distribution="trailing">
             {" "}
             <Button primary onClick={add}>
-              {openState ? "Close" : "Add"}
+              {openState ? "Close" : "Create New Bar"}
             </Button>{" "}
           </Stack>
         </Layout.Section>
