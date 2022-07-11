@@ -21,19 +21,6 @@ router.get("/announcementBar", async (req, res) => {
 router.post("/announcementBar", async (req, res) => {
   const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
 
-  const data = await prisma.shipbars.findMany({
-    where: {
-      shop: test_session.shop,
-      isActive: "true",
-    },
-  });
-  if (data.length != 0) {
-    await prisma.shipbars.update({
-      where: { uuid: data[0].uuid },
-      data: { isActive: "false" },
-    });
-  }
-
   var details = {
     uuid: uuid(),
     name: req.body.name,
