@@ -32,11 +32,14 @@ export function HomePage() {
         >
           Announcement Bar
         </h2>
-        <button
+        <div
           style={{
-            height: "10px",
-            width: "10px",
+            height: "15px",
+            width: "15px",
             borderRadius: "50%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             background: "black",
             color: "white",
             fontWeight: "bold",
@@ -44,7 +47,7 @@ export function HomePage() {
           onClick={open}
         >
           i
-        </button>
+        </div>
       </div>
 
       {showInstruction ? (
