@@ -145,38 +145,52 @@ export async function createServer(
   });
   app.get("/updateAll", async (req, res) => {
     const test_session = await Shopify.Utils.loadCurrentSession(req, res);
-    const data = await prisma.shipbars.findMany({
-      where: {
-        shop: test_session.shop,
-        isActive: "true",
-      },
-    });
-    if (data.length != 0) {
-      await prisma.shipbars.update({
-        where: { uuid: data[0].uuid },
-        data: { isActive: "false" },
+
+    try {
+      const data = await prisma.shipbars.findMany({
+        where: {
+          shop: test_session.shop,
+          isActive: "true",
+        },
       });
+      if (data.length != 0) {
+        await prisma.shipbars.update({
+          where: { uuid: data[0].uuid },
+          data: { isActive: "false" },
+        });
+      }
+    } catch (error) {
+      res.status(404).send(error.message);
     }
   });
 
   app.delete("/delete/:id", async (req, res) => {
-    const deleteUser = await prisma.shipbars.delete({
-      where: {
-        uuid: req.params.id,
-      },
-    });
+    try {
+      const deleteUser = await prisma.shipbars.delete({
+        where: {
+          uuid: req.params.id,
+        },
+      });
+    } catch (error) {
+      res.status(404).send(error.message);
+    }
   });
 
   app.get("/get-script", async (req, res) => {
     // const test_session = await Shopify.Utils.loadCurrentSession(req, res);
-    const data = await prisma.shipbars.findMany({
-      where: {
-        shop: String(req.query.shop),
-        isActive: "true",
-      },
-    });
+    try {
+      const data = await prisma.shipbars.findMany({
+        where: {
+          shop: String(req.query.shop),
+          isActive: "true",
+        },
+      });
 
-    res.send(data);
+      res.send(data);
+    } catch (error) {
+            res.status(404).send(error.message);
+
+    }
   });
 
   app.get("/products-count", verifyRequest(app), async (req, res) => {
