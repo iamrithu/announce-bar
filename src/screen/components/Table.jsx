@@ -6,13 +6,12 @@ import Templates from "./Templates";
 import styled from "styled-components";
 
 const ActiveButton = styled.button`
-  padding: 9px 20px;
+  padding: 7px 20px;
   border: 0px;
   outline: none;
   border-radius: 4px;
   background: ${(props) => (props.active ? "#3EB372" : " yellow")};
   background: ${(props) => (props.delete ? "red" : " ")};
-
   color: ${(props) => (props.active ? "white" : "black")};
   color: ${(props) => (props.delete ? "white" : "")};
 `;
