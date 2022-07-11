@@ -9,8 +9,15 @@ export function HomePage() {
         <button>click</button>
       </div>
       <div
-        style={{ position: "absolute", width: "100%", height: "200px" }}
-      ></div>
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "200px",
+          background: "blue",
+        }}
+      >
+        hello
+      </div>
       <Table />
     </Page>
   );
