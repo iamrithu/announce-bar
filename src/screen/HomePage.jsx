@@ -1,7 +1,6 @@
 import { Page } from "@shopify/polaris";
 import { Table } from "./components/Table.jsx";
 import { useState } from "react";
-import { InfoMinor } from "@shopify/polaris-icons";
 
 import styled from "styled-components";
 
@@ -33,8 +32,19 @@ export function HomePage() {
         >
           Announcement Bar
         </h2>
-        {/* <Icon source={InfoMinor} color="base" onClick={open} /> */}
-        <button onClick={open}>click</button>
+        <button
+          style={{
+            height: "10px",
+            width: "10px",
+            borderRadius: "50%",
+            background: "black",
+            color: "white",
+            fontWeight: "bold",
+          }}
+          onClick={open}
+        >
+          i
+        </button>
       </div>
 
       {showInstruction ? (
