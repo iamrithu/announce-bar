@@ -33,9 +33,9 @@ export function HomePage() {
         <h2
           style={{ marginRight: "10px", fontSize: "17px", fontWeight: "bold" }}
         >
-          Announcement Bar
+          Announcement Bar{" "}
+          <Icon source={InfoMinor} color="base" onClick={open} />
         </h2>
-        <Icon source={InfoMinor} color="base" onClick={open} />
       </div>
 
       {showInstruction ? (
