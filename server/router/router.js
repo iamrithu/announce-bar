@@ -14,7 +14,6 @@ router.get("/announcementBar", async (req, res) => {
       where: { shop: test_session.shop },
     });
     res.status(200).send(data);
-    console.log(test_session);
   } catch (error) {
     res.status(404).send(error.message);
   }
