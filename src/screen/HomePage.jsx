@@ -34,8 +34,10 @@ export function HomePage() {
         </h2>
         <div
           style={{
+            marginTop: "4px",
             height: "15px",
             width: "15px",
+            padding: "5px",
             borderRadius: "50%",
             display: "flex",
             alignItems: "center",
@@ -43,6 +45,7 @@ export function HomePage() {
             background: "black",
             color: "white",
             fontWeight: "bold",
+            cursor: "pointer",
           }}
           onClick={open}
         >
