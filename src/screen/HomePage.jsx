@@ -33,8 +33,14 @@ export function HomePage() {
 
       {showInstruction ? (
         <Container>
-          <div>
-            <h2>Instruction</h2>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <h1>Instruction</h1>
           </div>
           <div>
             <ol>
@@ -46,6 +52,27 @@ export function HomePage() {
                 below
               </li>
             </ol>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
+            }}
+          >
+            <button
+              style={{
+                background: "red",
+                color: "white",
+                padding: "10px",
+                border: "0px",
+                outline: "none",
+                margin: "10px",
+              }}
+              onClick={open}
+            >
+              Close
+            </button>
           </div>
         </Container>
       ) : (
