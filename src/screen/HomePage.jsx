@@ -2,7 +2,7 @@ import { Page } from "@shopify/polaris";
 import { Table } from "./components/Table.jsx";
 import styled from "styled-components";
 
-const container = styled.div`
+const Container = styled.div`
   width: 90%;
   height: 400px;
   z-index: 100;
@@ -16,7 +16,7 @@ export function HomePage() {
         <h2>Announcement</h2>
         <button>click</button>
       </div>
-      <container>hello</container>
+      <Container>hello</Container>
       <Table />
     </Page>
   );
