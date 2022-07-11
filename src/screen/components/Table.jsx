@@ -37,7 +37,8 @@ export const Table = () => {
   async function deleted(e) {
     var data = await fetch(`/delete/${e}`, {
       method: "Delete",
-    }).then((res) => alert("hi"));
+    });
+    alert("hi");
   }
 
   async function activate(e) {
