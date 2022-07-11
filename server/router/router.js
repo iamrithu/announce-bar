@@ -107,7 +107,6 @@ router.get("/get-script", async (req, res) => {
       },
     });
 
-    res.send(data);
     res.status(200).send(data);
   } catch (error) {
     res.status(404).send(error.message);
