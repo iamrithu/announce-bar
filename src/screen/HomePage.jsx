@@ -37,7 +37,7 @@ export function HomePage() {
             marginTop: "4px",
             height: "15px",
             width: "15px",
-            padding: "5px",
+            padding: "10px",
             borderRadius: "50%",
             display: "flex",
             alignItems: "center",
