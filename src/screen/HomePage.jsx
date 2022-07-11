@@ -34,7 +34,6 @@ export function HomePage() {
         </h2>
         <div
           style={{
-            marginTop: "4px",
             height: "15px",
             width: "15px",
             padding: "10px",
