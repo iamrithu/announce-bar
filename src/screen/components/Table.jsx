@@ -100,7 +100,7 @@ export const Table = () => {
                     <div
                       style={{
                         //
-                        padding: "20px 50px",
+                        padding: "10px 20px",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
