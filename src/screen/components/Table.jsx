@@ -21,7 +21,7 @@ export const Table = () => {
   const [actived, setActive] = useState();
 
   const [templates, set_templates] = useState([]);
-  // const [action, setAction] = useState();
+  const [action, setAction] = useState();
   const [openState, setOpenState] = useState(false);
   const [choosedTemplate, setChoosedTemplate] = useState("");
 
@@ -36,10 +36,9 @@ export const Table = () => {
   }
 
   async function deleted(e) {
-    alert("hi");
     var data = await fetch(`/delete/${e}`, {
       method: "Delete",
-    }).then((e) => getTemplate());
+    }).then((e) => setAction("delete"));
   }
 
   async function activate(e) {
@@ -70,8 +69,9 @@ export const Table = () => {
   };
 
   useEffect(() => {
+    alert("working");
     getTemplate();
-  }, []);
+  }, [action]);
 
   return (
     <Page fullWidth>
