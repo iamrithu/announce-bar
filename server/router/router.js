@@ -5,7 +5,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 router.get("/router", (req, res) => {
-  const data = prisma.shops({});
+  const data = prisma.shops.findMany({});
   res.send(data);
 });
 
