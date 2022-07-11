@@ -27,7 +27,11 @@ export function HomePage() {
   return (
     <Page fullWidth>
       <div style={{ display: "flex" }}>
-        <h2>Announcement</h2>
+        <h2
+          style={{ marginRight: "10px", fontSize: "17px", fontWeight: "bold" }}
+        >
+          Announcement Bar
+        </h2>
         <button onClick={open}>click</button>
       </div>
 
@@ -38,9 +42,12 @@ export function HomePage() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              fontSize: "20px",
+              fontWeight: "bold",
+              textDecoration: "underline",
             }}
           >
-            <h1>Instruction</h1>
+            <h1>INSTUCTION</h1>
           </div>
           <div>
             <ol>
