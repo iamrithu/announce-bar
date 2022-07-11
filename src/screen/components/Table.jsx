@@ -102,7 +102,6 @@ export const Table = () => {
                         height: "30px",
                         width: "100%",
                         display: "flex",
-                        padding: "4px 0px",
                         alignItems: "center",
                         justifyContent: "center",
                         background: info.background,
