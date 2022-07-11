@@ -70,7 +70,8 @@ export const Table = () => {
   };
 
   useEffect(() => {
-    getTemplate();
+    // getTemplate();
+    alert("hi");
   }, [action]);
 
   return (
