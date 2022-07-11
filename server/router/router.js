@@ -1,6 +1,6 @@
 import { Shopify, ApiVersion } from "@shopify/shopify-api";
-
-const router = require("express").Router();
+import express from "express";
+const router = express.Router();
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
