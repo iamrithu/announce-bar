@@ -102,6 +102,7 @@ export const Table = () => {
                         height: "30px",
                         width: "100%",
                         display: "flex",
+                        padding: "4px 0px",
                         alignItems: "center",
                         justifyContent: "center",
                         background: info.background,
@@ -111,9 +112,7 @@ export const Table = () => {
                         borderRadius: "4px",
                       }}
                     >
-                      <h2 style={{ width: "100%", margin: "20px 50px" }}>
-                        content
-                      </h2>
+                      content
                     </div>
                     ,
                   </Stack>,
