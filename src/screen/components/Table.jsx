@@ -7,9 +7,14 @@ import styled from "styled-components";
 
 const ActiveButton = styled.button`
   padding: 9px 20px;
+  border: 0px;
+  outline: none;
   border-radius: 4px;
   background: ${(props) => (props.active ? "#3EB372" : " yellow")};
-  color: white;
+  background: ${(props) => (props.delete ? "red" : " ")};
+
+  color: ${(props) => (props.active ? "white" : "black")};
+  color: ${(props) => (props.delete ? "white" : "")};
 `;
 
 export const Table = () => {
@@ -121,13 +126,9 @@ export const Table = () => {
                       {info.uuid === actived ? "Actived " : "Paused"}
                     </ActiveButton>
                     {/* <Button>Edit</Button> */}
-                    <Button
-                      onClick={() => deleted(info.uuid)}
-                      plain
-                      destructive
-                    >
+                    <ActiveButton delete onClick={() => deleted(info.uuid)}>
                       Delete
-                    </Button>
+                    </ActiveButton>
                   </Stack>,
                 ];
               })}
