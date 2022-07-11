@@ -39,7 +39,7 @@ export const Table = () => {
     alert("hi");
     var data = await fetch(`/delete/${e}`, {
       method: "Delete",
-    }).then((e) => setAction("delete"));
+    }).then((e) => getTemplate());
   }
 
   async function activate(e) {
@@ -70,7 +70,6 @@ export const Table = () => {
   };
 
   useEffect(() => {
-    // getTemplate();
     alert("hi");
   }, [action]);
 
