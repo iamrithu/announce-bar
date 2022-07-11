@@ -69,7 +69,6 @@ export const Table = () => {
   };
 
   useEffect(() => {
-    alert("working");
     getTemplate();
   }, []);
 
