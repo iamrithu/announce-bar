@@ -14,6 +14,7 @@ import { uuid } from "uuidv4";
 import body from "body-parser";
 import fs from "fs";
 import cors from "cors";
+import { router } from "../server/router/router";
 
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
@@ -75,6 +76,8 @@ export async function createServer(
       }
     }
   });
+
+  app.use("/", router);
 
   app.get("/announcementBar", async (req, res) => {
     const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
@@ -188,8 +191,7 @@ export async function createServer(
 
       res.send(data);
     } catch (error) {
-            res.status(404).send(error.message);
-
+      res.status(404).send(error.message);
     }
   });
 
