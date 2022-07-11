@@ -21,7 +21,7 @@ export const Table = () => {
   const [actived, setActive] = useState();
 
   const [templates, set_templates] = useState([]);
-  const [action, setAction] = useState();
+  // const [action, setAction] = useState();
   const [openState, setOpenState] = useState(false);
   const [choosedTemplate, setChoosedTemplate] = useState("");
 
@@ -70,8 +70,8 @@ export const Table = () => {
   };
 
   useEffect(() => {
-    alert("hi");
-  }, [action]);
+    getTemplate();
+  }, []);
 
   return (
     <Page fullWidth>
