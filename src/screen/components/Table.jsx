@@ -36,10 +36,10 @@ export const Table = () => {
   }
 
   async function deleted(e) {
-    setAction("delete");
-    // var data = await fetch(`/delete/${e}`, {
-    //   method: "Delete",
-    // }).then((e) => setAction("delete"));
+    var data = await fetch(`/delete/${e}`, {
+      method: "Delete",
+    });
+    alert("hi");
   }
 
   async function activate(e) {
