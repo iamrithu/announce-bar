@@ -13,14 +13,14 @@ import { uuid } from "uuidv4";
 import body from "body-parser";
 import fs from "fs";
 import cors from "cors";
-import { router } from "./router/router";
+import router from "./router/router";
 
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const USE_ONLINE_TOKENS = true;
 const TOP_LEVEL_OAUTH_COOKIE = "shopify_top_level_oauth";
-
+flu;
 const PORT = parseInt(process.env.PORT || "8081", 10);
 const isTest = process.env.NODE_ENV === "test" || !!process.env.VITE_TEST_BUILD;
 
