@@ -118,7 +118,7 @@ router.get("/customers", async (req, res) => {
   const { Customer } = await import(
     `@shopify/shopify-api/dist/rest-resources/${Shopify.Context.API_VERSION}/index.js`
   );
-  const customers = await Customer.count({ session });
+  const customers = await Customer.All({ session });
   console.log(customers);
 });
 
