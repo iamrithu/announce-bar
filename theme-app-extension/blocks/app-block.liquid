@@ -12,7 +12,7 @@ fetch(url)
       if(data.lenght===0){
         return announceBar.style.display="none"
       }else{
-         announceBar.innerHTML = data[0].content;
+         announceBar.innerHTML = `<p style ="font-size:${data[0].fontSize}px;">data[0].content</p><div style="padding:5px;background-color:red;color:white; border-radius:50%;border:0px; position:fixed; top:0; right:0;">X</div>`;
        announceBar.style.cssText=`
         position:${data[0].position}; 
         top: 0; 
@@ -22,7 +22,6 @@ fetch(url)
         background:${data[0].background};
         color:${data[0].fontColor};
         z-index:1000;
-        font-size:${data[0].fontSize}px;
         font-family: ${data[0].fontFamily};
         display:flex;
         align-items:center;

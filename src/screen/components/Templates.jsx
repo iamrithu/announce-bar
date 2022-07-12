@@ -21,6 +21,10 @@ const Templates = ({ getTemplate, closeTemplate }) => {
     { label: "Fixed", value: "fixed" },
     { label: "Scrollable ", value: "relative" },
   ];
+  const closeButton = [
+    { label: "NO", value: "NO" },
+    { label: "YES", value: "YES" },
+  ];
   const fontOPT = [
     {
       label: "Helvetica",
@@ -70,7 +74,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
 
   const [openTextField, setOpenTextField] = useState(false);
   const [name, set_name] = useState();
-  const [goal, set_goal] = useState("100");
+  const [close_button, setCloseButton] = useState("NO");
   const [content, set_content] = useState("");
   const [background_color, set_background_color] = useState("");
   const [font_color, set_font_color] = useState("");
@@ -170,6 +174,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       fontColor: font_color,
       fontFamily: font_family,
       fontSize: font_size,
+      closeButton: close_button,
     };
 
     var post = await fetch("/announcementBar", {
@@ -240,12 +245,6 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                 onChange={set_content}
                 autoComplete="off"
               />
-              <Select
-                label="Position"
-                options={options}
-                onChange={handleSelectChange}
-                value={selected}
-              />
             </Card>
           </Layout.Section>
           <Layout.Section oneHalf>
@@ -310,10 +309,22 @@ const Templates = ({ getTemplate, closeTemplate }) => {
               />
 
               <TextField
-                label="Font-Size"
+                label=" Choose Font-Size"
                 value={font_size}
                 onChange={set_font_size}
                 autoComplete="off"
+              />
+              <Select
+                label="Choose a Display Position:"
+                options={options}
+                onChange={handleSelectChange}
+                value={selected}
+              />
+              <Select
+                label="Include Close Button:"
+                options={closeButton}
+                onChange={setCloseButton}
+                value={close_button}
               />
             </Card>
           </Layout.Section>

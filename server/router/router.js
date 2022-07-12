@@ -30,7 +30,9 @@ router.post("/announcementBar", async (req, res) => {
     fontColor: req.body.fontColor,
     fontFamily: req.body.fontFamily,
     fontSize: req.body.fontSize,
+    closeButton: req.body.closeButton,
     shop: test_session.shop,
+
     isActive: "false",
   };
   let newData = await prisma.shipbars.create({
