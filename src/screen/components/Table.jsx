@@ -73,6 +73,7 @@ export const Table = () => {
 
   useEffect(() => {
     getTemplate();
+    await fetch(`/customers`).then((res) => res.json());
   }, []);
 
   return (
