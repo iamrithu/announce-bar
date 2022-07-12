@@ -74,6 +74,7 @@ export const Table = () => {
   useEffect(async () => {
     getTemplate();
     await fetch(`/customers`).then((res) => res.json());
+    await fetch(`/orders`).then((res) => res.json());
   }, []);
 
   return (
