@@ -115,10 +115,7 @@ router.get("/get-script", async (req, res) => {
 });
 
 router.get("/customers", async (req, res) => {
-  const test_session = await Shopify.Utils.loadCurrentSession(
-    request,
-    response
-  );
+  const test_session = await Shopify.Utils.loadCurrentSession(req, res);
   let customer = await Customer.all({
     session: test_session,
   });
