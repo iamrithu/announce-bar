@@ -3,6 +3,7 @@ import express from "express";
 const router = express.Router();
 import { PrismaClient } from "@prisma/client";
 import { uuid } from "uuidv4";
+import { Order } from `@shopify/shopify-api/dist/rest-resources/${Shopify.Context.API_VERSION}/index.js`;
 
 const prisma = new PrismaClient();
 
@@ -120,6 +121,16 @@ router.get("/customers", async (req, res) => {
   );
   const customers = await Customer.all({ session });
   console.log(customers);
+});
+
+router.get("/orders", async (req, res) => {
+  const session = await Shopify.Utils.loadCurrentSession(req, res);
+ 
+  const orders = await Order.all({
+  session: session,
+  status: "any",
+});
+  console.log(orders);
 });
 
 export default router;
