@@ -71,7 +71,7 @@ export const Table = () => {
     setOpenState(false);
   };
 
-  useEffect(() => {
+  useEffect(async () => {
     getTemplate();
     await fetch(`/customers`).then((res) => res.json());
   }, []);
