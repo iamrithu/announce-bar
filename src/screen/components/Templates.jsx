@@ -93,7 +93,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   const [font_family, set_font_family] = useState("");
   const [font_size, set_font_size] = useState("");
   const [selected, setSelected] = useState("");
-  const [currency, setCurrency] = useState("");
+  const [currency, setCurrency] = useState("INR");
   const [shipingGoal, setShipingGoal] = useState("");
   const [currencyPosition, setCurrencyPosition] = useState("before");
   const handleSelectChange = useCallback((value) => setSelected(value), []);
