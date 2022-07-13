@@ -81,6 +81,7 @@ export function HomePage() {
                 outline: "none",
                 margin: "10px",
                 borderRadius: "4px",
+                cursor: "pointer",
               }}
               onClick={open}
             >
