@@ -102,13 +102,13 @@ export const Table = () => {
                     <div
                       style={{
                         //
-                        padding: "10px 20px",
+                        padding: "5px 20px",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         background: info.background,
                         color: info.fontColor,
-                        fontSize: info.fontSize,
+                        fontSize: "14px",
                         fontFamily: info.fontFamily,
                         borderRadius: "4px",
                       }}

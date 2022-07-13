@@ -201,8 +201,8 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       fontSize: font_size,
       shipingGoal:
         currencyPosition === "after"
-          ? shipingGoal + " " + currency
-          : currency + " " + shipingGoal,
+          ? shipingGoal + currency
+          : currency + shipingGoal,
       closeButton: close_button,
     };
 
@@ -352,6 +352,8 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                   autoComplete="off"
                   style={{ width: "200px", height: "40px" }}
                 />
+              </div>
+              <div>
                 <lable
                   style={{
                     fontSize: "15px",
