@@ -52,18 +52,35 @@ export function HomePage() {
               textDecoration: "underline",
             }}
           >
-            <h1>INSTUCTION</h1>
+            <h3>INSTUCTION</h3>
           </div>
           <div>
             <ol>
-              <li>Add a Condition and select "Based on order price"</li>
-              <li>Enter a minimum order price</li>
-              <li>Once you complete it, click "Done"</li>
               <li>
-                You can create a bar by clicking the "Create New Bar" button
-                below
+                You can create a new bar by clicking the "Create New Bar" button
+                below.
+              </li>
+              <li>Choose a template from basic templates.</li>
+              <li>Add 'Content' and 'Design' configuration details.</li>
+              <li>
+                Finally click "Create Template" for creating new template or
+                click "Cancel" for abort the function
+              </li>
+              <li>
+                If a new template created it will paused state.So click "Paused"
+                button to activate the Template or click "Actived" button to
+                paused the template
               </li>
             </ol>
+          </div>
+          <div>
+            <h3>Don't see the bar ?</h3>
+            <p>
+              Refresh the website, the bar should display properly.
+              <br />
+              If it still does not work, email us at demo@gmail.com, and we will
+              help.
+            </p>
           </div>
           <div
             style={{
