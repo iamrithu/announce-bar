@@ -63,11 +63,11 @@ export function HomePage() {
               <li>Choose a template from basic templates.</li>
               <li>Add 'Content' and 'Design' configuration details.</li>
               <li>
-                Finally click "Create Template" for creating new template or
-                click "Cancel" for abort the function
+                Once you complete it click "Create Template" for creating new
+                template or click "Cancel" for abort the function
               </li>
               <li>
-                If a new template created it will be paused state.So click
+                If a new template created it will be on paused state.So click
                 "Paused" button to activate the Template or click "Actived"
                 button to paused the template
               </li>
