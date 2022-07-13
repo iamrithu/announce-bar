@@ -267,12 +267,14 @@ const Templates = ({ getTemplate, closeTemplate }) => {
 
               <TextField
                 label="Initial Message :"
+                type="text"
                 value={content}
                 onChange={set_content}
                 autoComplete="off"
               />
               <TextField
                 label="Free Shiping Goal :"
+                type="number"
                 value={shipingGoal}
                 onChange={setShipingGoal}
                 autoComplete="off"
@@ -385,6 +387,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
 
               <TextField
                 label=" Choose Font-Size :"
+                type="number"
                 value={font_size}
                 onChange={set_font_size}
                 autoComplete="off"
