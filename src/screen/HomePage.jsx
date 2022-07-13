@@ -78,7 +78,6 @@ export function HomePage() {
                 color: "red",
                 border: "1px solid red",
                 padding: "10px",
-                border: "0px",
                 outline: "none",
                 margin: "10px",
                 borderRadius: "4px",
