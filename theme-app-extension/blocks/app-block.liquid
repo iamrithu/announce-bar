@@ -1,18 +1,27 @@
 <div  id="demo">
 </div>
+<button id="btn" style="position: absolute;top:10px;right:10px; width:50px;z-index:1001; display: none">
+    close
+</button>
 
 <script>
 let a = document.getElementById("shopify-section-announcement-bar");
 
 let announceBar = document.getElementById("demo");
+let button = document.getElementById("btn");
+button.addEventListener("click",()=>{
+ announceBar.style.display="none" 
+button.style.display="none"
+})
+
 const url = `https://announce-bar-bcnd.herokuapp.com/get-script?shop=${window.location.hostname}`
 fetch(url)
   .then(response => response.json())
   .then(data => {
       if(data.lenght===0){
-        return announceBar.style.display="none"
+         announceBar.style.display="none"
       }else{
-         announceBar.innerHTML = `<p style ="font-size:${data[0].fontSize}px;">data[0].content</p><div style="padding:5px;background-color:red;color:white; border-radius:50%;border:0px; position:fixed; top:0; right:0;">X</div>`;
+         announceBar.innerHTML = data[0].content;
        announceBar.style.cssText=`
         position:${data[0].position}; 
         top: 0; 
@@ -22,10 +31,17 @@ fetch(url)
         background:${data[0].background};
         color:${data[0].fontColor};
         z-index:1000;
+        font-size:${data[0].fontSize}px;
         font-family: ${data[0].fontFamily};
         display:flex;
         align-items:center;
         justify-content:center`
+      }
+      if(data[0].closeButton==="YES"){
+        button.style.display="block"
+      }
+      if(data[0].position==="fixed"){
+        button.style.position="fixed"
       }
   });
 </script>
