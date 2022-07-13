@@ -17,18 +17,15 @@ const ActiveButton = styled.button`
   color: ${(props) => (props.active ? " #3EB372" : "#FA931C")};
   color: ${(props) => (props.delete ? "red" : "")};
   &:hover {
-    border: 2px;
+    border: 1px solid gery;
   }
 `;
 
 export const Table = () => {
   const app = useAppBridge();
   const fetch = userLoggedInFetch(app);
-
   const [actived, setActive] = useState();
-
   const [templates, set_templates] = useState([]);
-  const [action, setAction] = useState();
   const [openState, setOpenState] = useState(false);
   const [choosedTemplate, setChoosedTemplate] = useState("");
 
