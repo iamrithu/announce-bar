@@ -186,13 +186,8 @@ const Templates = ({ getTemplate, closeTemplate }) => {
     setOpenTextField(true);
   };
   async function create() {
-    if (currencyPosition === "after") {
-      setValue(shipingGoal);
-      alert(value);
-    } else {
-      setValue(currency);
-      alert(value);
-    }
+    console.log(currency);
+    console.log(shipingGoal);
     // var template = {
     //   name: name,
     //   shipBar: content,
