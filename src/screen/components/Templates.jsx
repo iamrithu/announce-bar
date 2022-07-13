@@ -348,7 +348,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                   type="color"
                   onChange={(e) => set_font_color(e.target.value)}
                   autoComplete="off"
-                  style={{ width: "200px", height: "40px", marginLeft: "55px" }}
+                  style={{ width: "200px", height: "40px", marginLeft: "53px" }}
                 />
               </div>
               <div
