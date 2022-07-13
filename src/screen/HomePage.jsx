@@ -45,14 +45,13 @@ export function HomePage() {
           <div
             style={{
               display: "flex",
-              justifyContent: "center",
+              justifyContent: "flex-start",
               alignItems: "center",
-              fontSize: "20px",
+              fontSize: "16px",
               fontWeight: "bold",
-              textDecoration: "underline",
             }}
           >
-            <h3>INSTUCTION</h3>
+            <h1>INSTUCTION</h1>
           </div>
           <div>
             <ol>
@@ -74,13 +73,24 @@ export function HomePage() {
             </ol>
           </div>
           <div>
-            <h3>Don't see the bar ?</h3>
-            <p>
-              Refresh the website, the bar should display properly.
-              <br />
-              If it still does not work, email us at demo@gmail.com, and we will
-              help.
-            </p>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-start",
+                alignItems: "center",
+                fontSize: "16px",
+                fontWeight: "bold",
+              }}
+            >
+              <h3>Don't see the bar ?</h3>
+            </div>
+            <ol>
+              <li> Refresh the website, the bar should display properly.</li>
+              <li>
+                If it still does not work, email us at demo@gmail.com, and we
+                will help.
+              </li>
+            </ol>
           </div>
           <div
             style={{
