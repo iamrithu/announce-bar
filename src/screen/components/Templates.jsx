@@ -89,6 +89,8 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   const [content, set_content] = useState("");
   const [background_color, set_background_color] = useState("");
   const [font_color, set_font_color] = useState("");
+  const [special_font_color, set_special_font_color] = useState("");
+
   const [font_family, set_font_family] = useState("");
   const [font_size, set_font_size] = useState("");
   const [selected, setSelected] = useState("");
@@ -194,6 +196,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       background: background_color,
       position: selected,
       fontColor: font_color,
+      specialTextColor: special_font_color,
       fontFamily: font_family,
       fontSize: font_size,
       shipingGoal:
@@ -314,7 +317,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                     marginRight: "5%",
                   }}
                 >
-                  Background :
+                  Background Color:
                 </lable>
                 <input
                   value={background_color}
@@ -340,7 +343,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                     marginRight: "6.8%",
                   }}
                 >
-                  Font-Color :
+                  Text Color :
                 </lable>
                 <input
                   value={font_color}
@@ -349,9 +352,25 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                   autoComplete="off"
                   style={{ width: "200px", height: "40px" }}
                 />
+                <lable
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: "200",
+                    marginRight: "6.8%",
+                  }}
+                >
+                  Special Text Color :
+                </lable>
+                <input
+                  value={special_font_color}
+                  type="color"
+                  onChange={(e) => set_special_font_color(e.target.value)}
+                  autoComplete="off"
+                  style={{ width: "200px", height: "40px" }}
+                />
               </div>
               <Select
-                label="Font-Family"
+                label="Font Family"
                 options={fontOPT}
                 onChange={fontSelectChange}
                 value={font_family}
