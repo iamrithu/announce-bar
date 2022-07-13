@@ -10,6 +10,7 @@ const ActiveButton = styled.button`
   border: 0px;
   outline: none;
   border-radius: 4px;
+  cursor: pointer;
   border: ${(props) =>
     props.active ? "1px solid #3EB372" : "1px solid #FA931C"};
   border: ${(props) => (props.delete ? "1px solid red" : " ")};
