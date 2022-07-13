@@ -10,8 +10,9 @@ const ActiveButton = styled.button`
   border: 0px;
   outline: none;
   border-radius: 4px;
-  background: ${(props) => (props.active ? "#3EB372" : "#FA931C")};
-  background: ${(props) => (props.delete ? "red" : " ")};
+  border: ${(props) =>
+    props.active ? "1px solid #3EB372" : "1px solid #FA931C"};
+  border: ${(props) => (props.delete ? "1px solid red" : " ")};
   color: ${(props) => (props.active ? "white" : "black")};
   color: ${(props) => (props.delete ? "white" : "")};
 `;
