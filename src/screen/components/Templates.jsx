@@ -89,7 +89,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   const [content, set_content] = useState("");
   const [background_color, set_background_color] = useState("");
   const [font_color, set_font_color] = useState("");
-  const [special_font_color, set_special_font_color] = useState("");
+  const [special_font_color, set_special_font_color] = useState("#1A0D12");
   const [font_family, set_font_family] = useState("");
   const [font_size, set_font_size] = useState("");
   const [selected, setSelected] = useState("");
