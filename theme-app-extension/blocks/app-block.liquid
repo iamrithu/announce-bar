@@ -21,7 +21,7 @@ fetch(url)
       if(data.lenght===0){
          announceBar.style.display="none"
       }else{
-         announceBar.innerHTML =`<p style="color:${data[0].fontColor};"> ${data[0].content}<span style="color:${data[0].specialTextColor}; margin-left:5px;">${data[0].shipingGoal}</span><p/>`;
+         announceBar.innerHTML =`<p style="color:${data[0].fontColor};"> ${data[0].content}<span style="color:${data[0].specialTextColor}; margin-left:5px;font-weight:bolder">${data[0].shipingGoal}</span><p/>`;
        announceBar.style.cssText=`
         position:${data[0].position}; 
         top: 0; 

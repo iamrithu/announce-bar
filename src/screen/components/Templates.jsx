@@ -17,7 +17,6 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   const fetch = userLoggedInFetch(app);
 
   const options = [
-    { label: "Choose", value: "" },
     { label: "Fixed", value: "fixed" },
     { label: "Scrollable ", value: "relative" },
   ];
@@ -92,7 +91,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   const [special_font_color, set_special_font_color] = useState("#1A0D12");
   const [font_family, set_font_family] = useState("");
   const [font_size, set_font_size] = useState("");
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState("fixed");
   const [currency, setCurrency] = useState("INR");
   const [shipingGoal, setShipingGoal] = useState("");
   const [currencyPosition, setCurrencyPosition] = useState("before");
