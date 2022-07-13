@@ -47,8 +47,9 @@ export function HomePage() {
               display: "flex",
               justifyContent: "flex-start",
               alignItems: "center",
-              fontSize: "16px",
-              fontWeight: "bold",
+              fontSize: "14px",
+              fontWeight: "bolder",
+              textDecoration: "underline",
             }}
           >
             <h1>INSTUCTION</h1>
@@ -78,8 +79,9 @@ export function HomePage() {
                 display: "flex",
                 justifyContent: "flex-start",
                 alignItems: "center",
-                fontSize: "16px",
-                fontWeight: "bold",
+                fontSize: "14px",
+                fontWeight: "bolder",
+                textDecoration: "underline",
               }}
             >
               <h3>Don't see the bar ?</h3>
