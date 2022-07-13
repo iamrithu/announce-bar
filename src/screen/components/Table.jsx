@@ -97,7 +97,7 @@ export const Table = () => {
                 return [
                   index + 1,
                   info.name,
-                  info.content,
+                  info.content + " " + info.shipingGoal,
                   <Stack>
                     <div
                       style={{
