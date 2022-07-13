@@ -25,6 +25,13 @@ const Templates = ({ getTemplate, closeTemplate }) => {
     { label: "NO", value: "NO" },
     { label: "YES", value: "YES" },
   ];
+  const Currency = [
+    { label: "India Rupees", value: "INR" },
+    { label: "United State Dollars", value: "$" },
+    { label: "United Kingdom", value: "£" },
+    { label: "Euro", value: "€" },
+    { label: "Canada", value: "$" },
+  ];
   const fontOPT = [
     {
       label: "Helvetica",
@@ -81,9 +88,11 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   const [font_family, set_font_family] = useState("");
   const [font_size, set_font_size] = useState("");
   const [selected, setSelected] = useState("");
+  const [currency, setCurrency] = useState("");
 
   const handleSelectChange = useCallback((value) => setSelected(value), []);
   const fontSelectChange = useCallback((value) => set_font_family(value), []);
+  const currencyChange = useCallback((value) => setCurrency(value), []);
 
   var templates = [
     {
@@ -242,6 +251,24 @@ const Templates = ({ getTemplate, closeTemplate }) => {
               <TextField
                 label="Content"
                 value={content}
+                onChange={set_content}
+                autoComplete="off"
+              />
+              <TextField
+                label="Free Shiping Goal"
+                value={content}
+                onChange={set_content}
+                autoComplete="off"
+              />
+              <Select
+                label="Currency:"
+                options={Currency}
+                onChange={currencyChange}
+                value={currency}
+              />
+              <TextField
+                label="Currency Symbol:"
+                value={currency}
                 onChange={set_content}
                 autoComplete="off"
               />
