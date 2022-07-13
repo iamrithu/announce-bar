@@ -67,9 +67,9 @@ export function HomePage() {
                 click "Cancel" for abort the function
               </li>
               <li>
-                If a new template created it will paused state.So click "Paused"
-                button to activate the Template or click "Actived" button to
-                paused the template
+                If a new template created it will be paused state.So click
+                "Paused" button to activate the Template or click "Actived"
+                button to paused the template
               </li>
             </ol>
           </div>
