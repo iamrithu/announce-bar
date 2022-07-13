@@ -25,6 +25,10 @@ const Templates = ({ getTemplate, closeTemplate }) => {
     { label: "NO", value: "NO" },
     { label: "YES", value: "YES" },
   ];
+  const CurrencyPosition = [
+    { label: "Place symbol before the amount", value: "before" },
+    { label: "Place symbol after the amount", value: "after" },
+  ];
   const Currency = [
     { label: "India Rupees", value: "INR" },
     { label: "United State Dollars", value: "$" },
@@ -89,10 +93,15 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   const [font_size, set_font_size] = useState("");
   const [selected, setSelected] = useState("");
   const [currency, setCurrency] = useState("");
+  const [currencyPosition, setCurrencyPosition] = useState("before");
 
   const handleSelectChange = useCallback((value) => setSelected(value), []);
   const fontSelectChange = useCallback((value) => set_font_family(value), []);
   const currencyChange = useCallback((value) => setCurrency(value), []);
+  const currencyPositionChange = useCallback(
+    (value) => setCurrencyPosition(value),
+    []
+  );
 
   var templates = [
     {
@@ -249,7 +258,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
               />
 
               <TextField
-                label="Content"
+                label="Initial Message :"
                 value={content}
                 onChange={set_content}
                 autoComplete="off"
@@ -269,8 +278,13 @@ const Templates = ({ getTemplate, closeTemplate }) => {
               <TextField
                 label="Currency Symbol:"
                 value={currency}
-                onChange={set_content}
                 autoComplete="off"
+              />
+              <Select
+                label="Currency:"
+                options={CurrencyPosition}
+                onChange={currencyPositionChange}
+                value={currencyPosition}
               />
             </Card>
           </Layout.Section>
