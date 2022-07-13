@@ -90,14 +90,12 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   const [background_color, set_background_color] = useState("");
   const [font_color, set_font_color] = useState("");
   const [special_font_color, set_special_font_color] = useState("");
-
   const [font_family, set_font_family] = useState("");
   const [font_size, set_font_size] = useState("");
   const [selected, setSelected] = useState("");
   const [currency, setCurrency] = useState("");
   const [shipingGoal, setShipingGoal] = useState("");
   const [currencyPosition, setCurrencyPosition] = useState("before");
-
   const handleSelectChange = useCallback((value) => setSelected(value), []);
   const fontSelectChange = useCallback((value) => set_font_family(value), []);
   const currencyChange = useCallback((value) => setCurrency(value), []);

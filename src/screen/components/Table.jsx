@@ -109,7 +109,6 @@ export const Table = () => {
                         background: info.background,
                         color: info.fontColor,
                         fontSize: "14px",
-                        fontFamily: info.fontFamily,
                         borderRadius: "4px",
                       }}
                     >
