@@ -30,6 +30,7 @@ router.post("/announcementBar", async (req, res) => {
     fontColor: req.body.fontColor,
     fontFamily: req.body.fontFamily,
     fontSize: req.body.fontSize,
+    shipingGoal: req.body.shipingGoal,
     closeButton: req.body.closeButton,
     shop: test_session.shop,
 
