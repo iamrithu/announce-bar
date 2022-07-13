@@ -187,28 +187,30 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   async function create() {
     if (currencyPosition === "after") {
       setShipingGoal(`${shipingGoal}${currency}`);
+      alert(shipingGoal);
     } else {
       setShipingGoal(`${currency}${shipingGoal}`);
+      alert(shipingGoal);
     }
-    var template = {
-      name: name,
-      shipBar: content,
-      background: background_color,
-      position: selected,
-      fontColor: font_color,
-      fontFamily: font_family,
-      fontSize: font_size,
-      shipingGoal: shipingGoal,
-      closeButton: close_button,
-    };
+    // var template = {
+    //   name: name,
+    //   shipBar: content,
+    //   background: background_color,
+    //   position: selected,
+    //   fontColor: font_color,
+    //   fontFamily: font_family,
+    //   fontSize: font_size,
+    //   shipingGoal: shipingGoal,
+    //   closeButton: close_button,
+    // };
 
-    var post = await fetch("/announcementBar", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(template),
-    });
-    closeTemplate();
-    getTemplate();
+    // var post = await fetch("/announcementBar", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(template),
+    // });
+    // closeTemplate();
+    // getTemplate();
   }
 
   return (
