@@ -94,6 +94,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   const [selected, setSelected] = useState("");
   const [currency, setCurrency] = useState("");
   const [shipingGoal, setShipingGoal] = useState("");
+  const [value, setValue] = useState("");
   const [currencyPosition, setCurrencyPosition] = useState("before");
 
   const handleSelectChange = useCallback((value) => setSelected(value), []);
@@ -186,11 +187,11 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   };
   async function create() {
     if (currencyPosition === "after") {
-      setShipingGoal(`${shipingGoal}+${currency}`);
+      setValue(shipingGoal, currency);
       alert(shipingGoal);
     } else {
-      setShipingGoal(`${currency}+${shipingGoal}`);
-      alert(shipingGoal);
+      setValue(currency, shipingGoal);
+      alert(value);
     }
     // var template = {
     //   name: name,
