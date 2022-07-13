@@ -198,8 +198,8 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       fontSize: font_size,
       shipingGoal:
         currencyPosition === "after"
-          ? shipingGoal + currency
-          : currency + shipingGoal,
+          ? shipingGoal + " " + currency
+          : currency + " " + shipingGoal,
       closeButton: close_button,
     };
 
