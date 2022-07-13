@@ -258,9 +258,9 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       {openTextField ? (
         <>
           <Layout.Section oneHalf>
-            <Card title="Content Configuration" sectioned>
+            <Card title="Content Configuration :" sectioned>
               <TextField
-                label="Name"
+                label="Shipbar Name :"
                 value={name}
                 onChange={set_name}
                 autoComplete="off"
@@ -273,24 +273,24 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                 autoComplete="off"
               />
               <TextField
-                label="Free Shiping Goal"
+                label="Free Shiping Goal :"
                 value={shipingGoal}
                 onChange={setShipingGoal}
                 autoComplete="off"
               />
               <Select
-                label="Currency:"
+                label="Currency :"
                 options={Currency}
                 onChange={currencyChange}
                 value={currency}
               />
               <TextField
-                label="Currency Symbol:"
+                label="Currency Symbol :"
                 value={currency}
                 autoComplete="off"
               />
               <Select
-                label="Currency:"
+                label="Currency :"
                 options={CurrencyPosition}
                 onChange={currencyPositionChange}
                 value={currencyPosition}
@@ -298,7 +298,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
             </Card>
           </Layout.Section>
           <Layout.Section oneHalf>
-            <Card title="Design Configuration" sectioned>
+            <Card title="Design Configuration :" sectioned>
               <div
                 style={{
                   display: "flex",
@@ -315,7 +315,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                     marginRight: "5%",
                   }}
                 >
-                  Background Color:
+                  Background Color :
                 </lable>
                 <input
                   value={background_color}
@@ -378,26 +378,26 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                 />
               </div>
               <Select
-                label="Font Family"
+                label="Font Family :"
                 options={fontOPT}
                 onChange={fontSelectChange}
                 value={font_family}
               />
 
               <TextField
-                label=" Choose Font-Size"
+                label=" Choose Font-Size :"
                 value={font_size}
                 onChange={set_font_size}
                 autoComplete="off"
               />
               <Select
-                label="Choose a Display Position:"
+                label="Choose a Display Position :"
                 options={options}
                 onChange={handleSelectChange}
                 value={selected}
               />
               <Select
-                label="Include Close Button:"
+                label="Include Close Button :"
                 options={closeButton}
                 onChange={setCloseButton}
                 value={close_button}
