@@ -93,7 +93,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   const [font_size, set_font_size] = useState("");
   const [selected, setSelected] = useState("");
   const [currency, setCurrency] = useState("");
-  const [shpingGoal, setShpingGoal] = useState("");
+  const [shipingGoal, setShipingGoal] = useState("");
   const [currencyPosition, setCurrencyPosition] = useState("before");
 
   const handleSelectChange = useCallback((value) => setSelected(value), []);
@@ -186,9 +186,9 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   };
   async function create() {
     if (currencyPosition === "after") {
-      setShpingGoal(`${shpingGoal}${currency}`);
+      setShipingGoal(`${shipingGoal}${currency}`);
     } else {
-      setShpingGoal(`${currency}${shpingGoal}`);
+      setShipingGoal(`${currency}${shipingGoal}`);
     }
     var template = {
       name: name,
@@ -198,7 +198,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       fontColor: font_color,
       fontFamily: font_family,
       fontSize: font_size,
-      shpingGoal: shpingGoal,
+      shipingGoal: shipingGoal,
       closeButton: close_button,
     };
 
@@ -272,8 +272,8 @@ const Templates = ({ getTemplate, closeTemplate }) => {
               />
               <TextField
                 label="Free Shiping Goal"
-                value={content}
-                onChange={setShpingGoal}
+                value={shipingGoal}
+                onChange={setShipingGoal}
                 autoComplete="off"
               />
               <Select

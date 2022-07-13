@@ -21,7 +21,7 @@ model shipbars {
   fontFamily  String
   fontSize    String
   closeButton String
-  shpingGoal  String
+  shipingGoal String
   isActive    String   @default("false")
   createdAt   DateTime @default(now())
   shop        String
