@@ -93,6 +93,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   const [font_size, set_font_size] = useState("");
   const [selected, setSelected] = useState("");
   const [currency, setCurrency] = useState("");
+  const [shpingGoal, setShpingGoal] = useState("");
   const [currencyPosition, setCurrencyPosition] = useState("before");
 
   const handleSelectChange = useCallback((value) => setSelected(value), []);
@@ -184,6 +185,11 @@ const Templates = ({ getTemplate, closeTemplate }) => {
     setOpenTextField(true);
   };
   async function create() {
+    if (currencyPosition === "after") {
+      setShpingGoal(`${shpingGoal}${currency}`);
+    } else {
+      setShpingGoal(`${currency}${shpingGoal}`);
+    }
     var template = {
       name: name,
       shipBar: content,
@@ -192,6 +198,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       fontColor: font_color,
       fontFamily: font_family,
       fontSize: font_size,
+      shpingGoal: shpingGoal,
       closeButton: close_button,
     };
 
@@ -266,7 +273,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
               <TextField
                 label="Free Shiping Goal"
                 value={content}
-                onChange={set_content}
+                onChange={setShpingGoal}
                 autoComplete="off"
               />
               <Select

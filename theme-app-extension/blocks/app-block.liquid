@@ -21,7 +21,7 @@ fetch(url)
       if(data.lenght===0){
          announceBar.style.display="none"
       }else{
-         announceBar.innerHTML = data[0].content;
+         announceBar.innerHTML = data[0].content +data[0].shpingGoal;
        announceBar.style.cssText=`
         position:${data[0].position}; 
         top: 0; 
