@@ -94,7 +94,6 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   const [selected, setSelected] = useState("");
   const [currency, setCurrency] = useState("");
   const [shipingGoal, setShipingGoal] = useState("");
-  const [value, setValue] = useState("");
   const [currencyPosition, setCurrencyPosition] = useState("before");
 
   const handleSelectChange = useCallback((value) => setSelected(value), []);
@@ -188,6 +187,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   async function create() {
     console.log(currency + shipingGoal);
     console.log(shipingGoal + currency);
+    console.log(currencyPosition);
     // var template = {
     //   name: name,
     //   shipBar: content,
