@@ -186,8 +186,8 @@ const Templates = ({ getTemplate, closeTemplate }) => {
     setOpenTextField(true);
   };
   async function create() {
-    console.log(currency);
-    console.log(shipingGoal);
+    console.log(currency + shipingGoal);
+    console.log(shipingGoal + currency);
     // var template = {
     //   name: name,
     //   shipBar: content,
