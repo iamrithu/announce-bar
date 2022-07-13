@@ -350,7 +350,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                   type="color"
                   onChange={(e) => set_font_color(e.target.value)}
                   autoComplete="off"
-                  style={{ width: "200px", height: "40px", marginLeft: "30px" }}
+                  style={{ width: "200px", height: "40px", marginLeft: "50px" }}
                 />
               </div>
               <div>
@@ -368,7 +368,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                   type="color"
                   onChange={(e) => set_special_font_color(e.target.value)}
                   autoComplete="off"
-                  style={{ width: "200px", height: "40px" }}
+                  style={{ width: "200px", height: "100px" }}
                 />
               </div>
               <Select
