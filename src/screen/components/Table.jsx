@@ -16,6 +16,9 @@ const ActiveButton = styled.button`
   border: ${(props) => (props.delete ? "1px solid red" : " ")};
   color: ${(props) => (props.active ? " #3EB372" : "#FA931C")};
   color: ${(props) => (props.delete ? "red" : "")};
+  &:hover {
+    border: 2px;
+  }
 `;
 
 export const Table = () => {
