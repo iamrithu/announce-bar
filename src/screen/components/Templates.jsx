@@ -353,7 +353,15 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                   style={{ width: "200px", height: "40px", marginLeft: "50px" }}
                 />
               </div>
-              <div>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "flex-start",
+                  height: "50px",
+                  width: "95%",
+                }}
+              >
                 <lable
                   style={{
                     fontSize: "15px",
@@ -368,7 +376,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                   type="color"
                   onChange={(e) => set_special_font_color(e.target.value)}
                   autoComplete="off"
-                  style={{ width: "200px", height: "100px" }}
+                  style={{ width: "200px", height: "40px" }}
                 />
               </div>
               <Select
