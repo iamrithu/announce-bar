@@ -187,10 +187,10 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   };
   async function create() {
     if (currencyPosition === "after") {
-      setValue(shipingGoal, currency);
-      alert(shipingGoal);
+      setValue(shipingGoal + currency);
+      alert(value);
     } else {
-      setValue(currency, shipingGoal);
+      setValue(currency + shipingGoal);
       alert(value);
     }
     // var template = {
