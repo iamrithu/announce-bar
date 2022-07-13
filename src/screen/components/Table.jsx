@@ -13,8 +13,8 @@ const ActiveButton = styled.button`
   border: ${(props) =>
     props.active ? "1px solid #3EB372" : "1px solid #FA931C"};
   border: ${(props) => (props.delete ? "1px solid red" : " ")};
-  color: ${(props) => (props.active ? "white" : "black")};
-  color: ${(props) => (props.delete ? "white" : "")};
+  color: ${(props) => (props.active ? " #3EB372" : "#FA931C")};
+  color: ${(props) => (props.delete ? "red" : "")};
 `;
 
 export const Table = () => {
