@@ -59,7 +59,12 @@ export function HomePage() {
               textDecoration: "underline",
             }}
           >
-            <h1>INSTUCTION</h1>
+            <h1>
+              INSTUCTION
+              <a href="https://www.loom.com/share/b3f99a0f77ee4a278e4901c78b2cf4c7">
+                Video Tutorial
+              </a>
+            </h1>
           </div>
           <div>
             <ol>
