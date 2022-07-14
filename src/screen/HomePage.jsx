@@ -70,7 +70,7 @@ export function HomePage() {
               <Icon source={PlayCircleMajor} color="blue" />
               <a
                 style={{ marginLeft: "3sdfsdfsdfsdfsdfsdfsdfsdfpx" }}
-                href="https://www.loom.com/share/b3f99a0f77ee4a278e4901c78b2cf4c7"
+                href="https://www.loom.com/share/c5a989590e84491b83036e5e77ad04c6"
                 target="_blank"
               >
                 Video Tutorial
