@@ -66,20 +66,26 @@ export function HomePage() {
               <li>
                 You can create a new bar by clicking the "Create New Bar".
                 <br />
+                <br />
                 <Image
                   source={home}
                   alt="Nice work on building a Shopify app"
-                  width={450}
+                  width={600}
                 />
+                <br />
+                <br />
               </li>
               <li>
                 Choose a template from basic templates.
                 <br />
+                <br />
                 <Image
                   source={template}
                   alt="Nice work on building a Shopify app"
-                  width={450}
+                  width={600}
                 />
+                <br />
+                <br />
               </li>
 
               <li>Add 'Content' and 'Design' configuration details.</li>
@@ -87,11 +93,14 @@ export function HomePage() {
                 Once you complete it, click "Create Template" for creating new
                 template or click "Cancel" for abort the function.
                 <br />
+                <br />
                 <Image
                   source={create}
                   alt="Nice work on building a Shopify app"
-                  width={450}
+                  width={600}
                 />
+                <br />
+                <br />
               </li>
 
               <li>
@@ -99,11 +108,24 @@ export function HomePage() {
                 click "Paused" button to activate the template or click
                 "Actived" button to paused the template.
                 <br />
+                <br />
                 <Image
                   source={active}
                   alt="Nice work on building a Shopify app"
-                  width={450}
+                  width={600}
                 />
+                <br />
+                <br />
+                <p>after</p>
+                <br />
+                <br />
+                <Image
+                  source={actived}
+                  alt="Nice work on building a Shopify app"
+                  width={600}
+                />
+                <br />
+                <br />
               </li>
             </ol>
           </div>
@@ -124,11 +146,14 @@ export function HomePage() {
               <li>
                 Refresh the website, the bar should display properly.
                 <br />
+                <br />
                 <Image
                   source={store}
                   alt="Nice work on building a Shopify app"
-                  width={450}
+                  width={600}
                 />
+                <br />
+                <br />
               </li>
               <li>
                 If it still does not work, kindly contact us at demo@gmail.com.
