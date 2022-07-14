@@ -61,7 +61,11 @@ export function HomePage() {
           >
             <h1>
               INSTUCTION
-              <a href="https://www.loom.com/share/b3f99a0f77ee4a278e4901c78b2cf4c7">
+              <a
+                style={{ marginLeft: "5px" }}
+                href="https://www.loom.com/share/b3f99a0f77ee4a278e4901c78b2cf4c7"
+                target="_blank"
+              >
                 Video Tutorial
               </a>
             </h1>
