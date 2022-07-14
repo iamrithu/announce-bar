@@ -55,10 +55,10 @@ export function HomePage() {
             <h1>INSTUCTION</h1>
           </div>
           <div>
-            {/* <img
+            <img
               src="https://static.vecteezy.com/packs/media/vectors/term-bg-1-666de2d9.jpg"
               alt=""
-            /> */}
+            />
             <img src="../assets/home.png" alt="" />
             <ol>
               <li>
