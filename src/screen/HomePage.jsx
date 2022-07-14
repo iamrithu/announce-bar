@@ -59,17 +59,23 @@ export function HomePage() {
               textDecoration: "underline",
             }}
           >
-            <h1>
-              INSTUCTION
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "flex-start",
+              }}
+            >
+              <h1 style={{ marginRight: "5px" }}>INSTUCTION:</h1>
+              <Icon source={PlayMajor} color="blue" />
               <a
-                style={{ marginLeft: "5px" }}
+                style={{ marginLeft: "3px" }}
                 href="https://www.loom.com/share/b3f99a0f77ee4a278e4901c78b2cf4c7"
                 target="_blank"
               >
-                <Icon source={PlayMajor} color="base" />
                 Video Tutorial
               </a>
-            </h1>
+            </div>
           </div>
           <div>
             <ol>
