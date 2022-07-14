@@ -72,45 +72,15 @@ export function HomePage() {
                 />
               </li>
               <li>Choose a template from basic templates.</li>
-              <br />
-              <Image
-                source={template}
-                alt="Nice work on building a Shopify app"
-                width={220}
-              />
               <li>Add 'Content' and 'Design' configuration details.</li>
               <li>
                 Once you complete it, click "Create Template" for creating new
                 template or click "Cancel" for abort the function
-                <br />
-                <Image
-                  source={create}
-                  alt="Nice work on building a Shopify app"
-                  width={220}
-                />
               </li>
               <li>
                 If a new template is created , it will be on pause state.So
                 click "Paused" button to activate the template or click
                 "Actived" button to paused the template
-                <br />
-                <Image
-                  source={active}
-                  alt="Nice work on building a Shopify app"
-                  width={220}
-                />
-                <br />
-                <Image
-                  source={actived}
-                  alt="Nice work on building a Shopify app"
-                  width={220}
-                />
-                <br />
-                <Image
-                  source={store}
-                  alt="Nice work on building a Shopify app"
-                  width={220}
-                />
               </li>
             </ol>
           </div>
