@@ -7,6 +7,8 @@ import { Icon } from "@shopify/polaris";
 
 import { InfoMinor } from "@shopify/polaris-icons";
 
+import home from "../assets/home.jpg";
+
 const Container = styled.div`
   width: 90%;
   height: 400px;
@@ -59,6 +61,11 @@ export function HomePage() {
               <li>
                 You can create a new bar by clicking the "Create New Bar".
                 <br />
+                <Image
+                  source={home}
+                  alt="Nice work on building a Shopify app"
+                  width={120}
+                />
               </li>
               <li>Choose a template from basic templates.</li>
               <li>Add 'Content' and 'Design' configuration details.</li>
