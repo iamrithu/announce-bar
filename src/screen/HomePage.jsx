@@ -63,13 +63,13 @@ export function HomePage() {
               <li>Choose a template from basic templates.</li>
               <li>Add 'Content' and 'Design' configuration details.</li>
               <li>
-                Once you complete it click "Create Template" for creating new
+                Once you complete it, click "Create Template" for creating new
                 template or click "Cancel" for abort the function
               </li>
               <li>
-                If a new template created it will be on paused state.So click
-                "Paused" button to activate the Template or click "Actived"
-                button to paused the template
+                If a new template is created , it will be on pause state.So
+                click "Paused" button to activate the template or click
+                "Actived" button to paused the template
               </li>
             </ol>
           </div>
@@ -89,8 +89,7 @@ export function HomePage() {
             <ol>
               <li> Refresh the website, the bar should display properly.</li>
               <li>
-                If it still does not work, email us at demo@gmail.com, and we
-                will help.
+                If it still does not work, kindly contact us at demo@gmail.com.
               </li>
             </ol>
           </div>
