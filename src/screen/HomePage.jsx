@@ -5,7 +5,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { Icon } from "@shopify/polaris";
 
-import { InfoMinor } from "@shopify/polaris-icons";
+import { InfoMinor, PlayMajor } from "@shopify/polaris-icons";
 
 import home from "../assets/home.jpg";
 import active from "../assets/active.jpg";
@@ -66,6 +66,7 @@ export function HomePage() {
                 href="https://www.loom.com/share/b3f99a0f77ee4a278e4901c78b2cf4c7"
                 target="_blank"
               >
+                <Icon source={PlayMajor} color="base" />
                 Video Tutorial
               </a>
             </h1>
