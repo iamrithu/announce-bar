@@ -4,7 +4,12 @@ import { useState } from "react";
 
 import styled from "styled-components";
 import { Icon } from "@shopify/polaris";
-import trophyImgUrl from "../assets/actived.png";
+import home from "../assets/home.png";
+import active from "../assets/active.jpg";
+import actived from "../assets/actived.jpg";
+import create from "../assets/create.jpg";
+import store from "../assets/store.jpg";
+import template from "../assets/template.jpg";
 
 import { InfoMinor } from "@shopify/polaris-icons";
 
@@ -59,24 +64,53 @@ export function HomePage() {
             <ol>
               <li>
                 You can create a new bar by clicking the "Create New Bar".
-                below.
                 <br />
                 <Image
-                  source={trophyImgUrl}
+                  source={home}
                   alt="Nice work on building a Shopify app"
-                  width={120}
+                  width={220}
                 />
               </li>
               <li>Choose a template from basic templates.</li>
+              <br />
+              <Image
+                source={template}
+                alt="Nice work on building a Shopify app"
+                width={220}
+              />
               <li>Add 'Content' and 'Design' configuration details.</li>
               <li>
                 Once you complete it, click "Create Template" for creating new
                 template or click "Cancel" for abort the function
+                <br />
+                <Image
+                  source={create}
+                  alt="Nice work on building a Shopify app"
+                  width={220}
+                />
               </li>
               <li>
                 If a new template is created , it will be on pause state.So
                 click "Paused" button to activate the template or click
                 "Actived" button to paused the template
+                <br />
+                <Image
+                  source={active}
+                  alt="Nice work on building a Shopify app"
+                  width={220}
+                />
+                <br />
+                <Image
+                  source={actived}
+                  alt="Nice work on building a Shopify app"
+                  width={220}
+                />
+                <br />
+                <Image
+                  source={store}
+                  alt="Nice work on building a Shopify app"
+                  width={220}
+                />
               </li>
             </ol>
           </div>
