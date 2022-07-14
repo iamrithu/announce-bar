@@ -4,12 +4,7 @@ import { useState } from "react";
 
 import styled from "styled-components";
 import { Icon } from "@shopify/polaris";
-import home from "../assets/home.png";
-import active from "../assets/active.jpg";
-import actived from "../assets/actived.jpg";
-import create from "../assets/create.jpg";
-import store from "../assets/store.jpg";
-import template from "../assets/template.jpg";
+import trophyImgUrl from "../assets/actived.png";
 
 import { InfoMinor } from "@shopify/polaris-icons";
 
@@ -66,9 +61,9 @@ export function HomePage() {
                 You can create a new bar by clicking the "Create New Bar".
                 <br />
                 <Image
-                  source={home}
+                  source={trophyImgUrl}
                   alt="Nice work on building a Shopify app"
-                  width={220}
+                  width={120}
                 />
               </li>
               <li>Choose a template from basic templates.</li>
