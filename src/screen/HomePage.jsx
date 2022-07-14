@@ -55,15 +55,12 @@ export function HomePage() {
             <h1>INSTUCTION</h1>
           </div>
           <div>
-            <img
-              src="https://static.vecteezy.com/packs/media/vectors/term-bg-1-666de2d9.jpg"
-              alt=""
-            />
-            <img src="../assets/home.png" alt="" />
             <ol>
               <li>
                 You can create a new bar by clicking the "Create New Bar" button
                 below.
+                <br />
+                <img src="./actived.png" alt="" width="300" height="100" />
               </li>
               <li>Choose a template from basic templates.</li>
               <li>Add 'Content' and 'Design' configuration details.</li>
