@@ -57,10 +57,10 @@ export function HomePage() {
           <div>
             <ol>
               <li>
-                You can create a new bar by clicking the "Create New Bar" button
+                You can create a new bar by clicking the "Create New Bar".
                 below.
                 <br />
-                <img src="./actived.png" alt="" width="300" height="100" />
+                <img src="actived.png" alt="" width="300" height="100" />
               </li>
               <li>Choose a template from basic templates.</li>
               <li>Add 'Content' and 'Design' configuration details.</li>
