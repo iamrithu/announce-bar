@@ -8,6 +8,11 @@ import { Icon } from "@shopify/polaris";
 import { InfoMinor } from "@shopify/polaris-icons";
 
 import home from "../assets/home.jpg";
+import active from "../assets/active.jpg";
+import actived from "../assets/actived.jpg";
+import create from "../assets/create.jpg";
+import template from "../assets/template.jpg";
+import store from "../assets/store.jpg";
 
 const Container = styled.div`
   width: 90%;
@@ -64,19 +69,41 @@ export function HomePage() {
                 <Image
                   source={home}
                   alt="Nice work on building a Shopify app"
-                  width={320}
+                  width={450}
                 />
               </li>
-              <li>Choose a template from basic templates.</li>
+              <li>
+                Choose a template from basic templates.
+                <br />
+                <Image
+                  source={template}
+                  alt="Nice work on building a Shopify app"
+                  width={450}
+                />
+              </li>
+
               <li>Add 'Content' and 'Design' configuration details.</li>
               <li>
                 Once you complete it, click "Create Template" for creating new
-                template or click "Cancel" for abort the function
+                template or click "Cancel" for abort the function.
+                <br />
+                <Image
+                  source={create}
+                  alt="Nice work on building a Shopify app"
+                  width={450}
+                />
               </li>
+
               <li>
                 If a new template is created , it will be on pause state.So
                 click "Paused" button to activate the template or click
-                "Actived" button to paused the template
+                "Actived" button to paused the template.
+                <br />
+                <Image
+                  source={active}
+                  alt="Nice work on building a Shopify app"
+                  width={450}
+                />
               </li>
             </ol>
           </div>
@@ -94,7 +121,15 @@ export function HomePage() {
               <h3>Don't see the bar ?</h3>
             </div>
             <ol>
-              <li> Refresh the website, the bar should display properly.</li>
+              <li>
+                Refresh the website, the bar should display properly.
+                <br />
+                <Image
+                  source={store}
+                  alt="Nice work on building a Shopify app"
+                  width={450}
+                />
+              </li>
               <li>
                 If it still does not work, kindly contact us at demo@gmail.com.
               </li>
