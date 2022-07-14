@@ -5,7 +5,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { Icon } from "@shopify/polaris";
 
-import { InfoMinor, PlayMajor } from "@shopify/polaris-icons";
+import { InfoMinor, PlayCircleMajor } from "@shopify/polaris-icons";
 
 import home from "../assets/home.jpg";
 import active from "../assets/active.jpg";
@@ -67,9 +67,9 @@ export function HomePage() {
               }}
             >
               <h1 style={{ marginRight: "5px" }}>INSTUCTION:</h1>
-              <Icon source={PlayMajor} color="blue" />
+              <Icon source={PlayCircleMajor} color="blue" />
               <a
-                style={{ marginLeft: "3px" }}
+                style={{ marginLeft: "3sdfsdfsdfsdfsdfsdfsdfsdfpx" }}
                 href="https://www.loom.com/share/b3f99a0f77ee4a278e4901c78b2cf4c7"
                 target="_blank"
               >
