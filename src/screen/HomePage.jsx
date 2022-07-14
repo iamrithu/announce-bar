@@ -59,15 +59,7 @@ export function HomePage() {
               <li>
                 You can create a new bar by clicking the "Create New Bar" button
                 below.
-                <img
-                  src="../assets/home.png"
-                  width="500"
-                  height="600Stack(
-                  children: [
-                    
-                  ]
-                )"
-                />
+                <img src="../assets/home.png" width="300" height="200" />
               </li>
               <li>Choose a template from basic templates.</li>
               <li>Add 'Content' and 'Design' configuration details.</li>
