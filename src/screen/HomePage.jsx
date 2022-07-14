@@ -64,7 +64,7 @@ export function HomePage() {
                 <Image
                   source={home}
                   alt="Nice work on building a Shopify app"
-                  width={120}
+                  width={320}
                 />
               </li>
               <li>Choose a template from basic templates.</li>
