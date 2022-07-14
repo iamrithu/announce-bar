@@ -1,4 +1,4 @@
-import { Page } from "@shopify/polaris";
+import { Page, Image } from "@shopify/polaris";
 import { Table } from "./components/Table.jsx";
 import { useState } from "react";
 
@@ -60,7 +60,7 @@ export function HomePage() {
                 You can create a new bar by clicking the "Create New Bar".
                 below.
                 <br />
-                <img src="actived.png" alt="" width="300" height="100" />
+                <Image src="./actived.png" alt="" width="300" height="100" />
               </li>
               <li>Choose a template from basic templates.</li>
               <li>Add 'Content' and 'Design' configuration details.</li>
