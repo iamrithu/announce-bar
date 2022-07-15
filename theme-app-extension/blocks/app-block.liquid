@@ -21,7 +21,7 @@ fetch(url)
       if(data.lenght===0){
          announceBar.style.display="none"
       }else{
-         announceBar.innerHTML =`<p style="color:${data[0].fontColor};"> ${data[0].content}<span style="color:${data[0].specialTextColor}; margin-left:5px;font-weight:bolder">${data[0].shipingGoal}</span><p/>`;
+         announceBar.innerHTML =`<p style="color:${data[0].fontColor};  font-size:${data[0].fontSize}px;"> ${data[0].content}<span style="color:${data[0].specialTextColor}; margin-left:5px;font-weight:bolder">${data[0].shipingGoal}</span><p/>`;
        announceBar.style.cssText=`
         position:${data[0].position}; 
         top: 0; 
@@ -30,7 +30,6 @@ fetch(url)
         width:100%;
         background:${data[0].background};
         z-index:1000;
-        font-size:${data[0].fontSize}px;
         font-family: ${data[0].fontFamily};
         display:flex;
         align-items:center;
@@ -47,7 +46,7 @@ fetch(url)
 
 {% schema %}
   {
-    "name": "App Embed",
+    "name": "custom annnoucement bar",
     "target": "head",
     "settings": []
   }

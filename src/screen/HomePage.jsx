@@ -44,6 +44,7 @@ export function HomePage() {
         </h2>
         <div onClick={open} style={{ cursor: "pointer" }} title="Instruction">
           <Icon source={InfoMinor} color="base" />
+          <span>(Instruction)</span>
         </div>
       </div>
 
