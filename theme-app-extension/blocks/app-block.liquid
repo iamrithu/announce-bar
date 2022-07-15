@@ -23,9 +23,7 @@ fetch(url)
       }else{
          announceBar.innerHTML =`<p style="color:${data[0].fontColor};  font-size:${data[0].fontSize}px;"> ${data[0].content}<span style="color:${data[0].specialTextColor}; margin-left:5px;font-weight:bolder">${data[0].shipingGoal}</span><p/>`;
        announceBar.style.cssText=`
-        position:${data[0].position}; 
-        top: 0; 
-        left: 0 ; 
+        position:sticky; 
         height:40px;
         width:100%;
         background:${data[0].background};
@@ -38,8 +36,9 @@ fetch(url)
       if(data[0].closeButton==="YES"){
         button.style.display="block"
       }
-      if(data[0].position==="fixed"){
+      if(data[0].position==="sticky"){
         button.style.position="fixed"
+          announceBar.style.top="40px"
       }
   });
 </script>
