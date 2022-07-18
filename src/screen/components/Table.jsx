@@ -76,7 +76,8 @@ export const Table = () => {
     setOpenState(false);
   };
   const editValues = (info) => {
-    setEditValue(info);
+    setEditValue(JSON.stringify(info));
+    setEditOpen(true);
   };
 
   useEffect(async () => {
@@ -145,12 +146,19 @@ export const Table = () => {
         </Layout.Section>
         <Layout.Section>
           {openState ? (
-            <Templates getTemplate={getTemplate} closeTemplate={close} />
-          ) : editOpen ? (
             <Templates
               getTemplate={getTemplate}
               closeTemplate={close}
-              editValue={edit}
+              editOpen={false}
+              values={""}
+            />
+          ) : null}
+          {editOpen ? (
+            <Templates
+              getTemplate={getTemplate}
+              closeTemplate={close}
+              editOpen={true}
+              values={edit}
             />
           ) : null}
         </Layout.Section>
