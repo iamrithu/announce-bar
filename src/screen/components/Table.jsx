@@ -75,7 +75,8 @@ export const Table = () => {
     setOpenState(false);
   };
   const editValues = (info) => {
-    console.log(info);
+    setEditValue(info);
+    console.log(edit);
   };
 
   useEffect(async () => {
