@@ -150,7 +150,7 @@ export const Table = () => {
               getTemplate={getTemplate}
               closeTemplate={close}
               editOpen={false}
-              values={""}
+              values={"{}"}
             />
           ) : null}
           {editOpen ? (

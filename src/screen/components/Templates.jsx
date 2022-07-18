@@ -13,8 +13,6 @@ import { userLoggedInFetch } from "../../App";
 import { useState, useCallback } from "react";
 
 const Templates = ({ getTemplate, closeTemplate, values, editOpen }) => {
-  console.log(editOpen);
-
   var objectData = JSON.parse(values);
   const app = useAppBridge();
   const fetch = userLoggedInFetch(app);
@@ -187,12 +185,7 @@ const Templates = ({ getTemplate, closeTemplate, values, editOpen }) => {
     setOpenTextField(true);
   };
 
-  if (editOpen === true) {
-    setOpenTextField(true);
-    console.log(objectData);
-    console.log(openTextField);
-  }
-
+  console.log(editOpen);
   async function create() {
     console.log(currency + shipingGoal);
     console.log(shipingGoal + currency);
