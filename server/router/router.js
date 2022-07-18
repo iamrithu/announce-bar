@@ -7,7 +7,7 @@ import { uuid } from "uuidv4";
 const prisma = new PrismaClient();
 
 router.get("/", (req, res) => {
-  res.send("rithi");
+  res.send("rithi mahesh");
 });
 
 router.get("/announcementBar", async (req, res) => {
