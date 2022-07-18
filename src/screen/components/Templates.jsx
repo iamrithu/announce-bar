@@ -14,7 +14,9 @@ import { useState, useCallback } from "react";
 
 const Templates = ({ getTemplate, closeTemplate, values, editOpen }) => {
   console.log(editOpen);
-  console.log(values);
+
+  var objectData = JSON.parse(values);
+  console.log(objectData);
   const app = useAppBridge();
   const fetch = userLoggedInFetch(app);
 
@@ -185,6 +187,11 @@ const Templates = ({ getTemplate, closeTemplate, values, editOpen }) => {
     set_font_size(info.fontSize);
     setOpenTextField(true);
   };
+
+  if (editOpen === true) {
+    setOpenTextField(true);
+  }
+
   async function create() {
     console.log(currency + shipingGoal);
     console.log(shipingGoal + currency);
