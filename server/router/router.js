@@ -19,30 +19,31 @@ router.get("/announcementBar", async (req, res) => {
   }
 });
 router.post("/announcementBar", async (req, res) => {
-  const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
+  console.log(req.body);
+  // const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
 
-  var details = {
-    uuid: uuid(),
-    name: req.body.name,
-    content: req.body.shipBar,
-    background: req.body.background,
-    position: req.body.position,
-    fontColor: req.body.fontColor,
-    fontFamily: req.body.fontFamily,
-    fontSize: req.body.fontSize,
-    specialTextColor: req.body.specialTextColor,
-    shipingGoal: req.body.shipingGoal,
-    currency: req.body.currency,
-    currencyPosition: req.body.currencyPosition,
-    closeButton: req.body.closeButton,
-    shop: test_session.shop,
+  // var details = {
+  //   uuid: uuid(),
+  //   name: req.body.name,
+  //   content: req.body.shipBar,
+  //   background: req.body.background,
+  //   position: req.body.position,
+  //   fontColor: req.body.fontColor,
+  //   fontFamily: req.body.fontFamily,
+  //   fontSize: req.body.fontSize,
+  //   specialTextColor: req.body.specialTextColor,
+  //   shipingGoal: req.body.shipingGoal,
+  //   currency: req.body.currency,
+  //   currencyPosition: req.body.currencyPosition,
+  //   closeButton: req.body.closeButton,
+  //   shop: test_session.shop,
 
-    isActive: "false",
-  };
-  let newData = await prisma.shipbars.create({
-    data: details,
-  });
-  res.status(200).send(newData);
+  //   isActive: "false",
+  // };
+  // let newData = await prisma.shipbars.create({
+  //   data: details,
+  // });
+  // res.status(200).send(newData);
 });
 
 router.put("/update/:id", async (req, res) => {
