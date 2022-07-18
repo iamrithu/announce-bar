@@ -25,8 +25,8 @@ const Templates = ({ getTemplate, closeTemplate }) => {
     { label: "YES", value: "YES" },
   ];
   const CurrencyPosition = [
-    { label: "Place symbol before the amount", value: "before" },
     { label: "Place symbol after the amount", value: "after" },
+    { label: "Place symbol before the amount", value: "before" },
   ];
   const Currency = [
     { label: "India Rupees", value: "INR" },
@@ -195,6 +195,11 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       fontSize: font_size,
       shipingGoal: shipingGoal,
       currency: currency,
+      currencyPosition: currencyPosition,
+      currencyContent:
+        currencyPosition === "after"
+          ? shipingGoal + currency
+          : currency + shipingGoal,
       closeButton: close_button,
     };
 
