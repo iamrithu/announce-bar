@@ -10,10 +10,9 @@ import {
 import { useAppBridge } from "@shopify/app-bridge-react";
 import { userLoggedInFetch } from "../../App";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 
-const Templates = ({ getTemplate, closeTemplate, values, editOpen }) => {
-  var objectData = JSON.parse(values);
+const Templates = ({ getTemplate, closeTemplate }) => {
   const app = useAppBridge();
   const fetch = userLoggedInFetch(app);
 
@@ -184,7 +183,6 @@ const Templates = ({ getTemplate, closeTemplate, values, editOpen }) => {
     set_font_size(info.fontSize);
     setOpenTextField(true);
   };
-
   async function create() {
     console.log(currency + shipingGoal);
     console.log(shipingGoal + currency);
@@ -213,10 +211,6 @@ const Templates = ({ getTemplate, closeTemplate, values, editOpen }) => {
     closeTemplate();
     getTemplate();
   }
-
-  useEffect(() => {
-    console.log(editOpen);
-  }, [values]);
 
   return (
     <Layout>
