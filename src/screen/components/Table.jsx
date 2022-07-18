@@ -73,6 +73,9 @@ export const Table = () => {
   const close = () => {
     setOpenState(false);
   };
+  const edit = () => {
+    alert("hi");
+  };
 
   useEffect(async () => {
     getTemplate();
@@ -126,7 +129,7 @@ export const Table = () => {
                     >
                       {info.uuid === actived ? "Actived " : "Paused"}
                     </ActiveButton>
-                    {/* <Button>Edit</Button> */}
+                    <ActiveButton onclick={edit}>Edit</ActiveButton>
                     <ActiveButton delete onClick={() => deleted(info.uuid)}>
                       Delete
                     </ActiveButton>
