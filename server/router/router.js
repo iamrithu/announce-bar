@@ -39,11 +39,10 @@ router.post("/announcementBar", async (req, res) => {
     shop: test_session.shop,
     isActive: "false",
   };
-  console.log(details);
-  // let newData = await prisma.shipbars.create({
-  //   data: details,
-  // });
-  // res.status(200).send(newData);
+  let newData = await prisma.shipbars.create({
+    data: details,
+  });
+  res.status(200).send(newData);
 });
 
 router.put("/update/:id", async (req, res) => {

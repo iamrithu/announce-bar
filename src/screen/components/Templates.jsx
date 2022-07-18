@@ -259,7 +259,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
           <Layout.Section oneHalf>
             <Card title="Content Configuration :" sectioned>
               <TextField
-                label="Shipbar Name :"
+                label="Shippbar Name :"
                 value={name}
                 onChange={set_name}
                 autoComplete="off"
