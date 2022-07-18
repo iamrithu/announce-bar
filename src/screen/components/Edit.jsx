@@ -159,7 +159,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
             label="Currency :"
             options={Currency}
             onChange={currencyChange}
-            value={currency}
+            value={value.currency}
           />
           <TextField
             label="Currency Symbol :"
@@ -170,7 +170,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
             label="Currency :"
             options={CurrencyPosition}
             onChange={currencyPositionChange}
-            value={currencyPosition}
+            value={value.currencyPosition}
           />
         </Card>
       </Layout.Section>
@@ -264,21 +264,21 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
           <TextField
             label=" Choose Font-Size :"
             type="number"
-            value={font_size}
-            onChange={value.fontSize}
+            value={value.fontFamily}
+            onChange={set_font_size}
             autoComplete="off"
           />
           <Select
             label="Choose a Display Position :"
             options={options}
-            onChange={value.position}
+            onChange={handleSelectChange}
             value={selected}
           />
           <Select
             label="Include Close Button :"
             options={closeButton}
             onChange={setCloseButton}
-            value={value.closeButton}
+            value={close_button}
           />
         </Card>
       </Layout.Section>

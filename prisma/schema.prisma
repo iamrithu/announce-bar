@@ -23,6 +23,8 @@ model shipbars {
   fontSize         String
   closeButton      String
   shipingGoal      String
+  currencyPosition   String
+  currency      String
   isActive         String   @default("false")
   createdAt        DateTime @default(now())
   shop             String

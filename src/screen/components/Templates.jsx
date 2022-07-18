@@ -196,11 +196,9 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       specialTextColor: special_font_color,
       fontFamily: font_family,
       fontSize: font_size,
-      shipingGoal:
-        currencyPosition === "after"
-          ? shipingGoal + currency
-          : currency + shipingGoal,
-      closeButton: close_button,
+      shipingGoal: shipingGoal,
+      currency: currency,
+      currencyPosition: currencyPosition,
     };
 
     var post = await fetch("/announcementBar", {

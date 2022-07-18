@@ -21,7 +21,13 @@ fetch(url)
       if(data.lenght===0){
          announceBar.style.display="none"
       }else{
-         announceBar.innerHTML =`<p style="color:${data[0].fontColor};  font-size:${data[0].fontSize}px;"> ${data[0].content}<span style="color:${data[0].specialTextColor}; margin-left:5px;font-weight:bolder">${data[0].shipingGoal}</span><p/>`;
+
+          if(data[0].currencyPosition==="after"){
+             announceBar.innerHTML =`<p style="color:${data[0].fontColor};  font-size:${data[0].fontSize}px;"> ${data[0].content}<span style="color:${data[0].specialTextColor}; margin-left:5px;font-weight:bolder">${data[0].shipingGoal  data[0].currency}</span><p/>`;
+             }else{
+                           announceBar.innerHTML =`<p style="color:${data[0].fontColor};  font-size:${data[0].fontSize}px;"> ${data[0].content}<span style="color:${data[0].specialTextColor}; margin-left:5px;font-weight:bolder">${ data[0].currency data[0].shipingGoal  }</span><p/>`;
+
+             }
        announceBar.style.cssText=`
         position:${data[0].position}; 
         top: 0; 
@@ -35,7 +41,7 @@ fetch(url)
         align-items:center;
         justify-content:center`
       }
-      if(data[0].closeButton==="YES"){cd
+      if(data[0].closeButton==="YES"){
         button.style.display="block"
       }
       if(data[0].position==="fixed"){
