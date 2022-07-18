@@ -94,7 +94,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
   const [selected, setSelected] = useState("fixed");
   const [currency, setCurrency] = useState("INR");
   const [shipingGoal, setShipingGoal] = useState("");
-  const [currencyPosition, setCurrencyPosition] = useState("before");
+  const [currencyPosition, setCurrencyPosition] = useState("after");
   const handleSelectChange = useCallback((value) => setSelected(value), []);
   const fontSelectChange = useCallback((value) => set_font_family(value), []);
   const currencyChange = useCallback((value) => setCurrency(value), []);

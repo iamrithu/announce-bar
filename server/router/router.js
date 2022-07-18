@@ -37,13 +37,13 @@ router.post("/announcementBar", async (req, res) => {
     currencyContent: req.body.currencyContent,
     closeButton: req.body.closeButton,
     shop: test_session.shop,
-
     isActive: "false",
   };
-  let newData = await prisma.shipbars.create({
-    data: details,
-  });
-  res.status(200).send(newData);
+  console.log(details);
+  // let newData = await prisma.shipbars.create({
+  //   data: details,
+  // });
+  // res.status(200).send(newData);
 });
 
 router.put("/update/:id", async (req, res) => {
