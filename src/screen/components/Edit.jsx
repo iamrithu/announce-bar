@@ -13,6 +13,7 @@ import { userLoggedInFetch } from "../../App";
 import { useState, useCallback } from "react";
 
 const Edit = ({ getTemplate, closeTemplate, value }) => {
+  console.log(value);
   const app = useAppBridge();
   const fetch = userLoggedInFetch(app);
 
@@ -103,29 +104,30 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
   );
 
   async function update() {
-    var template = {
-      name: name,
-      shipBar: content,
-      background: background_color,
-      position: selected,
-      fontColor: font_color,
-      specialTextColor: special_font_color,
-      fontFamily: font_family,
-      fontSize: font_size,
-      shipingGoal:
-        currencyPosition === "after"
-          ? shipingGoal + currency
-          : currency + shipingGoal,
-      closeButton: close_button,
-    };
+    alert("hi");
+    // var template = {
+    //   name: name,
+    //   shipBar: content,
+    //   background: background_color,
+    //   position: selected,
+    //   fontColor: font_color,
+    //   specialTextColor: special_font_color,
+    //   fontFamily: font_family,
+    //   fontSize: font_size,
+    //   shipingGoal:
+    //     currencyPosition === "after"
+    //       ? shipingGoal + currency
+    //       : currency + shipingGoal,
+    //   closeButton: close_button,
+    // };
 
-    var post = await fetch("/announcementBar", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(template),
-    });
-    closeTemplate();
-    getTemplate();
+    // var post = await fetch("/announcementBar", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify(template),
+    // });
+    // closeTemplate();
+    // getTemplate();
   }
 
   return (
@@ -282,7 +284,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
       </Layout.Section>
       <Layout.Section fullWidth>
         <Stack distribution="trailing">
-          <Button onClick={closeTemplate}>Cancel</Button>
+          <Button onClick={closeTemplate()}>Cancel</Button>
           <Button primary onClick={update}>
             Edit Template
           </Button>

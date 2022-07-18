@@ -31,6 +31,7 @@ export const Table = () => {
   const [openState, setOpenState] = useState(false);
   const [choosedTemplate, setChoosedTemplate] = useState("");
   const [editOption, setEdit] = useState(false);
+  const [editData, setEditData] = useState({});
 
   async function getTemplate() {
     const count = await fetch(`/announcementBar`).then((res) => res.json());
@@ -74,6 +75,7 @@ export const Table = () => {
   };
   const edit = (info) => {
     setEdit(true);
+    setEditData({ info });
   };
   const close = () => {
     setOpenState(false);
@@ -148,7 +150,11 @@ export const Table = () => {
             <Templates getTemplate={getTemplate} closeTemplate={close} />
           ) : null}
           {editOption ? (
-            <Edit getTemplate={getTemplate} closeTemplate={close} />
+            <Edit
+              getTemplate={getTemplate}
+              closeTemplate={close}
+              value={editData}
+            />
           ) : null}
         </Layout.Section>
       </Layout>
