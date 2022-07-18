@@ -123,7 +123,6 @@ router.get("/customers", async (req, res) => {
     `@shopify/shopify-api/dist/rest-resources/${Shopify.Context.API_VERSION}/index.js`
   );
   const customers = await Customer.all({ session });
-  console.log(customers);
 });
 
 router.get("/orders", async (req, res) => {
@@ -132,7 +131,6 @@ router.get("/orders", async (req, res) => {
     `@shopify/shopify-api/dist/rest-resources/${Shopify.Context.API_VERSION}/index.js`
   );
   const orders = await Order.all({ session });
-  console.log(orders);
 });
 
 export default router;
