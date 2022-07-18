@@ -195,7 +195,6 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       fontSize: font_size,
       shipingGoal: shipingGoal,
       currency: currency,
-
       closeButton: close_button,
     };
 
