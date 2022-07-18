@@ -7,13 +7,6 @@ import { Icon } from "@shopify/polaris";
 
 import { InfoMinor, PlayCircleMajor } from "@shopify/polaris-icons";
 
-import home from "../assets/home.jpg";
-import active from "../assets/active.jpg";
-import actived from "../assets/actived.jpg";
-import create from "../assets/create.jpg";
-import template from "../assets/template.jpg";
-import store from "../assets/store.jpg";
-
 const Container = styled.div`
   width: 90%;
   height: 400px;
