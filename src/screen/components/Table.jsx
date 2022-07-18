@@ -73,7 +73,7 @@ export const Table = () => {
     }
   };
   const edit = (info) => {
-    console.log(info);
+    setEdit(true);
   };
   const close = () => {
     setOpenState(false);
