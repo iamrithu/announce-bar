@@ -29,7 +29,6 @@ export const Table = () => {
   const [templates, set_templates] = useState([]);
   const [openState, setOpenState] = useState(false);
   const [choosedTemplate, setChoosedTemplate] = useState("");
-  const [editOpen, setEditOpen] = useState(false);
 
   async function getTemplate() {
     const count = await fetch(`/announcementBar`).then((res) => res.json());
@@ -73,9 +72,6 @@ export const Table = () => {
   };
   const close = () => {
     setOpenState(false);
-  };
-  const editValues = (info) => {
-    setEditOpen(true);
   };
 
   useEffect(async () => {
@@ -130,9 +126,7 @@ export const Table = () => {
                     >
                       {info.uuid === actived ? "Actived " : "Paused"}
                     </ActiveButton>
-                    <ActiveButton onClick={() => editValues(info)}>
-                      Edit
-                    </ActiveButton>
+
                     <ActiveButton delete onClick={() => deleted(info.uuid)}>
                       Delete
                     </ActiveButton>
@@ -144,9 +138,6 @@ export const Table = () => {
         </Layout.Section>
         <Layout.Section>
           {openState ? (
-            <Templates getTemplate={getTemplate} closeTemplate={close} />
-          ) : null}
-          {editOpen ? (
             <Templates getTemplate={getTemplate} closeTemplate={close} />
           ) : null}
         </Layout.Section>
