@@ -184,9 +184,6 @@ const Templates = ({ getTemplate, closeTemplate }) => {
     setOpenTextField(true);
   };
   async function create() {
-    console.log(currency + shipingGoal);
-    console.log(shipingGoal + currency);
-    console.log(currencyPosition);
     var template = {
       name: name,
       shipBar: content,
@@ -196,10 +193,9 @@ const Templates = ({ getTemplate, closeTemplate }) => {
       specialTextColor: special_font_color,
       fontFamily: font_family,
       fontSize: font_size,
-      shipingGoal:
-        currencyPosition === "after"
-          ? shipingGoal + currency
-          : currency + shipingGoal,
+      shipingGoal: shipingGoal,
+      currency: currency,
+
       closeButton: close_button,
     };
 
