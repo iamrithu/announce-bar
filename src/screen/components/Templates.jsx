@@ -12,7 +12,8 @@ import { userLoggedInFetch } from "../../App";
 
 import { useState, useCallback } from "react";
 
-const Templates = ({ getTemplate, closeTemplate }) => {
+const Templates = ({ getTemplate, closeTemplate, editValue }) => {
+  console.log(editValue);
   const app = useAppBridge();
   const fetch = userLoggedInFetch(app);
 

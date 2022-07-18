@@ -29,7 +29,8 @@ export const Table = () => {
   const [templates, set_templates] = useState([]);
   const [openState, setOpenState] = useState(false);
   const [choosedTemplate, setChoosedTemplate] = useState("");
-  const [edit, setEditValue] = useState({});
+  const [editOpen, setEditOpen] = useState(false);
+  const [edit, setEditValue] = useState();
 
   async function getTemplate() {
     const count = await fetch(`/announcementBar`).then((res) => res.json());
@@ -76,7 +77,6 @@ export const Table = () => {
   };
   const editValues = (info) => {
     setEditValue(info);
-    console.log(edit);
   };
 
   useEffect(async () => {
@@ -146,6 +146,12 @@ export const Table = () => {
         <Layout.Section>
           {openState ? (
             <Templates getTemplate={getTemplate} closeTemplate={close} />
+          ) : editOpen ? (
+            <Templates
+              getTemplate={getTemplate}
+              closeTemplate={close}
+              editValue={edit}
+            />
           ) : null}
         </Layout.Section>
       </Layout>
