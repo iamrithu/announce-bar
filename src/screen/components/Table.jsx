@@ -75,10 +75,11 @@ export const Table = () => {
   };
   const edit = (info) => {
     setEdit(true);
-    setEditData({ info });
+    setEditData(info);
   };
   const close = () => {
     setOpenState(false);
+    setEdit(false);
   };
 
   useEffect(async () => {
