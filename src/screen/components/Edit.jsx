@@ -136,7 +136,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
         <Card title="Content Configuration :" sectioned>
           <TextField
             label="Shipbar Name :"
-            value={name}
+            value={value.name}
             onChange={set_name}
             autoComplete="off"
           />
@@ -144,14 +144,14 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
           <TextField
             label="Initial Message :"
             type="text"
-            value={content}
+            value={value.content}
             onChange={set_content}
             autoComplete="off"
           />
           <TextField
             label="Free Shiping Goal :"
             type="number"
-            value={shipingGoal}
+            value={value.shipingGoal}
             onChange={setShipingGoal}
             autoComplete="off"
           />
@@ -195,7 +195,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
               Background Color :
             </lable>
             <input
-              value={background_color}
+              value={value.background}
               type="color"
               onChange={(e) => set_background_color(e.target.value)}
               autoComplete="off"
@@ -221,7 +221,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
               Text Color :
             </lable>
             <input
-              value={font_color}
+              value={value.fontColor}
               type="color"
               onChange={(e) => set_font_color(e.target.value)}
               autoComplete="off"
@@ -247,7 +247,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
               Special Text Color :
             </lable>
             <input
-              value={special_font_color}
+              value={value.specialTextColor}
               type="color"
               onChange={(e) => set_special_font_color(e.target.value)}
               autoComplete="off"
@@ -258,33 +258,33 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
             label="Font Family :"
             options={fontOPT}
             onChange={fontSelectChange}
-            value={font_family}
+            value={value.fontFamily}
           />
 
           <TextField
             label=" Choose Font-Size :"
             type="number"
             value={font_size}
-            onChange={set_font_size}
+            onChange={value.fontSize}
             autoComplete="off"
           />
           <Select
             label="Choose a Display Position :"
             options={options}
-            onChange={handleSelectChange}
+            onChange={value.position}
             value={selected}
           />
           <Select
             label="Include Close Button :"
             options={closeButton}
             onChange={setCloseButton}
-            value={close_button}
+            value={value.closeButton}
           />
         </Card>
       </Layout.Section>
       <Layout.Section fullWidth>
         <Stack distribution="trailing">
-          <Button onClick={closeTemplate()}>Cancel</Button>
+          <Button onClick={closeTemplate}>Cancel</Button>
           <Button primary onClick={update}>
             Edit Template
           </Button>
