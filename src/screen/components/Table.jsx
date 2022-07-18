@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useAppBridge } from "@shopify/app-bridge-react";
 import { userLoggedInFetch } from "../../App";
 import Templates from "./Templates";
-import Template from "./Edit";
+import Edit from "./Edit";
 import styled from "styled-components";
 
 const ActiveButton = styled.button`
