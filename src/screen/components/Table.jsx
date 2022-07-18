@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useAppBridge } from "@shopify/app-bridge-react";
 import { userLoggedInFetch } from "../../App";
 import Templates from "./Templates";
+import Template from "./Edit";
 import styled from "styled-components";
 
 const ActiveButton = styled.button`
@@ -29,6 +30,7 @@ export const Table = () => {
   const [templates, set_templates] = useState([]);
   const [openState, setOpenState] = useState(false);
   const [choosedTemplate, setChoosedTemplate] = useState("");
+  const [editOption, setEdit] = useState(false);
 
   async function getTemplate() {
     const count = await fetch(`/announcementBar`).then((res) => res.json());
@@ -69,6 +71,9 @@ export const Table = () => {
     } else {
       setOpenState(false);
     }
+  };
+  const edit = (info) => {
+    console.log(info);
   };
   const close = () => {
     setOpenState(false);
@@ -126,7 +131,9 @@ export const Table = () => {
                     >
                       {info.uuid === actived ? "Actived " : "Paused"}
                     </ActiveButton>
-
+                    <ActiveButton delete onClick={() => edit(info)}>
+                      Edit
+                    </ActiveButton>
                     <ActiveButton delete onClick={() => deleted(info.uuid)}>
                       Delete
                     </ActiveButton>
@@ -139,6 +146,9 @@ export const Table = () => {
         <Layout.Section>
           {openState ? (
             <Templates getTemplate={getTemplate} closeTemplate={close} />
+          ) : null}
+          {editOption ? (
+            <Edit getTemplate={getTemplate} closeTemplate={close} />
           ) : null}
         </Layout.Section>
       </Layout>
