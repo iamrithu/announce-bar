@@ -16,7 +16,6 @@ const Templates = ({ getTemplate, closeTemplate, values, editOpen }) => {
   console.log(editOpen);
 
   var objectData = JSON.parse(values);
-  console.log(objectData);
   const app = useAppBridge();
   const fetch = userLoggedInFetch(app);
 
@@ -190,6 +189,8 @@ const Templates = ({ getTemplate, closeTemplate, values, editOpen }) => {
 
   if (editOpen === true) {
     setOpenTextField(true);
+    console.log(objectData);
+    console.log(openTextField);
   }
 
   async function create() {
