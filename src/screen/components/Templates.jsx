@@ -10,7 +10,7 @@ import {
 import { useAppBridge } from "@shopify/app-bridge-react";
 import { userLoggedInFetch } from "../../App";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 const Templates = ({ getTemplate, closeTemplate, values, editOpen }) => {
   var objectData = JSON.parse(values);
@@ -185,7 +185,6 @@ const Templates = ({ getTemplate, closeTemplate, values, editOpen }) => {
     setOpenTextField(true);
   };
 
-  console.log(editOpen);
   async function create() {
     console.log(currency + shipingGoal);
     console.log(shipingGoal + currency);
@@ -214,6 +213,10 @@ const Templates = ({ getTemplate, closeTemplate, values, editOpen }) => {
     closeTemplate();
     getTemplate();
   }
+
+  useEffect(() => {
+    console.log(editOpen);
+  }, [values]);
 
   return (
     <Layout>
