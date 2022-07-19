@@ -1,7 +1,7 @@
 import { Page, Image } from "@shopify/polaris";
 import { Table } from "./components/Table.jsx";
 import { useState } from "react";
-
+import "./style.css";
 import styled from "styled-components";
 import { Icon } from "@shopify/polaris";
 
@@ -46,7 +46,7 @@ export function HomePage() {
         >
           <Icon source={InfoMinor} color="base" />
           <span>(Instruction)</span>
-          <Icon source={ArrowUpMinor} />
+          <Icon source={ArrowUpMinor} className="icon" />
         </div>
       </div>
 
