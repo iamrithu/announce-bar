@@ -9,6 +9,7 @@ import {
   useAppBridge,
 } from "@shopify/app-bridge-react";
 import { authenticatedFetch } from "@shopify/app-bridge-utils";
+import "./style.css";
 import { Redirect } from "@shopify/app-bridge/actions";
 import { AppProvider as PolarisProvider } from "@shopify/polaris";
 import translations from "@shopify/polaris/locales/en.json";
@@ -27,7 +28,8 @@ export default function App() {
         }}
       >
         <MyProvider>
-          <HomePage />
+          <div className="demo">demo</div>
+          {/* <HomePage /> */}
         </MyProvider>
       </AppBridgeProvider>
     </PolarisProvider>

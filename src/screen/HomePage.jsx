@@ -5,7 +5,11 @@ import { useState } from "react";
 import styled from "styled-components";
 import { Icon } from "@shopify/polaris";
 
-import { InfoMinor, PlayCircleMajor } from "@shopify/polaris-icons";
+import {
+  InfoMinor,
+  PlayCircleMajor,
+  ArrowUpMinor,
+} from "@shopify/polaris-icons";
 
 const Container = styled.div`
   width: 90%;
@@ -42,6 +46,7 @@ export function HomePage() {
         >
           <Icon source={InfoMinor} color="base" />
           <span>(Instruction)</span>
+          <Icon source={ArrowUpMinor} />
         </div>
       </div>
 
