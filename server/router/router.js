@@ -27,7 +27,7 @@ router.get("/getUser/:id", async (req, res) => {
 
   res.status(201).send(getUser);
 });
-router.put("updateUser/:id", async (req, res) => {
+router.put("/updateUser/:id", async (req, res) => {
   console.log(req.params.id);
   console.log(req.body);
   // let datas = await prisma.shipbars.update({

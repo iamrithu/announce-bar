@@ -13,7 +13,6 @@ import { userLoggedInFetch } from "../../App";
 import { useState, useCallback, useEffect } from "react";
 
 const Edit = ({ getTemplate, closeTemplate, value }) => {
-  console.log(value);
   const app = useAppBridge();
   const fetch = userLoggedInFetch(app);
 
@@ -125,7 +124,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
     console.log(template);
     console.log(id);
 
-    var post = await fetch(`/updateUser/${id}`, {
+    await fetch(`/updateUser/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(template),
