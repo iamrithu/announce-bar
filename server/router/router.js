@@ -11,7 +11,7 @@ router.get("/shop", async (req, res) => {
 
   try {
     const data = await prisma.shops.findUnique({
-      where: { name: session.shop },
+      where: { name: test_session.shop },
     });
     res.status(200).send(data);
   } catch (error) {
