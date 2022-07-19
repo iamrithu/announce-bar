@@ -38,8 +38,7 @@ export function HomePage() {
   };
   useEffect(async () => {
     const count = await fetch(`/shop`).then((res) => res.json());
-    console.log(count);
-    console.log("rithi");
+    setAnimation(count.animate);
   });
   return (
     <Page fullWidth>
