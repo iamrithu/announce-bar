@@ -16,11 +16,8 @@ router.get("/announcementBar", async (req, res) => {
     var demo = data.sort(function (a, b) {
       return a.id - b.id;
     });
-    console.log(data);
 
-    console.log(demo);
-
-    res.status(200).send(data);
+    res.status(200).send(demo);
   } catch (error) {
     res.status(404).send(error.message);
   }
