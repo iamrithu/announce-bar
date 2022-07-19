@@ -129,8 +129,11 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
     // closeTemplate();
     // getTemplate();
   }
-  useEffect(() => {
-    console.log(value);
+  useEffect(async () => {
+    const user = await fetch(`/announcementBar/${value}`).then((res) =>
+      res.json()
+    );
+    console.log(user);
   }, []);
 
   return (
