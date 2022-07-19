@@ -38,11 +38,11 @@ export const Table = () => {
 
   async function getTemplate() {
     const count = await fetch(`/announcementBar`).then((res) => res.json());
-    count.map((e) => {
-      if (e.isActive === "true") {
-        setActive(e.uuid);
-      }
-    });
+    // count.map((e) => {
+    //   if (e.isActive === "true") {
+    //     setActive(e.uuid);
+    //   }
+    // });
     set_templates(count);
   }
 
