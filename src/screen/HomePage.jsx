@@ -46,8 +46,9 @@ export function HomePage() {
         >
           <Icon source={InfoMinor} color="base" />
           <span>(Instruction)</span>
-          <div className="icon">demo</div>
-          <Icon source={ArrowUpMinor} />
+          <div className="icon">
+            <Icon source={ArrowUpMinor} />
+          </div>
         </div>
       </div>
 

@@ -1,6 +1,5 @@
 .icon {
-  width: 100px;
-  height: 100px;
-  color: red;
-  background-color: pink;
+  position: absolute;
+  top: 20px;
+  left: 40pc;
 }
