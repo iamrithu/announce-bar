@@ -32,7 +32,7 @@ export function HomePage() {
   const open = () => {
     if (showInstruction === false) {
       setInstruction(true);
-      setAnimation(count.animate);
+      setAnimation(false);
     } else {
       setInstruction(false);
     }
@@ -42,6 +42,8 @@ export function HomePage() {
     if (count.animate === true) {
       setAnimation(count.animate);
       const data = await fetch(`/shopUpdate`).then((res) => res.json());
+    } else {
+      setAnimation(false);
     }
   });
   return (
