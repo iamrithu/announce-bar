@@ -31,18 +31,17 @@ export function HomePage() {
 
   const open = () => {
     if (showInstruction === false) {
-      return setInstruction(true);
+      setInstruction(true);
+      setAnimation(count.animate);
+    } else {
+      setInstruction(false);
     }
-
-    setInstruction(false);
   };
   useEffect(async () => {
     const count = await fetch(`/shop`).then((res) => res.json());
     if (count.animate === true) {
       setAnimation(count.animate);
       const data = await fetch(`/shopUpdate`).then((res) => res.json());
-    } else {
-      setAnimation(false);
     }
   });
   return (
