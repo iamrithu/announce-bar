@@ -13,7 +13,13 @@ router.get("/announcementBar", async (req, res) => {
     const data = await prisma.shipbars.findMany({
       where: { shop: test_session.shop },
     });
+    var demo = data.sort(function (a, b) {
+      return a.id - b.id;
+    });
     console.log(data);
+
+    console.log(demo);
+
     res.status(200).send(data);
   } catch (error) {
     res.status(404).send(error.message);
