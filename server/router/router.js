@@ -28,10 +28,12 @@ router.get("/getUser/:id", async (req, res) => {
   res.status(201).send(getUser);
 });
 router.put("updateUser/:id", async (req, res) => {
-  let datas = await prisma.shipbars.update({
-    where: { uuid: req.params.id },
-    data: req.body,
-  });
+  console.log(req.params.id);
+  console.log(req.body);
+  // let datas = await prisma.shipbars.update({
+  //   where: { uuid: req.params.id },
+  //   data: req.body,
+  // });
 });
 router.post("/announcementBar", async (req, res) => {
   const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
