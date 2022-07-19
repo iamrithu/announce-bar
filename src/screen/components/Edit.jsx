@@ -131,7 +131,18 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
   }
   useEffect(async () => {
     const user = await fetch(`/getUser/${value}`).then((res) => res.json());
-    console.log(user);
+    set_name(user.name);
+    setCloseButton(user.closeButton);
+    set_content(user.content);
+    set_background_color(user.background);
+    set_font_color(user.fontColor);
+    set_special_font_color(user.specialTextColor);
+    set_font_family(user.fontFamily);
+    set_font_size(user.fontSize);
+    setSelected(user.position);
+    setCurrency(user.currency);
+    setShipingGoal(user.shipingGoal);
+    setCurrencyPosition(user.currencyPosition);
   }, []);
 
   return (
