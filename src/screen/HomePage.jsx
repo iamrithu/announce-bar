@@ -63,8 +63,8 @@ export function HomePage() {
             <>
               <div className="icon">
                 <Icon source={ArrowLeftMinor} />
+                <span>Click Here .... </span>
               </div>
-              <span>Click Here .... </span>
             </>
           ) : (
             <></>
