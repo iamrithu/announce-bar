@@ -159,6 +159,11 @@ export const Table = () => {
                   })}
                 />
               </Card>
+              {templates.length === 0 ? (
+                <Card>There Is No Templates Found</Card>
+              ) : (
+                ""
+              )}
             </Layout.Section>
           </>
         )}
