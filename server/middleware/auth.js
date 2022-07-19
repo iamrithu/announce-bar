@@ -54,6 +54,8 @@ export default function applyAuthMiddleware(app) {
         where: { name: session.shop },
       });
       if (data) {
+        res.send({ animation: false });
+
         console.log("exit");
       } else {
         await prisma.shops.create({
@@ -63,6 +65,7 @@ export default function applyAuthMiddleware(app) {
             name: session.shop,
           },
         });
+        res.send({ animation: true });
       }
 
       const host = req.query.host;

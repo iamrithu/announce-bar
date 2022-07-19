@@ -1,6 +1,6 @@
 import { Page, Image } from "@shopify/polaris";
 import { Table } from "./components/Table.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./style.css";
 import styled from "styled-components";
 import { Icon } from "@shopify/polaris";
@@ -23,6 +23,7 @@ const Container = styled.div`
 
 export function HomePage() {
   const [showInstruction, setInstruction] = useState(false);
+  const [animation, setAnimation] = useState(false);
 
   const open = () => {
     if (showInstruction === false) {
@@ -31,6 +32,10 @@ export function HomePage() {
 
     setInstruction(false);
   };
+  useEffect(async () => {
+    const count = await fetch(`/auth/callback`).then((res) => res.json());
+    console.log(count);
+  });
   return (
     <Page fullWidth>
       <div style={{ display: "flex" }}>
@@ -46,9 +51,13 @@ export function HomePage() {
         >
           <Icon source={InfoMinor} color="base" />
           <span>(Instruction)</span>
-          <div className="icon">
-            <Icon source={ArrowLeftMinor} />
-          </div>
+          {animation ? (
+            <div className="icon">
+              <Icon source={ArrowLeftMinor} />
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
 
