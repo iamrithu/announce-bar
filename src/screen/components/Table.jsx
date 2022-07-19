@@ -40,11 +40,11 @@ export const Table = () => {
     const count = await fetch(`/announcementBar`).then((res) => res.json());
     set_templates(count);
     console.log(count);
-    // count.map((e) => {
-    //   if (e.isActive === "true") {
-    //     setActive(e.uuid);
-    //   }
-    // });
+    count.map((e) => {
+      if (e.isActive === "true") {
+        setActive(e.uuid);
+      }
+    });
   }
 
   async function deleted(e) {

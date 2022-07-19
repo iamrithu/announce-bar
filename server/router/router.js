@@ -13,6 +13,7 @@ router.get("/announcementBar", async (req, res) => {
     const data = await prisma.shipbars.findMany({
       where: { shop: test_session.shop },
     });
+    console.log(data);
     res.status(200).send(data);
   } catch (error) {
     res.status(404).send(error.message);
