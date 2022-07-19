@@ -42,8 +42,6 @@ export function HomePage() {
     if (count.animate === true) {
       setAnimation(count.animate);
       const data = await fetch(`/shopUpdate`).then((res) => res.json());
-    } else {
-      setAnimation(false);
     }
   });
   return (
