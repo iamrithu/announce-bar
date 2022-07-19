@@ -91,7 +91,7 @@ export const Table = () => {
   return (
     <Page fullWidth>
       <Layout>
-        {openState ? (
+        {editOption ? (
           <></>
         ) : (
           <>
