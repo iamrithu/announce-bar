@@ -18,6 +18,20 @@ router.get("/shop", async (req, res) => {
     res.status(404).send(error.message);
   }
 });
+router.get("/shopUpdate", async (req, res) => {
+  const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
+
+  try {
+    const data = await prisma.shops.update({
+      where: { name: test_session.shop },
+      data: { animate: false },
+    });
+    console.log(data);
+    res.status(200).send(data);
+  } catch (error) {
+    res.status(404).send(error.message);
+  }
+});
 
 router.get("/announcementBar", async (req, res) => {
   const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);

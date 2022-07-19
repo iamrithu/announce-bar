@@ -38,7 +38,12 @@ export function HomePage() {
   };
   useEffect(async () => {
     const count = await fetch(`/shop`).then((res) => res.json());
-    setAnimation(count.animate);
+    if (count.animate === true) {
+      setAnimation(count.animate);
+      const data = await fetch(`/shopUpdate`).then((res) => res.json());
+    } else {
+      setAnimation(false);
+    }
   });
   return (
     <Page fullWidth>
