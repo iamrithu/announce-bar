@@ -19,7 +19,7 @@ router.get("/announcementBar", async (req, res) => {
   }
 });
 router.get("/getUser/:id", async (req, res) => {
-  const getUser = await prisma.user.update({
+  const getUser = await prisma.shipbars.findUnique({
     where: {
       uuid: req.params.id,
     },
