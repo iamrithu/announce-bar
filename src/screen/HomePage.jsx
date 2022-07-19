@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import "./style.css";
 import styled from "styled-components";
 import { Icon } from "@shopify/polaris";
+import { useAppBridge } from "@shopify/app-bridge-react";
+import { userLoggedInFetch } from "../App";
 
 import {
   InfoMinor,
@@ -24,6 +26,8 @@ const Container = styled.div`
 export function HomePage() {
   const [showInstruction, setInstruction] = useState(false);
   const [animation, setAnimation] = useState(false);
+  const app = useAppBridge();
+  const fetch = userLoggedInFetch(app);
 
   const open = () => {
     if (showInstruction === false) {
