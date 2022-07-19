@@ -8,7 +8,7 @@ import { Icon } from "@shopify/polaris";
 import {
   InfoMinor,
   PlayCircleMajor,
-  ArrowUpMinor,
+  ArrowDownMinor,
 } from "@shopify/polaris-icons";
 
 const Container = styled.div`
@@ -47,7 +47,7 @@ export function HomePage() {
           <Icon source={InfoMinor} color="base" />
           <span>(Instruction)</span>
           <div className="icon">
-            <Icon source={ArrowUpMinor} />
+            <Icon source={ArrowDownMinor} />
           </div>
         </div>
       </div>
