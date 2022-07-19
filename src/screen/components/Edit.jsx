@@ -121,9 +121,6 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
           : currency + shipingGoal,
       closeButton: close_button,
     };
-    console.log(template);
-    console.log(id);
-
     await fetch(`/updateUser/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },

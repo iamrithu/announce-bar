@@ -75,6 +75,7 @@ export const Table = () => {
   };
   const edit = (info) => {
     setEdit(true);
+    setOpenState(false);
     setEditData(info.uuid);
   };
   const close = () => {
