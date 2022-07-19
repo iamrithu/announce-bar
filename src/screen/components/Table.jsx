@@ -72,6 +72,9 @@ export const Table = () => {
     } else {
       setOpenState(false);
     }
+    if (editOption === true) {
+      return setEdit(false);
+    }
   };
   const edit = (info) => {
     setEdit(true);
@@ -96,6 +99,7 @@ export const Table = () => {
             {" "}
             <Button primary onClick={add}>
               {openState ? "Close" : "Create New Bar"}
+              {editOption ? "close" : "Create New Bar"}
             </Button>{" "}
           </Stack>
         </Layout.Section>

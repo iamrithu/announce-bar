@@ -312,7 +312,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                 <lable
                   style={{
                     fontSize: "15px",
-                    fontWeight: "200",
+                    fontWeight: "400",
                     marginRight: "5%",
                   }}
                 >
@@ -338,7 +338,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                 <lable
                   style={{
                     fontSize: "15px",
-                    fontWeight: "200",
+                    fontWeight: "400",
                     marginRight: "6.8%",
                   }}
                 >
@@ -364,7 +364,7 @@ const Templates = ({ getTemplate, closeTemplate }) => {
                 <lable
                   style={{
                     fontSize: "15px",
-                    fontWeight: "200",
+                    fontWeight: "400",
                     marginRight: "6.8%",
                   }}
                 >
