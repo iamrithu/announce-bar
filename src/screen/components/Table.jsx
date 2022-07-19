@@ -31,7 +31,7 @@ export const Table = () => {
   const [openState, setOpenState] = useState(false);
   const [choosedTemplate, setChoosedTemplate] = useState("");
   const [editOption, setEdit] = useState(false);
-  const [editData, setEditData] = useState({});
+  const [editData, setEditData] = useState();
 
   async function getTemplate() {
     const count = await fetch(`/announcementBar`).then((res) => res.json());
@@ -75,7 +75,7 @@ export const Table = () => {
   };
   const edit = (info) => {
     setEdit(true);
-    setEditData(info);
+    setEditData(info.uuid);
   };
   const close = () => {
     setOpenState(false);

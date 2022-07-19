@@ -10,7 +10,7 @@ import {
 import { useAppBridge } from "@shopify/app-bridge-react";
 import { userLoggedInFetch } from "../../App";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 const Edit = ({ getTemplate, closeTemplate, value }) => {
   console.log(value);
@@ -129,14 +129,17 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
     // closeTemplate();
     // getTemplate();
   }
+  useEffect(() => {
+    console.log(value);
+  }, []);
 
   return (
     <Layout>
       <Layout.Section oneHalf>
         <Card title="Content Configuration :" sectioned>
           <TextField
-            label="Shipbar Name :"
-            value={value.name}
+            label="Shippbar Name :"
+            value={name}
             onChange={set_name}
             autoComplete="off"
           />
@@ -144,14 +147,14 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
           <TextField
             label="Initial Message :"
             type="text"
-            value={value.content}
+            value={content}
             onChange={set_content}
             autoComplete="off"
           />
           <TextField
             label="Free Shiping Goal :"
             type="number"
-            value={value.shipingGoal}
+            value={shipingGoal}
             onChange={setShipingGoal}
             autoComplete="off"
           />
@@ -159,7 +162,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
             label="Currency :"
             options={Currency}
             onChange={currencyChange}
-            value={value.currency}
+            value={currency}
           />
           <TextField
             label="Currency Symbol :"
@@ -170,7 +173,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
             label="Currency :"
             options={CurrencyPosition}
             onChange={currencyPositionChange}
-            value={value.currencyPosition}
+            value={currencyPosition}
           />
         </Card>
       </Layout.Section>
@@ -195,7 +198,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
               Background Color :
             </lable>
             <input
-              value={value.background}
+              value={background_color}
               type="color"
               onChange={(e) => set_background_color(e.target.value)}
               autoComplete="off"
@@ -221,7 +224,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
               Text Color :
             </lable>
             <input
-              value={value.fontColor}
+              value={font_color}
               type="color"
               onChange={(e) => set_font_color(e.target.value)}
               autoComplete="off"
@@ -247,7 +250,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
               Special Text Color :
             </lable>
             <input
-              value={value.specialTextColor}
+              value={special_font_color}
               type="color"
               onChange={(e) => set_special_font_color(e.target.value)}
               autoComplete="off"
@@ -258,13 +261,13 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
             label="Font Family :"
             options={fontOPT}
             onChange={fontSelectChange}
-            value={value.fontFamily}
+            value={font_family}
           />
 
           <TextField
             label=" Choose Font-Size :"
             type="number"
-            value={value.fontFamily}
+            value={font_size}
             onChange={set_font_size}
             autoComplete="off"
           />
