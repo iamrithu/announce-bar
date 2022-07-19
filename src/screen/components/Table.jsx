@@ -17,6 +17,9 @@ const ActiveButton = styled.button`
     props.active ? "1px solid #3EB372" : "1px solid #FA931C"};
   border: ${(props) => (props.delete ? "1px solid red" : " ")};
   color: ${(props) => (props.active ? " #3EB372" : "#FA931C")};
+  color: ${(props) => (props.edit ? " blue" : "#FA931C")};
+  border: ${(props) => (props.edit ? "1px solid blue" : " ")};
+
   color: ${(props) => (props.delete ? "red" : "")};
   &:hover {
     background: #efefef;
