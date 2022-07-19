@@ -119,52 +119,45 @@ export const Table = () => {
                     "text",
                   ]}
                   headings={["Item.No", "Name", "Content", "Preview", "Action"]}
-                  rows={
-                    templates.length === 0
-                      ? ["", "", "No Data Found", "", ""]
-                      : templates.map((info, index) => {
-                          return [
-                            index + 1,
-                            info.name,
-                            info.content + " " + info.currencyContent,
-                            <Stack>
-                              <div
-                                style={{
-                                  //
-                                  padding: "3px 40px",
-                                  display: "flex",
-                                  alignItems: "center",
-                                  justifyContent: "center",
-                                  background: info.background,
-                                  color: info.fontColor,
-                                  fontSize: "14px",
-                                  borderRadius: "4px",
-                                }}
-                              >
-                                content
-                              </div>
-                              ,
-                            </Stack>,
-                            <Stack>
-                              <ActiveButton
-                                active={info.uuid === actived}
-                                onClick={() => activate(info)}
-                              >
-                                {info.uuid === actived ? "Actived " : "Paused"}
-                              </ActiveButton>
-                              <ActiveButton edit onClick={() => edit(info)}>
-                                Edit
-                              </ActiveButton>
-                              <ActiveButton
-                                delete
-                                onClick={() => deleted(info.uuid)}
-                              >
-                                Delete
-                              </ActiveButton>
-                            </Stack>,
-                          ];
-                        })
-                  }
+                  rows={templates.map((info, index) => {
+                    return [
+                      index + 1,
+                      info.name,
+                      info.content + " " + info.currencyContent,
+                      <Stack>
+                        <div
+                          style={{
+                            //
+                            padding: "3px 40px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            background: info.background,
+                            color: info.fontColor,
+                            fontSize: "14px",
+                            borderRadius: "4px",
+                          }}
+                        >
+                          content
+                        </div>
+                        ,
+                      </Stack>,
+                      <Stack>
+                        <ActiveButton
+                          active={info.uuid === actived}
+                          onClick={() => activate(info)}
+                        >
+                          {info.uuid === actived ? "Actived " : "Paused"}
+                        </ActiveButton>
+                        <ActiveButton edit onClick={() => edit(info)}>
+                          Edit
+                        </ActiveButton>
+                        <ActiveButton delete onClick={() => deleted(info.uuid)}>
+                          Delete
+                        </ActiveButton>
+                      </Stack>,
+                    ];
+                  })}
                 />
               </Card>
             </Layout.Section>
