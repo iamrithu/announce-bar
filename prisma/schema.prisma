@@ -36,4 +36,5 @@ model shops {
   uuid   String @unique @db.VarChar(255)
   shopId String
   name   String @unique
+  animate Boolean  @default(true)
 }

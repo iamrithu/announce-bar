@@ -33,7 +33,7 @@ export function HomePage() {
     setInstruction(false);
   };
   useEffect(async () => {
-    const count = await fetch(`/auth/callback`).then((res) => res.json());
+    const count = await fetch(`/shop`).then((res) => res.json());
     console.log(count);
   });
   return (

@@ -6,6 +6,19 @@ import { uuid } from "uuidv4";
 
 const prisma = new PrismaClient();
 
+router.get("/shop", async (req, res) => {
+  const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
+
+  try {
+    const data = await prisma.shops.findUnique({
+      where: { name: session.shop },
+    });
+    res.status(200).send(data);
+  } catch (error) {
+    res.status(404).send(error.message);
+  }
+});
+
 router.get("/announcementBar", async (req, res) => {
   const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
 
