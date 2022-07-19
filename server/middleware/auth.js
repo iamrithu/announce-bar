@@ -55,12 +55,6 @@ export default function applyAuthMiddleware(app) {
       });
       if (data) {
         console.log("exit");
-        await prisma.shops.update({
-          where: { name: session.shop },
-          data: {
-            animate: false,
-          },
-        });
       } else {
         await prisma.shops.create({
           data: {
