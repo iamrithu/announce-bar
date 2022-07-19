@@ -125,13 +125,13 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
     console.log(template);
     console.log(id);
 
-    // var post = await fetch(`/updateUser/${id}`, {
-    //   method: "PUT",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(template),
-    // });
-    // closeTemplate();
-    // getTemplate();
+    var post = await fetch(`/updateUser/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(template),
+    });
+    closeTemplate();
+    getTemplate();
   }
   useEffect(async () => {
     const user = await fetch(`/getUser/${value}`).then((res) => res.json());
