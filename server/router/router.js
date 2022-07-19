@@ -32,9 +32,24 @@ router.get("/getUser/:id", async (req, res) => {
 });
 router.put("/updateUser/:id", async (req, res) => {
   try {
+    var data = {
+      name: req.body.name,
+      content: req.body.shipBar,
+      background: req.body.background,
+      position: req.body.position,
+      fontColor: req.body.fontColor,
+      fontFamily: req.body.fontFamily,
+      fontSize: req.body.fontSize,
+      specialTextColor: req.body.specialTextColor,
+      shipingGoal: req.body.shipingGoal,
+      currency: req.body.currency,
+      currencyPosition: req.body.currencyPosition,
+      currencyContent: req.body.currencyContent,
+      closeButton: req.body.closeButton,
+    };
     let datas = await prisma.shipbars.update({
       where: { uuid: req.params.id },
-      data: req.body,
+      data,
     });
     res.send(datas);
   } catch (error) {
