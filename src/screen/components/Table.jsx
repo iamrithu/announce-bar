@@ -72,9 +72,6 @@ export const Table = () => {
     } else {
       setOpenState(false);
     }
-    if (editOption === true) {
-      return setEdit(false);
-    }
   };
   const edit = (info) => {
     setEdit(true);
@@ -94,62 +91,74 @@ export const Table = () => {
   return (
     <Page fullWidth>
       <Layout>
-        <Layout.Section>
-          <Stack distribution="trailing">
+        {openState ? (
+          <></>
+        ) : (
+          <>
             {" "}
-            <Button primary onClick={add}>
-              {openState ? "Close" : "Create New Bar"}
-              {editOption ? "close" : "Create New Bar"}
-            </Button>{" "}
-          </Stack>
-        </Layout.Section>
-        <Layout.Section>
-          <Card>
-            <DataTable
-              columnContentTypes={["number", "text", "text", "text", "text"]}
-              headings={["Item.No", "Name", "Content", "Preview", "Action"]}
-              rows={templates.map((info, index) => {
-                return [
-                  index + 1,
-                  info.name,
-                  info.content + " " + info.currencyContent,
-                  <Stack>
-                    <div
-                      style={{
-                        //
-                        padding: "3px 40px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        background: info.background,
-                        color: info.fontColor,
-                        fontSize: "14px",
-                        borderRadius: "4px",
-                      }}
-                    >
-                      content
-                    </div>
-                    ,
-                  </Stack>,
-                  <Stack>
-                    <ActiveButton
-                      active={info.uuid === actived}
-                      onClick={() => activate(info)}
-                    >
-                      {info.uuid === actived ? "Actived " : "Paused"}
-                    </ActiveButton>
-                    <ActiveButton delete onClick={() => edit(info)}>
-                      Edit
-                    </ActiveButton>
-                    <ActiveButton delete onClick={() => deleted(info.uuid)}>
-                      Delete
-                    </ActiveButton>
-                  </Stack>,
-                ];
-              })}
-            />
-          </Card>
-        </Layout.Section>
+            <Layout.Section>
+              <Stack distribution="trailing">
+                {" "}
+                <Button primary onClick={add}>
+                  {openState ? "Close" : "Create New Bar"}
+                </Button>{" "}
+              </Stack>
+            </Layout.Section>
+            <Layout.Section>
+              <Card>
+                <DataTable
+                  columnContentTypes={[
+                    "number",
+                    "text",
+                    "text",
+                    "text",
+                    "text",
+                  ]}
+                  headings={["Item.No", "Name", "Content", "Preview", "Action"]}
+                  rows={templates.map((info, index) => {
+                    return [
+                      index + 1,
+                      info.name,
+                      info.content + " " + info.currencyContent,
+                      <Stack>
+                        <div
+                          style={{
+                            //
+                            padding: "3px 40px",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            background: info.background,
+                            color: info.fontColor,
+                            fontSize: "14px",
+                            borderRadius: "4px",
+                          }}
+                        >
+                          content
+                        </div>
+                        ,
+                      </Stack>,
+                      <Stack>
+                        <ActiveButton
+                          active={info.uuid === actived}
+                          onClick={() => activate(info)}
+                        >
+                          {info.uuid === actived ? "Actived " : "Paused"}
+                        </ActiveButton>
+                        <ActiveButton delete onClick={() => edit(info)}>
+                          Edit
+                        </ActiveButton>
+                        <ActiveButton delete onClick={() => deleted(info.uuid)}>
+                          Delete
+                        </ActiveButton>
+                      </Stack>,
+                    ];
+                  })}
+                />
+              </Card>
+            </Layout.Section>
+          </>
+        )}
         <Layout.Section>
           {openState ? (
             <Templates getTemplate={getTemplate} closeTemplate={close} />

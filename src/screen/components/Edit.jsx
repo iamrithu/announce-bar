@@ -82,7 +82,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
       value: "Electra",
     },
   ];
-
+  const [id, setId] = useState();
   const [name, set_name] = useState();
   const [close_button, setCloseButton] = useState("NO");
   const [content, set_content] = useState("");
@@ -104,33 +104,36 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
   );
 
   async function update() {
-    alert("hi");
-    // var template = {
-    //   name: name,
-    //   shipBar: content,
-    //   background: background_color,
-    //   position: selected,
-    //   fontColor: font_color,
-    //   specialTextColor: special_font_color,
-    //   fontFamily: font_family,
-    //   fontSize: font_size,
-    //   shipingGoal:
-    //     currencyPosition === "after"
-    //       ? shipingGoal + currency
-    //       : currency + shipingGoal,
-    //   closeButton: close_button,
-    // };
+    var template = {
+      name: name,
+      shipBar: content,
+      background: background_color,
+      position: selected,
+      fontColor: font_color,
+      specialTextColor: special_font_color,
+      fontFamily: font_family,
+      fontSize: font_size,
+      shipingGoal: shipingGoal,
+      currency: currency,
+      currencyPosition: currencyPosition,
+      currencyContent:
+        currencyPosition === "after"
+          ? shipingGoal + currency
+          : currency + shipingGoal,
+      closeButton: close_button,
+    };
 
-    // var post = await fetch("/announcementBar", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(template),
-    // });
-    // closeTemplate();
-    // getTemplate();
+    var post = await fetch(`/updateUser/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(template),
+    });
+    closeTemplate();
+    getTemplate();
   }
   useEffect(async () => {
     const user = await fetch(`/getUser/${value}`).then((res) => res.json());
+    setId(user.uuid);
     set_name(user.name);
     setCloseButton(user.closeButton);
     set_content(user.content);
