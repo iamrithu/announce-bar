@@ -19,13 +19,13 @@ router.get("/announcementBar", async (req, res) => {
   }
 });
 router.get("/getUser/:id", async (req, res) => {
-  console.log(req.params.id);
-  // const getUser = await prisma.user.update({
-  //   where: {
-  //     uuid: req.params.id,
-  //   },
-  // });
-  // res.status(201).send(getUser);
+  const getUser = await prisma.user.update({
+    where: {
+      uuid: req.params.id,
+    },
+  });
+  console.log(getUser);
+  res.status(201).send(getUser);
 });
 router.post("/announcementBar", async (req, res) => {
   const test_session = await Shopify.Utils.loadCurrentSession(req, res, true);
