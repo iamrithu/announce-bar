@@ -24,7 +24,7 @@ router.get("/getUser/:id", async (req, res) => {
       uuid: req.params.id,
     },
   });
-  console.log(getUser);
+
   res.status(201).send(getUser);
 });
 router.put("updateUser/:id", async (req, res) => {
