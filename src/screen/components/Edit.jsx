@@ -130,9 +130,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
     // getTemplate();
   }
   useEffect(async () => {
-    const user = await fetch(`/announcementBar/${value}`).then((res) =>
-      res.json()
-    );
+    const user = await fetch(`/getUser/${value}`).then((res) => res.json());
     console.log(user);
   }, []);
 
@@ -246,7 +244,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
             <lable
               style={{
                 fontSize: "15px",
-                fontWeight: "200",
+                fontWeight: "bold",
                 marginRight: "6.8%",
               }}
             >
