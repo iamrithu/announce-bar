@@ -1,5 +1,6 @@
 .icon {
   animation: bounceLeft 2s infinite;
+  display: flex;
 }
 
 @keyframes bounceLeft {
