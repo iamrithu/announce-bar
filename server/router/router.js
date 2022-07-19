@@ -26,7 +26,6 @@ router.get("/shopUpdate", async (req, res) => {
       where: { name: test_session.shop },
       data: { animate: false },
     });
-    console.log(data);
     res.status(200).send(data);
   } catch (error) {
     res.status(404).send(error.message);

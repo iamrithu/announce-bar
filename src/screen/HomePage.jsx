@@ -60,9 +60,12 @@ export function HomePage() {
           <Icon source={InfoMinor} color="base" />
           <span>(Instruction)</span>
           {animation ? (
-            <div className="icon">
-              <Icon source={ArrowLeftMinor} />
-            </div>
+            <>
+              <div className="icon">
+                <Icon source={ArrowLeftMinor} />
+              </div>
+              <span>Click Here .... </span>
+            </>
           ) : (
             <></>
           )}
