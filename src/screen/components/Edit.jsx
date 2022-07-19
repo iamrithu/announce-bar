@@ -150,7 +150,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
       <Layout.Section oneHalf>
         <Card title="Content Configuration :" sectioned>
           <TextField
-            label="Shippbar Name:"
+            label="Shippbar Name :"
             value={name}
             onChange={set_name}
             autoComplete="off"
@@ -214,7 +214,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
               type="color"
               onChange={(e) => set_background_color(e.target.value)}
               autoComplete="off"
-              style={{ width: "400px", height: "40px", marginLeft: "8px" }}
+              style={{ width: "200px", height: "40px", marginLeft: "8px" }}
             />
           </div>
           <div
@@ -255,7 +255,7 @@ const Edit = ({ getTemplate, closeTemplate, value }) => {
             <lable
               style={{
                 fontSize: "15px",
-                fontWeight: "bold",
+                fontWeight: "400",
                 marginRight: "6.8%",
               }}
             >
