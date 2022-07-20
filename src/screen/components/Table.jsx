@@ -26,7 +26,7 @@ const ActiveButton = styled.button`
   }
 `;
 
-export const Table = ({ close }) => {
+export const Table = ({ closeAnimate }) => {
   const app = useAppBridge();
   const fetch = userLoggedInFetch(app);
   const [actived, setActive] = useState();
@@ -71,7 +71,7 @@ export const Table = ({ close }) => {
   }
 
   const add = () => {
-    close();
+    closeAnimate();
     if (openState === false) {
       setOpenState(true);
     } else {

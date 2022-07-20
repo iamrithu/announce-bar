@@ -171,7 +171,7 @@ export function HomePage() {
           </div>
         </Container>
       ) : (
-        <Table close={closeAnimate} />
+        <Table closeAnimate={closeAnimate} />
       )}
     </Page>
   );
