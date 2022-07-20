@@ -37,6 +37,10 @@ export function HomePage() {
       setInstruction(false);
     }
   };
+
+  const closeAnimate = () => {
+    setAnimation(false);
+  };
   useEffect(async () => {
     const count = await fetch(`/shop`).then((res) => res.json());
     if (count.animate === true) {
@@ -167,7 +171,7 @@ export function HomePage() {
           </div>
         </Container>
       ) : (
-        <Table />
+        <Table close={closeAnimate} />
       )}
     </Page>
   );
