@@ -55,7 +55,7 @@ export function HomePage() {
         <div
           onClick={open}
           style={{ cursor: "pointer", display: "flex" }}
-          title="Instruction :"
+          title="Instruction"
         >
           <Icon source={InfoMinor} color="base" />
           <span>(Instruction)</span>
